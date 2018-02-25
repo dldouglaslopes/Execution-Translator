@@ -32,6 +32,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/dldou/Dropbox/java/Execution-Translator/execution-metamodel.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dldou/Dropbox/java/execution-metamodel.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
