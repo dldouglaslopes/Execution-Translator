@@ -1,9 +1,11 @@
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
@@ -11,6 +13,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.json.JSONObject;
+
+import MetamodelExecution.ShortExecution;
 
 public class Translator {
 	private Resource resource;
@@ -21,7 +25,7 @@ public class Translator {
 		this.resource = createResource(output, new String[] {"xml", "xmi"}, new ResourceSetImpl());
 	}
 	
-	public void toXMI(JSONObject json){
+	public void toXMI(JSONObject json) throws ParseException{
 		//Set the same information that contain any execution json		
 		if(!json.getString("code").isEmpty()){
 			ModelingExecution modeling = new ModelingExecution();
@@ -29,13 +33,13 @@ public class Translator {
 		}
 		if(!json.getString("type").isEmpty()){
 			CompleteStep completeStep = new CompleteStep();
-			completeStep.createCompleteStep(json, resource);
-			//resource.getContents().add();
+			resource.getContents().add((EObject) completeStep.createCompleteStep(json, resource));
 		}
 		else{
-			ShortExecution shortExecution = new ShortExecution();
-			shortExecution.createShortExecution(json, resource);
-			//resource.getContents().add();
+			ShortExecutionModel shortExecutionModel = new ShortExecutionModel();
+			
+			//save the content
+			resource.getContents().add((EObject) shortExecutionModel.createShortExecution(json, resource));
 		}
 		
 		//save the content

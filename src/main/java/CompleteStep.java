@@ -4,7 +4,7 @@ import org.json.JSONObject;
 
 
 public class CompleteStep {
-	public JSONObject createCompleteStep(JSONObject json, Resource resource){
+	public CompleteStep createCompleteStep(JSONObject json, Resource resource){
 		return null;
 	}
 }
