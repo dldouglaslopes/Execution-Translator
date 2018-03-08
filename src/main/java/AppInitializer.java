@@ -12,8 +12,15 @@ public class AppInitializer {
 		String path = "/json/pneumonia_influenza/modelagem.json";
 		File file = new File();		
 		JSONObject json = file.toJSONObject(path);
+		
 		Translator translator = new Translator();
 		
-		translator.toXMI(json);
+		for (int i = 0; i < args.length; i++) {
+			System.out.println("Tranlate file " + i + "...");
+			translator.toXMI(json);
+			System.out.print("OK.");
+		}
+		
+		System.out.println("Finish.");
 	}
 }

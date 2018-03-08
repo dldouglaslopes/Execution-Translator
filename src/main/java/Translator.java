@@ -1,11 +1,12 @@
 import java.io.IOException;
+
+
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
@@ -14,7 +15,8 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.json.JSONObject;
 
-import MetamodelExecution.ShortExecution;
+import MetamodelExecution.EPathway;
+import MetamodelExecution.Execution_metamodelFactory;
 
 public class Translator {
 	private Resource resource;
@@ -26,23 +28,46 @@ public class Translator {
 	}
 	
 	public void toXMI(JSONObject json) throws ParseException{
-		//Set the same information that contain any execution json		
-		if(!json.getString("code").isEmpty()){
-			ModelingExecution modeling = new ModelingExecution();
-			resource.getContents().add(modeling.createModeling(json, resource));			
-		}
-		if(!json.getString("type").isEmpty()){
-			CompleteStep completeStep = new CompleteStep();
-			resource.getContents().add((EObject) completeStep.createCompleteStep(json, resource));
+		Execution execution = new Execution();
+		EPathway ePathway = Execution_metamodelFactory.eINSTANCE.createEPathway();
+		
+		if (json.getString("type").isEmpty()) {
+			ePathway = execution.addEPathway(json, resource, ePathway);
 		}
 		else{
-			ShortExecutionModel shortExecutionModel = new ShortExecutionModel();
+			String type = json.getString("type");
 			
-			//save the content
-			resource.getContents().add((EObject) shortExecutionModel.createShortExecution(json, resource));
-		}
+			switch (type) {
+				case "AuxilioCondutaExecutado":					
+					ePathway.getElement().add(execution.addEAuxiliaryConduct(json, resource));
+					break;
+				case "TratamentoExecutado":	
+					ePathway.getElement().add(execution.addETreatment(json, resource));
+					break;
+							
+				case "ReceitaExecutado":	
+					ePathway.getElement().add(execution.addEPrescription(json, resource));
+					break;
+					
+				case "EncaminhamentoExecutado":	
+					ePathway.getElement().add(execution.addEReferral(json, resource));
+					break;
+					
+				case "InformacaoExecutado":
+					ePathway.getElement().add(execution.addEInformation(json, resource));
+					break;
+					
+				case "AltaExecutado":
+					ePathway.getElement().add(execution.addEDischarge(json, resource));
+					break;
 		
-		//save the content
+				default:
+					break;
+				}
+		}		
+		
+		//save all contents
+		resource.getContents().add(ePathway);		
 		saveResource(resource);
 	}
 	
@@ -67,5 +92,5 @@ public class Translator {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-  }
+	}
 }
