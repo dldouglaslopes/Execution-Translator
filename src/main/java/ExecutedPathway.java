@@ -7,20 +7,14 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import MetamodelExecution.EAuxiliaryConduct;
-import MetamodelExecution.EDischarge;
-import MetamodelExecution.EInformation;
 import MetamodelExecution.EPathway;
-import MetamodelExecution.EPrescription;
-import MetamodelExecution.EReferral;
-import MetamodelExecution.ETreatment;
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.LastProfessional;
 import MetamodelExecution.Pathway;
 import MetamodelExecution.Responsible;
 
 
-public class Execution {	
+public class ExecutedPathway {	
 	public EPathway addEPathway(JSONObject json, Resource resource, EPathway ePathway) throws ParseException{
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSXXX", Locale.getDefault());
 		
@@ -90,29 +84,5 @@ public class Execution {
 		}
 		
 		return ePathway;
-	}
-
-	public EAuxiliaryConduct addEAuxiliaryConduct(JSONObject json, Resource resource){
-		return null;
-	}
-	
-	public ETreatment addETreatment(JSONObject json, Resource resource){
-		return null;
-	}
-	
-	public EPrescription addEPrescription(JSONObject json, Resource resource){
-		return null;
-	}
-	
-	public EInformation addEInformation(JSONObject json, Resource resource){
-		return null;
-	}
-	
-	public EReferral addEReferral(JSONObject json, Resource resource){
-		return null;
-	}
-	
-	public EDischarge addEDischarge(JSONObject json, Resource resource){
-		return null;
-	}
+	}	
 }
