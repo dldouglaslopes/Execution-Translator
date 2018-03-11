@@ -272,20 +272,56 @@ public class ExecutedStep {
 		return eTreatment;
 	}
 	
-	public EPrescription addEPrescription(JSONObject json, Resource resource){
-		return null;
+	public EPrescription addEPrescription(JSONObject json, Resource resource) throws ParseException{
+		//set executed precription
+		EPrescription ePrescription = Execution_metamodelFactory.eINSTANCE.createEPrescription();
+		ePrescription = (EPrescription) addEElement(json, ePrescription);
+		
+		ePrescription.setText(json.getString("texto"));
+		
+		//set prescribed medication 
+		JSONArray idsPrescribedMedicationJson = json.getJSONArray("medicamentos_prescritos_ids");		
+		for (int i = 0; i < idsPrescribedMedicationJson.length(); i++) {
+			//save prescribed medication 
+			ePrescription.getIdsPrescribedMedication().add(idsPrescribedMedicationJson.optInt(i));
+		}
+		
+		//set prescribed prescription item
+		JSONArray idsPrescribedPrescriptionItemJson = json.getJSONArray("medicamentos_prescritos_ids");		
+		for (int i = 0; i < idsPrescribedPrescriptionItemJson.length(); i++) {
+			//save prescribed PrescriptionItem 
+			ePrescription.getIdsPrescribedPrescriptionItem().add(idsPrescribedPrescriptionItemJson.optInt(i));
+		}
+		
+		//set prescription info
+		//set prescription prescription item
+		//set prescription medication
+		
+		return ePrescription;
 	}
 	
-	public EInformation addEInformation(JSONObject json, Resource resource){
-		return null;
+	public EInformation addEInformation(JSONObject json, Resource resource) throws ParseException{
+		//set executed information
+		EInformation eInformation = Execution_metamodelFactory.eINSTANCE.createEInformation();
+		eInformation = (EInformation) addEElement(json, eInformation);
+		
+		return eInformation;
 	}
 	
-	public EReferral addEReferral(JSONObject json, Resource resource){
-		return null;
+	public EReferral addEReferral(JSONObject json, Resource resource) throws ParseException{
+		//set executed referral
+		EReferral eReferral = Execution_metamodelFactory.eINSTANCE.createEReferral();
+		eReferral = (EReferral) addEElement(json, eReferral);
+		
+		return eReferral;
 	}
 	
-	public EDischarge addEDischarge(JSONObject json, Resource resource){
-		return null;
+	public EDischarge addEDischarge(JSONObject json, Resource resource) throws ParseException{
+		//set executed discharge
+		EDischarge eDischarge = Execution_metamodelFactory.eINSTANCE.createEDischarge();
+		eDischarge = (EDischarge) addEElement(json, eDischarge);
+		
+		return eDischarge;
 	}
 	
 	//Set step
