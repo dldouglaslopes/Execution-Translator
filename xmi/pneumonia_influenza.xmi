@@ -1,62 +1,62 @@
-<?xml version="1.0" encoding="ASCII"?>
-<MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1129" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/" creationDate="2017-10-26T09:25:36.130-0200" conclusionDate="2017-10-26T14:34:29.171-0200" completed="true" lastExecutedStepDate="26 de Outubro de 2017 &#xc3;&#xa0;s 17:24" idPathway="21" idLastProfessional="161" idResponsible="161" name="Pneumonia &amp; Influenza">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2567" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/" executed="true" creationDate="2017-10-26T09:25:49.243-0200" modificationDate="2017-10-26T09:17:06.237-0200" executionDate="2017-10-26T09:16:39.776-0200" createdById="161" executedById="161" idStep="401" name="Verificar Crit&#xc3;&#xa9;rios para SEPSE">
-    <step id="401" type="AuxilioConduta" typeVerbose="Aux&#xc3;&#xad;lio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/" name="Verificar Crit&#xc3;&#xa9;rios para SEPSE" description="Verifique os crit&#xc3;&#xa9;rios para SIRS" isInitial="true"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1129" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/" creationDate="2017-10-26T09:25:36.130-0200" conclusionDate="2017-10-26T14:34:29.171-0200" completed="true" lastExecutedStepDate="26 de Outubro de 2017 às 17:24" idPathway="21" idLastProfessional="161" idResponsible="161" name="Pneumonia &amp; Influenza">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2567" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/" executed="true" creationDate="2017-10-26T09:25:49.243-0200" modificationDate="2017-10-26T09:17:06.237-0200" executionDate="2017-10-26T09:16:39.776-0200" createdById="161" executedById="161" idStep="401" name="Verificar Critérios para SEPSE">
+    <step id="401" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/" name="Verificar Critérios para SEPSE" description="Verifique os critérios para SIRS" isInitial="true"/>
     <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <answer id="2567" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="321" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/perguntas/321/" text="TAX > 37.8&#xc2;&#xba;c ou &lt; 35&#xc2;&#xba;c?">
-        <variable id="501" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/" name="ver_sepse_tax" weight="1.0"/>
+    <answer id="2567" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="321" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/perguntas/321/" text="TAX > 37.8ºc ou &lt; 35ºc?">
+        <variable id="501" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/" name="ver_sepse_tax" weight="1.0"/>
       </question>
     </answer>
-    <answer id="2567" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2567" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="322" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/perguntas/322/" text="FC > 90 bpm?">
-        <variable id="502" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/" name="ver_sep_fc" weight="1.0"/>
+        <variable id="502" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/" name="ver_sep_fc" weight="1.0"/>
       </question>
     </answer>
-    <answer id="2567" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2567" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="323" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/perguntas/323/" text="FR > 20 irpm?">
-        <variable id="503" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/" name="ver_sep_fr" weight="1.0"/>
+        <variable id="503" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/" name="ver_sep_fr" weight="1.0"/>
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2568" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" reworked="true" executed="true" creationDate="2017-10-26T09:18:17.637-0200" modificationDate="2017-10-26T09:29:12.996-0200" executionDate="2017-10-26T09:28:39.243-0200" createdById="161" executedById="161" idStep="402" name="Verificar Fatores Agravantes Para SEPSE">
-    <step id="402" type="AuxilioConduta" typeVerbose="Aux&#xc3;&#xad;lio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/" name="Verificar Fatores Agravantes Para SEPSE" description="Verifique se o paciente apresenta algum dos fatores a seguir."/>
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2568" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" reworked="true" executed="true" creationDate="2017-10-26T09:18:17.637-0200" modificationDate="2017-10-26T09:29:12.996-0200" executionDate="2017-10-26T09:28:39.243-0200" createdById="161" executedById="161" idStep="402" name="Verificar Fatores Agravantes Para SEPSE">
+    <step id="402" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/" name="Verificar Fatores Agravantes Para SEPSE" description="Verifique se o paciente apresenta algum dos fatores a seguir."/>
     <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <answer id="2568" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="324" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/324/" text="Olig&#xc3;&#xba;ria / An&#xc3;&#xba;ria?">
-        <variable id="504" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" name="fat_agra_oliguria" weight="1.0"/>
+    <answer id="2568" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="324" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/324/" text="Oligúria / Anúria?">
+        <variable id="504" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" name="fat_agra_oliguria" weight="1.0"/>
       </question>
     </answer>
-    <answer id="2568" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2568" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="325" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/325/" text="PAS &lt; 100 mmHg?">
-        <variable id="505" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" name="fat_agra_pas" weight="1.0"/>
+        <variable id="505" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" name="fat_agra_pas" weight="1.0"/>
       </question>
     </answer>
-    <answer id="2568" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="326" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/326/" text="Agita&#xc3;&#xa7;&#xc3;&#xa3;o / Sonol&#xc3;&#xaa;ncia / Altera&#xc3;&#xa7;&#xc3;&#xa3;o N&#xc3;&#xad;vel de Consci&#xc3;&#xaa;ncia?">
-        <variable id="506" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" name="fat_agra_agita_sono_cons" weight="1.0"/>
+    <answer id="2568" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="326" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/326/" text="Agitação / Sonolência / Alteração Nível de Consciência?">
+        <variable id="506" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" name="fat_agra_agita_sono_cons" weight="1.0"/>
       </question>
     </answer>
-    <answer id="2568" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2568" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="327" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/327/" text="Dispneia ou SatO2 &lt; 93%?">
-        <variable id="507" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" name="fat_risc_disp_sat" weight="1.0"/>
+        <variable id="507" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" name="fat_risc_disp_sat" weight="1.0"/>
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2570" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2570/" executed="true" creationDate="2017-10-26T09:30:38.059-0200" modificationDate="2017-10-26T09:26:14.810-0200" executionDate="2017-10-26T09:26:04.304-0200" createdById="161" executedById="161" idStep="42" name="Verificar Idade do Paciente">
-    <step id="42" type="AuxilioConduta" typeVerbose="Aux&#xc3;&#xad;lio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/42/" name="Verificar Idade do Paciente" description="Verifique a idade do paciente"/>
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2570" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2570/" executed="true" creationDate="2017-10-26T09:30:38.059-0200" modificationDate="2017-10-26T09:26:14.810-0200" executionDate="2017-10-26T09:26:04.304-0200" createdById="161" executedById="161" idStep="42" name="Verificar Idade do Paciente">
+    <step id="42" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/42/" name="Verificar Idade do Paciente" description="Verifique a idade do paciente"/>
     <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <answer id="2570" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2570" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="41" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/42/perguntas/41/" text="Idade:">
-        <variable id="28" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2570/" name="idade" weight="1.0"/>
+        <variable id="28" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2570/" name="idade" weight="1.0"/>
       </question>
     </answer>
   </element>
   <element xsi:type="MetamodelExecution:ETreatment" id="2571" type="TratamentoExecutado" typeVerbose="Tratamento Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2571/" executed="true" creationDate="2017-10-26T09:27:03.783-0200" modificationDate="2017-10-26T09:21:52.553-0200" executionDate="2017-10-26T09:21:52.386-0200" createdById="161" executedById="161" idStep="45" name="Raio X + Pacote de Exames Laboratoriais">
-    <step id="45" type="Tratamento" typeVerbose="Tratamento" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/" name="Raio X + Pacote de Exames Laboratoriais" description="Paciente apresenta fatores complicadores para o tratamento, idade avan&#xc3;&#xa7;ada ou presen&#xc3;&#xa7;a de comorbidades, recomenda-se solicitar al&#xc3;&#xa9;m do raio X do t&#xc3;&#xb3;rax o pacote de exames laboratoriais a seguir:"/>
+    <step id="45" type="Tratamento" typeVerbose="Tratamento" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/" name="Raio X + Pacote de Exames Laboratoriais" description="Paciente apresenta fatores complicadores para o tratamento, idade avançada ou presença de comorbidades, recomenda-se solicitar além do raio X do tórax o pacote de exames laboratoriais a seguir:"/>
     <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <prescribedexam id="1862" report="" numberGuide="30584836">
@@ -148,133 +148,133 @@
     <idsPrescribedExamination>1871</idsPrescribedExamination>
     <idsPrescribedExamination>1872</idsPrescribedExamination>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" executed="true" creationDate="2017-10-26T09:22:16.076-0200" modificationDate="2017-10-26T14:35:37.657-0200" executionDate="2017-10-26T14:33:10.052-0200" createdById="161" executedById="161" idStep="141" name="C&#xc3;&#xa1;lculo do Port">
-    <step id="141" type="AuxilioConduta" typeVerbose="Aux&#xc3;&#xad;lio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/" name="C&#xc3;&#xa1;lculo do Port" description="Verifique os exames do paciente e preencha a tabela a seguir para calcular o PORT e seguir com o tratamento mais adequado."/>
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" executed="true" creationDate="2017-10-26T09:22:16.076-0200" modificationDate="2017-10-26T14:35:37.657-0200" executionDate="2017-10-26T14:33:10.052-0200" createdById="161" executedById="161" idStep="141" name="Cálculo do Port">
+    <step id="141" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/" name="Cálculo do Port" description="Verifique os exames do paciente e preencha a tabela a seguir para calcular o PORT e seguir com o tratamento mais adequado."/>
     <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="114" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/114/" text="Paciente mulher?" idCategory="1" category="Fatores Demogr&#xc3;&#xa1;ficos">
-        <variable id="134" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_mulher" weight="10.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="114" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/114/" text="Paciente mulher?" idCategory="1" category="Fatores Demográficos">
+        <variable id="134" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_mulher" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="115" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/115/" text="Procedente de Asilo?" idCategory="1" category="Fatores Demogr&#xc3;&#xa1;ficos">
-        <variable id="135" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_asilo" weight="10.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="115" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/115/" text="Procedente de Asilo?" idCategory="1" category="Fatores Demográficos">
+        <variable id="135" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_asilo" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="116" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/116/" text="Neoplasia?" idCategory="2" category="Comorbidades">
-        <variable id="136" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_neoplasia" weight="30.0"/>
+        <variable id="136" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_neoplasia" weight="30.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="117" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/117/" text="Doen&#xc3;&#xa7;a hep&#xc3;&#xa1;tica?" idCategory="2" category="Comorbidades">
-        <variable id="137" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_doenca_hepatica" weight="10.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="117" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/117/" text="Doença hepática?" idCategory="2" category="Comorbidades">
+        <variable id="137" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_doenca_hepatica" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="118" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/118/" text="ICC?" idCategory="2" category="Comorbidades">
-        <variable id="138" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_icc" weight="10.0"/>
+        <variable id="138" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_icc" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="119" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/119/" text="Doen&#xc3;&#xa7;a Cerebrovascular?" idCategory="2" category="Comorbidades">
-        <variable id="139" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_doenca_cerebrovasc" weight="10.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="119" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/119/" text="Doença Cerebrovascular?" idCategory="2" category="Comorbidades">
+        <variable id="139" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_doenca_cerebrovasc" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="120" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/120/" text="Doen&#xc3;&#xa7;a Renal?" idCategory="2" category="Comorbidades">
-        <variable id="140" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_doenca_renal" weight="10.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="120" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/120/" text="Doença Renal?" idCategory="2" category="Comorbidades">
+        <variable id="140" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_doenca_renal" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="121" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/121/" text="ph &lt; 7,35?" idCategory="3" category="Achados Laboratoriais">
-        <variable id="141" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_ph" weight="30.0"/>
+        <variable id="141" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_ph" weight="30.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="122" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/122/" text="Ureia > 65 mg/dl?" idCategory="3" category="Achados Laboratoriais">
-        <variable id="142" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_ureia" weight="20.0"/>
+        <variable id="142" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_ureia" weight="20.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="123" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/123/" text="S&#xc3;&#xb3;dio &lt; 130 meq/dl?" idCategory="3" category="Achados Laboratoriais">
-        <variable id="143" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_sodio" weight="20.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="123" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/123/" text="Sódio &lt; 130 meq/dl?" idCategory="3" category="Achados Laboratoriais">
+        <variable id="143" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_sodio" weight="20.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="124" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/124/" text="Glicose > 250 mg/dl?" idCategory="3" category="Achados Laboratoriais">
-        <variable id="144" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_glicose" weight="10.0"/>
+        <variable id="144" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_glicose" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="125" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/125/" text="Hemat&#xc3;&#xb3;critos &lt; 30%?" idCategory="3" category="Achados Laboratoriais">
-        <variable id="145" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_hematocrito" weight="10.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="125" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/125/" text="Hematócritos &lt; 30%?" idCategory="3" category="Achados Laboratoriais">
+        <variable id="145" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_hematocrito" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="126" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/126/" text="PO2 &lt; 60 mmhg?" idCategory="3" category="Achados Laboratoriais">
-        <variable id="146" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_po2" weight="10.0"/>
+        <variable id="146" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_po2" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="127" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/127/" text="Derrame pleural?" idCategory="3" category="Achados Laboratoriais">
-        <variable id="147" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_derrame_pleural" weight="10.0"/>
+        <variable id="147" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_derrame_pleural" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="128" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/128/" text="Altera&#xc3;&#xa7;&#xc3;&#xa3;o do estado mental?" idCategory="4" category="Exame F&#xc3;&#xad;sico">
-        <variable id="148" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_alteracao_mental" weight="20.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="128" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/128/" text="Alteração do estado mental?" idCategory="4" category="Exame Físico">
+        <variable id="148" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_alteracao_mental" weight="20.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="129" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/129/" text="F. Respirat&#xc3;&#xb3;ria > 30 ciclos?" idCategory="4" category="Exame F&#xc3;&#xad;sico">
-        <variable id="149" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_freq_esp" weight="20.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="129" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/129/" text="F. Respiratória > 30 ciclos?" idCategory="4" category="Exame Físico">
+        <variable id="149" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_freq_esp" weight="20.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="130" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/130/" text="PA sist&#xc3;&#xb3;lica &lt; 90 mmHg?" idCategory="4" category="Exame F&#xc3;&#xad;sico">
-        <variable id="150" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_pa_sistolica" weight="20.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="130" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/130/" text="PA sistólica &lt; 90 mmHg?" idCategory="4" category="Exame Físico">
+        <variable id="150" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_pa_sistolica" weight="20.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="131" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/131/" text="Temperatura &lt; 35 ou > 40?" idCategory="4" category="Exame F&#xc3;&#xad;sico">
-        <variable id="151" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_temperatura" weight="15.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="131" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/131/" text="Temperatura &lt; 35 ou > 40?" idCategory="4" category="Exame Físico">
+        <variable id="151" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_temperatura" weight="15.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="132" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/132/" text="Pulso >= 125 bvm?" idCategory="4" category="Exame F&#xc3;&#xad;sico">
-        <variable id="152" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_pulso" weight="10.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="132" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/132/" text="Pulso >= 125 bvm?" idCategory="4" category="Exame Físico">
+        <variable id="152" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_pulso" weight="10.0"/>
       </question>
     </answer>
-    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
-      <question id="170" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/170/" text="Idade:" idCategory="1" category="Fatores Demogr&#xc3;&#xa1;ficos">
-        <variable id="201" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_idade" weight="1.0"/>
+    <answer id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
+      <question id="170" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/170/" text="Idade:" idCategory="1" category="Fatores Demográficos">
+        <variable id="201" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" name="port_idade" weight="1.0"/>
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2584" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/" executed="true" creationDate="2017-10-26T14:38:30.817-0200" modificationDate="2017-10-26T14:25:15.166-0200" executionDate="2017-10-26T14:24:55.065-0200" createdById="161" executedById="161" idStep="105" name="[Port 2] Avaliar Fatores de Risco Para Influenza">
-    <step id="105" type="AuxilioConduta" typeVerbose="Aux&#xc3;&#xad;lio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/105/" name="[Port 2] Avaliar Fatores de Risco Para Influenza" description="Avalie se o paciente apresenta fatores que indicam risco de Influenza."/>
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2584" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/" executed="true" creationDate="2017-10-26T14:38:30.817-0200" modificationDate="2017-10-26T14:25:15.166-0200" executionDate="2017-10-26T14:24:55.065-0200" createdById="161" executedById="161" idStep="105" name="[Port 2] Avaliar Fatores de Risco Para Influenza">
+    <step id="105" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/105/" name="[Port 2] Avaliar Fatores de Risco Para Influenza" description="Avalie se o paciente apresenta fatores que indicam risco de Influenza."/>
     <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <answer id="2584" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2584" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="81" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/105/perguntas/81/" text="Tosse?">
-        <variable id="101" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/" name="port2_fatores_risco_tosse" weight="1.0"/>
+        <variable id="101" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/" name="port2_fatores_risco_tosse" weight="1.0"/>
       </question>
     </answer>
-    <answer id="2584" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2584" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="82" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/105/perguntas/82/" text="Febre?">
-        <variable id="102" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/" name="port2_fatores_risco_febre" weight="1.0"/>
+        <variable id="102" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/" name="port2_fatores_risco_febre" weight="1.0"/>
       </question>
     </answer>
-    <answer id="2584" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado">
+    <answer id="2584" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado">
       <question id="83" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/105/perguntas/83/" text="Dor de garganta?">
-        <variable id="103" type="AuxilioCondutaExecutado" typeVerbose="Aux&#xc3;&#xad;lio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/" name="port2_fatores_risco_dor" weight="1.0"/>
+        <variable id="103" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/" name="port2_fatores_risco_dor" weight="1.0"/>
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EPrescription" id="2585" type="ReceitaExecutado" typeVerbose="Receita Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2585/" executed="true" creationDate="2017-10-26T14:26:19.242-0200" modificationDate="2017-10-26T14:34:19.182-0200" executionDate="2017-10-26T14:34:19.012-0200" createdById="161" executedById="161" idStep="367" name="[Port 2] Receita Padr&#xc3;&#xa3;o para Pneumonia" text="">
-    <step id="367" type="Receita" typeVerbose="Receita" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/receitas/367/" name="[Port 2] Receita Padr&#xc3;&#xa3;o para Pneumonia" description="Aten&#xc3;&#xa7;&#xc3;&#xa3;o! Caso apresente alguns dos sintomas a seguir retornar imediatamente a emerg&#xc3;&#xaa;ncia. Sintomas: Falta de ar; Dor no peito; Febre por mais de 3 dias ap&#xc3;&#xb3;s in&#xc3;&#xad;cio das medica&#xc3;&#xa7;&#xc3;&#xb5;es; &#xA; Desorienta&#xc3;&#xa7;&#xc3;&#xa3;o; Sonol&#xc3;&#xaa;ncia excessiva; Sangramentos; Desmaio; Palpita&#xc3;&#xa7;&#xc3;&#xa3;o (Cora&#xc3;&#xa7;&#xc3;&#xa3;o acelerado); Diminui&#xc3;&#xa7;&#xc3;&#xa3;o ou aus&#xc3;&#xaa;ncia de urina. &#xA;Medica&#xc3;&#xa7;&#xc3;&#xa3;o: Azitromicina 500mg 5cp 1 cp 1x ao dia por 5 dias.  Alternativas - Amox c\ Clavulanato 875\125  1 cp 12/12h de 5 a 7 dias." isTerminal="true"/>
+  <element xsi:type="MetamodelExecution:EPrescription" id="2585" type="ReceitaExecutado" typeVerbose="Receita Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2585/" executed="true" creationDate="2017-10-26T14:26:19.242-0200" modificationDate="2017-10-26T14:34:19.182-0200" executionDate="2017-10-26T14:34:19.012-0200" createdById="161" executedById="161" idStep="367" name="[Port 2] Receita Padrão para Pneumonia" text="">
+    <step id="367" type="Receita" typeVerbose="Receita" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/receitas/367/" name="[Port 2] Receita Padrão para Pneumonia" description="Atenção! Caso apresente alguns dos sintomas a seguir retornar imediatamente a emergência. Sintomas: Falta de ar; Dor no peito; Febre por mais de 3 dias após início das medicações; &#xA; Desorientação; Sonolência excessiva; Sangramentos; Desmaio; Palpitação (Coração acelerado); Diminuição ou ausência de urina. &#xA;Medicação: Azitromicina 500mg 5cp 1 cp 1x ao dia por 5 dias.  Alternativas - Amox c\ Clavulanato 875\125  1 cp 12/12h de 5 a 7 dias." isTerminal="true"/>
     <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
   </element>

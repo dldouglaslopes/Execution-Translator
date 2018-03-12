@@ -72,7 +72,7 @@ public class ExecutedPathway {
 		//Set executed pathway
 		ePathway.setId(json.getInt("id"));		
 		ePathway.setUrl(json.getString("url"));
-		ePathway.setName(pathwayJson.getString("nome"));	
+		ePathway.setName(pathwayJson.getString("nome"));
 		ePathway.setCompleted(json.getBoolean("finalizado"));
 		ePathway.setAborted(json.getBoolean("abortado"));
 		ePathway.setLastExecutedStepDate(json.getString("data_ultimo_passo_executado"));
