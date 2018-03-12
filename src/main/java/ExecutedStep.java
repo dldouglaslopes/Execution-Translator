@@ -24,7 +24,13 @@ import MetamodelExecution.Executor;
 import MetamodelExecution.Justification;
 import MetamodelExecution.Numeric;
 import MetamodelExecution.PrescribedExamination;
+import MetamodelExecution.PrescribedInternment;
+import MetamodelExecution.PrescribedMedicament;
+import MetamodelExecution.PrescribedMedication;
+import MetamodelExecution.PrescribedPrescriptionItem;
+import MetamodelExecution.PrescribedProcedure;
 import MetamodelExecution.PrescriptionExam;
+import MetamodelExecution.PrescriptionInfo;
 import MetamodelExecution.Question;
 import MetamodelExecution.Step;
 import MetamodelExecution.Variable;
@@ -82,11 +88,11 @@ public class ExecutedStep {
 			JSONObject answerJson = answers.getJSONObject(i);
 			Answer answer = Execution_metamodelFactory.eINSTANCE.createAnswer();
 			
-			answer.setId(json.getInt("id"));
-			answer.setType(json.getString("type"));
-			answer.setTypeVerbose(json.getString("type_verbose"));
+			answer.setId(answerJson.getInt("id"));
+			answer.setType(answerJson.getString("type"));
+			answer.setTypeVerbose(answerJson.getString("type_verbose"));
 			
-			String type = json.getString("type");
+			String type = answerJson.getString("type");
 			
 			if (type.equals("RespostaSimOuNao")) {
 				//set yes or no
@@ -110,12 +116,12 @@ public class ExecutedStep {
 			Question question = Execution_metamodelFactory.eINSTANCE.createQuestion();
 			
 			question.setId(questionJson.getInt("id"));
-			question.setUrl(questionJson.getString("url"));
-			question.setText(questionJson.getString("texto"));
+			question.setName(questionJson.getString("texto"));
+			question.setUrl(questionJson.getString("url"));			
 				
 			if (!questionJson.isNull("categoria")) {
 				question.setCategory(questionJson.getString("categoria"));
-			}
+			}  
 			if (!questionJson.isNull("categoria_id")) {
 				question.setIdCategory(questionJson.getInt("categoria_id"));
 			}
@@ -195,26 +201,26 @@ public class ExecutedStep {
 		}
 		
 		//set prescribed examination
-		JSONArray prescribedExaminations = json.getJSONArray("exames_prescritos");		
-		
+		JSONArray prescribedExaminations = json.getJSONArray("exames_prescritos");			
 		for (int i = 0; i < prescribedExaminations.length(); i++) {			
 			PrescribedExamination prescribedExamination = Execution_metamodelFactory.eINSTANCE.createPrescribedExamination();
 			JSONObject prescribedExaminationJson = prescribedExaminations.getJSONObject(i);
 			prescribedExamination.setId(prescribedExaminationJson.getInt("id"));
 			prescribedExamination.setReport(prescribedExaminationJson.getString("laudo"));
 			prescribedExamination.setNumberGuide(prescribedExaminationJson.getInt("numero_guia"));
+			if (!prescribedExaminationJson.isNull("resultado")) {
+				prescribedExamination.setResult(prescribedExaminationJson.getString("resultado"));
+			}			
 			
 			//set prescription exam
 			JSONObject prescriptionExamJson = prescribedExaminationJson.getJSONObject("prescricao");
 			PrescriptionExam prescriptionExam = Execution_metamodelFactory.eINSTANCE.createPrescriptionExam();
 			prescriptionExam.setId(prescriptionExamJson.getInt("id"));
 			prescriptionExam.setSuccess(prescriptionExamJson.getBoolean("sucesso"));
-			prescriptionExam.setMessage(prescriptionExamJson.getString("mensagem"));
-			
+			prescriptionExam.setMessage(prescriptionExamJson.getString("mensagem"));			
 			String requestStr = prescriptionExamJson.getString("data_solicitacao");
 			Date requestDate = dateFormat.parse(requestStr);			
-			prescriptionExam.setRequestDate(requestDate);	
-			
+			prescriptionExam.setRequestDate(requestDate);
 			//save prescription exam
 			prescribedExamination.setPrescriptionexam(prescriptionExam);
 			
@@ -226,9 +232,9 @@ public class ExecutedStep {
 			complement.setSideLimbDisplay(complementJson.getString("lado_membro_display"));
 			complement.setJustification(complementJson.getString("justificativa"));
 			complement.setClinicalIndication(complementJson.getString("indicacao_clinica"));
-			
-			//set quantity
-			
+			if (!complementJson.isNull("quantidade")) {
+				complement.setQuantity(complementJson.getInt("quantidade"));
+			}
 			//save complement
 			prescribedExamination.setComplement(complement);
 			
@@ -254,22 +260,39 @@ public class ExecutedStep {
 			exam.setDescription(examJson.getString("descricao"));
 			exam.setOnlyEmergency(examJson.getBoolean("somente_emergencia"));
 			exam.setMemberPeers(examJson.getBoolean("membros_pares"));
-			
 			//save exam
 			examination.setExam(exam);
 			
 			//save examination
-			prescribedExamination.setExamination(examination);			
-			
-			//set result			
+			prescribedExamination.setExamination(examination);
 			
 			//save prescribed examination
 			eTreatment.getPrescribedexam().add(prescribedExamination);
 		}
 		
-		//set prescribed medicament
+		//set prescribed medicamention
+		JSONArray prescribedMedications = json.getJSONArray("medicamentos_prescritos");		
+		for (int i = 0; i < prescribedMedications.length(); i++) {			
+			PrescribedMedication prescribedMedicamention = Execution_metamodelFactory.eINSTANCE.createPrescribedMedication();
+			//save prescribed medicamention
+			eTreatment.getPrescribedmedication().add(prescribedMedicamention);
+		}
+		
 		//set prescribed procedure
-		//set prescribed internment	
+		JSONArray prescribedProcedures = json.getJSONArray("procedimentos_prescritos");
+		for (int i = 0; i < prescribedProcedures.length(); i++) {			
+			PrescribedProcedure prescribedProcedure = Execution_metamodelFactory.eINSTANCE.createPrescribedProcedure();
+			//save prescribed procedure
+			eTreatment.getPrescribedprocedure().add(prescribedProcedure);
+		}
+		
+		//set prescribed internment
+		JSONArray prescribedInternments = json.getJSONArray("internamentos_prescritos");
+		for (int i = 0; i < prescribedInternments.length(); i++) {			
+			PrescribedInternment prescribedInternment = Execution_metamodelFactory.eINSTANCE.createPrescribedInternment();
+			//save prescribed internment
+			eTreatment.getPrescribedinternment().add(prescribedInternment);
+		}		
 		
 		return eTreatment;
 	}
@@ -296,8 +319,19 @@ public class ExecutedStep {
 		}
 		
 		//set prescription info
+		PrescriptionInfo prescriptionInfo = Execution_metamodelFactory.eINSTANCE.createPrescriptionInfo();
+		//save prescription info
+		ePrescription.getPrescriptioninfo().add(prescriptionInfo);
+		
 		//set prescription prescription item
+		PrescribedPrescriptionItem prescribedPrescriptionItem = Execution_metamodelFactory.eINSTANCE.createPrescribedPrescriptionItem();
+		//save prescription prescription item
+		ePrescription.getPrescribedprescriptionitem().add(prescribedPrescriptionItem);
+		
 		//set prescription medication
+		PrescribedMedicament prescribedMedicament = Execution_metamodelFactory.eINSTANCE.createPrescribedMedicament();
+		//save prescription medication
+		ePrescription.getPrescribedmedicament().add(prescribedMedicament);
 		
 		return ePrescription;
 	}
@@ -348,21 +382,20 @@ public class ExecutedStep {
 	}
 	
 	//Set justification
-	public Justification addJustification(JSONObject json) {		
-		if (!json.isNull("justificativa")) {
+	public Justification addJustification(JSONObject json) {			
+		Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
+
+		if (!json.isNull("justificativa")) {	
 			JSONObject justificationJson = json.getJSONObject("justificativa");
-			Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
 			justification.setId(justificationJson.getInt("id"));
 			justification.setReason(justificationJson.getString("razao"));
 			justification.setReasonDisplay(justificationJson.getString("razao_display"));
 			justification.setDescription(justificationJson.getString("descricao"));
 			justification.setJustifiedById(justificationJson.getInt("justificado_por_id"));
 			justification.setJustifiedBy(justificationJson.getString("justificado_por"));
-			
-			return justification;
 		}
 		
-		return null;
+		return justification;
 	}
 	
 	//Set creator

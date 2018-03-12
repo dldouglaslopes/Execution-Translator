@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class AppInitializer {
+public class Init {
 	public static void main(String[] args) throws JSONException, IOException, ParseException {
 		FileConfig fileConfig = new FileConfig();
 		Translator translator = new Translator("./xmi/pneumonia_influenza.xmi");

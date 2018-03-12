@@ -57,8 +57,8 @@ public class ExecutedPathway {
 		lastProfessional.setState(lastProfessionalJson.getString("uf"));
 		
 		//set justification			
+		Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
 		if (!json.isNull("justificativa")) {
-			Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
 			JSONObject justificationJson = json.getJSONObject("justificativa");			
 			justification.setId(justificationJson.getInt("id"));
 			justification.setReason(justificationJson.getString("razao"));
@@ -66,8 +66,8 @@ public class ExecutedPathway {
 			justification.setDescription(justificationJson.getString("descricao"));
 			justification.setJustifiedById(justificationJson.getInt("justificado_por_id"));
 			justification.setJustifiedBy(justificationJson.getString("justificado_por"));		
-			ePathway.setJustification(justification);
 		}
+		ePathway.setJustification(justification);
 		
 		//Set executed pathway
 		ePathway.setId(json.getInt("id"));		
