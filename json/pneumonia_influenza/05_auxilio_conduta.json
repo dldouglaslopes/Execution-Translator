@@ -1,0 +1,521 @@
+{
+    "id": 2572,
+    "type": "AuxilioCondutaExecutado",
+    "type_verbose": "Auxílio Conduta Executado",
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/",
+    "previous": {
+        "url": "/atendimentos/624/protocolos/1129/passos/2571/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2571/"
+    },
+    "next": {
+        "url": "/atendimentos/624/protocolos/1129/passos/2584/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/"
+    },
+    "is_current": false,
+    "reworked": false,
+    "executado": true,
+    "data_criacao": "2017-10-26T09:16:43.333076-03:00",
+    "data_modificacao": "2017-10-26T14:23:57.700657-03:00",
+    "data_execucao": "2017-10-26T14:23:57.553052-03:00",
+    "justificativa": null,
+    "criado_por_id": 161,
+    "criado_por": {
+        "id": 161,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/",
+        "codigo": 2,
+        "email": "",
+        "login": "CRM1",
+        "nome": "LUIZ",
+        "numero_conselho": 1,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "executado_por_id": 161,
+    "executado_por": {
+        "id": 161,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/",
+        "codigo": 2,
+        "email": "",
+        "login": "CRM1",
+        "nome": "LUIZ",
+        "numero_conselho": 1,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "passo_id": 141,
+    "passo": {
+        "id": 141,
+        "type": "AuxilioConduta",
+        "type_verbose": "Auxílio Conduta",
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/",
+        "nome": "Cálculo do Port",
+        "descricao": "Verifique os exames do paciente e preencha a tabela a seguir para calcular o PORT e seguir com o tratamento mais adequado.",
+        "is_initial": false,
+        "is_terminal": false,
+        "obrigatoriedade": false
+    },
+    "protocolo_id": 21,
+    "protocolo_executado_id": 1129,
+    "respostas": [
+        {
+            "id": 4782,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 114,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/114/",
+                "texto": "Paciente mulher?",
+                "categoria_id": 1,
+                "categoria": "Fatores Demográficos",
+                "variavel": {
+                    "id": 134,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/134/",
+                    "nome": "port_mulher",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": true
+        },
+        {
+            "id": 4783,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 115,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/115/",
+                "texto": "Procedente de Asilo?",
+                "categoria_id": 1,
+                "categoria": "Fatores Demográficos",
+                "variavel": {
+                    "id": 135,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/135/",
+                    "nome": "port_asilo",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4784,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 116,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/116/",
+                "texto": "Neoplasia?",
+                "categoria_id": 2,
+                "categoria": "Comorbidades",
+                "variavel": {
+                    "id": 136,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/136/",
+                    "nome": "port_neoplasia",
+                    "peso": 30.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4785,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 117,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/117/",
+                "texto": "Doença hepática?",
+                "categoria_id": 2,
+                "categoria": "Comorbidades",
+                "variavel": {
+                    "id": 137,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/137/",
+                    "nome": "port_doenca_hepatica",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4786,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 118,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/118/",
+                "texto": "ICC?",
+                "categoria_id": 2,
+                "categoria": "Comorbidades",
+                "variavel": {
+                    "id": 138,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/138/",
+                    "nome": "port_icc",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4787,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 119,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/119/",
+                "texto": "Doença Cerebrovascular?",
+                "categoria_id": 2,
+                "categoria": "Comorbidades",
+                "variavel": {
+                    "id": 139,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/139/",
+                    "nome": "port_doenca_cerebrovasc",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4788,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 120,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/120/",
+                "texto": "Doença Renal?",
+                "categoria_id": 2,
+                "categoria": "Comorbidades",
+                "variavel": {
+                    "id": 140,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/140/",
+                    "nome": "port_doenca_renal",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4789,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 121,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/121/",
+                "texto": "ph < 7,35?",
+                "categoria_id": 3,
+                "categoria": "Achados Laboratoriais",
+                "variavel": {
+                    "id": 141,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/141/",
+                    "nome": "port_ph",
+                    "peso": 30.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4790,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 122,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/122/",
+                "texto": "Ureia > 65 mg/dl?",
+                "categoria_id": 3,
+                "categoria": "Achados Laboratoriais",
+                "variavel": {
+                    "id": 142,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/142/",
+                    "nome": "port_ureia",
+                    "peso": 20.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4791,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 123,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/123/",
+                "texto": "Sódio < 130 meq/dl?",
+                "categoria_id": 3,
+                "categoria": "Achados Laboratoriais",
+                "variavel": {
+                    "id": 143,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/143/",
+                    "nome": "port_sodio",
+                    "peso": 20.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4792,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 124,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/124/",
+                "texto": "Glicose > 250 mg/dl?",
+                "categoria_id": 3,
+                "categoria": "Achados Laboratoriais",
+                "variavel": {
+                    "id": 144,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/144/",
+                    "nome": "port_glicose",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4793,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 125,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/125/",
+                "texto": "Hematócritos < 30%?",
+                "categoria_id": 3,
+                "categoria": "Achados Laboratoriais",
+                "variavel": {
+                    "id": 145,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/145/",
+                    "nome": "port_hematocrito",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4794,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 126,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/126/",
+                "texto": "PO2 < 60 mmhg?",
+                "categoria_id": 3,
+                "categoria": "Achados Laboratoriais",
+                "variavel": {
+                    "id": 146,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/146/",
+                    "nome": "port_po2",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4795,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 127,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/127/",
+                "texto": "Derrame pleural?",
+                "categoria_id": 3,
+                "categoria": "Achados Laboratoriais",
+                "variavel": {
+                    "id": 147,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/147/",
+                    "nome": "port_derrame_pleural",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4796,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 128,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/128/",
+                "texto": "Alteração do estado mental?",
+                "categoria_id": 4,
+                "categoria": "Exame Físico",
+                "variavel": {
+                    "id": 148,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/148/",
+                    "nome": "port_alteracao_mental",
+                    "peso": 20.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4797,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 129,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/129/",
+                "texto": "F. Respiratória > 30 ciclos?",
+                "categoria_id": 4,
+                "categoria": "Exame Físico",
+                "variavel": {
+                    "id": 149,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/149/",
+                    "nome": "port_freq_esp",
+                    "peso": 20.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4798,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 130,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/130/",
+                "texto": "PA sistólica < 90 mmHg?",
+                "categoria_id": 4,
+                "categoria": "Exame Físico",
+                "variavel": {
+                    "id": 150,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/150/",
+                    "nome": "port_pa_sistolica",
+                    "peso": 20.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4799,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 131,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/131/",
+                "texto": "Temperatura < 35 ou > 40?",
+                "categoria_id": 4,
+                "categoria": "Exame Físico",
+                "variavel": {
+                    "id": 151,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/151/",
+                    "nome": "port_temperatura",
+                    "peso": 15.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4800,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 132,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/132/",
+                "texto": "Pulso >= 125 bvm?",
+                "categoria_id": 4,
+                "categoria": "Exame Físico",
+                "variavel": {
+                    "id": 152,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/152/",
+                    "nome": "port_pulso",
+                    "peso": 10.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4801,
+            "type": "RespostaNumerica",
+            "type_verbose": "Resposta Numérica",
+            "pergunta": {
+                "id": 170,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/perguntas/170/",
+                "texto": "Idade:",
+                "categoria_id": 1,
+                "categoria": "Fatores Demográficos",
+                "variavel": {
+                    "id": 201,
+                    "type": "Numerica",
+                    "type_verbose": "Numérica",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/201/",
+                    "nome": "port_idade",
+                    "peso": 1.0,
+                    "valor": 0.0,
+                    "vinculo": null
+                }
+            },
+            "valor": 51.0
+        }
+    ]
+}

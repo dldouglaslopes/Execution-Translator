@@ -1,0 +1,153 @@
+{
+    "id": 2568,
+    "type": "AuxilioCondutaExecutado",
+    "type_verbose": "Auxílio Conduta Executado",
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/",
+    "previous": {
+        "url": "/atendimentos/624/protocolos/1129/passos/2567/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/"
+    },
+    "next": {
+        "url": "/atendimentos/624/protocolos/1129/passos/2570/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2570/"
+    },
+    "is_current": false,
+    "reworked": true,
+    "executado": true,
+    "data_criacao": "2017-10-26T09:16:05.132637-03:00",
+    "data_modificacao": "2017-10-26T09:16:19.773996-03:00",
+    "data_execucao": "2017-10-26T09:16:19.740243-03:00",
+    "justificativa": null,
+    "criado_por_id": 161,
+    "criado_por": {
+        "id": 161,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/",
+        "codigo": 2,
+        "email": "",
+        "login": "CRM1",
+        "nome": "LUIZ",
+        "numero_conselho": 1,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "executado_por_id": 161,
+    "executado_por": {
+        "id": 161,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/",
+        "codigo": 2,
+        "email": "",
+        "login": "CRM1",
+        "nome": "LUIZ",
+        "numero_conselho": 1,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "passo_id": 402,
+    "passo": {
+        "id": 402,
+        "type": "AuxilioConduta",
+        "type_verbose": "Auxílio Conduta",
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/",
+        "nome": "Verificar Fatores Agravantes Para SEPSE",
+        "descricao": "Verifique se o paciente apresenta algum dos fatores a seguir.",
+        "is_initial": false,
+        "is_terminal": false,
+        "obrigatoriedade": false
+    },
+    "protocolo_id": 21,
+    "protocolo_executado_id": 1129,
+    "respostas": [
+        {
+            "id": 4776,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 324,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/324/",
+                "texto": "Oligúria / Anúria?",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 504,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/504/",
+                    "nome": "fat_agra_oliguria",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4777,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 325,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/325/",
+                "texto": "PAS < 100 mmHg?",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 505,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/505/",
+                    "nome": "fat_agra_pas",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4778,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 326,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/326/",
+                "texto": "Agitação / Sonolência / Alteração Nível de Consciência?",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 506,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/506/",
+                    "nome": "fat_agra_agita_sono_cons",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4779,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 327,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/perguntas/327/",
+                "texto": "Dispneia ou SatO2 < 93%?",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 507,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/507/",
+                    "nome": "fat_risc_disp_sat",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        }
+    ]
+}

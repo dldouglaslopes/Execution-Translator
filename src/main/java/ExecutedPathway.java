@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import MetamodelExecution.EPathway;
 import MetamodelExecution.Execution_metamodelFactory;
+import MetamodelExecution.Justification;
 import MetamodelExecution.LastProfessional;
 import MetamodelExecution.Pathway;
 import MetamodelExecution.Responsible;
@@ -16,7 +17,7 @@ import MetamodelExecution.Responsible;
 
 public class ExecutedPathway {	
 	public EPathway addEPathway(JSONObject json, Resource resource, EPathway ePathway) throws ParseException{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSXXX", Locale.getDefault());
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());
 		
 		//Set pathway
 		JSONObject pathwayJson = json.getJSONObject("protocolo");
@@ -53,7 +54,20 @@ public class ExecutedPathway {
 		lastProfessional.setName(lastProfessionalJson.getString("nome"));
 		lastProfessional.setNumberCouncil(lastProfessionalJson.getInt("numero_conselho"));
 		lastProfessional.setTypeCouncil(lastProfessionalJson.getString("tipo_conselho"));
-		lastProfessional.setState(lastProfessionalJson.getString("uf"));		
+		lastProfessional.setState(lastProfessionalJson.getString("uf"));
+		
+		//set justification			
+		if (!json.isNull("justificativa")) {
+			Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
+			JSONObject justificationJson = json.getJSONObject("justificativa");			
+			justification.setId(justificationJson.getInt("id"));
+			justification.setReason(justificationJson.getString("razao"));
+			justification.setReasonDisplay(justificationJson.getString("razao_display"));
+			justification.setDescription(justificationJson.getString("descricao"));
+			justification.setJustifiedById(justificationJson.getInt("justificado_por_id"));
+			justification.setJustifiedBy(justificationJson.getString("justificado_por"));		
+			ePathway.setJustification(justification);
+		}
 		
 		//Set executed pathway
 		ePathway.setId(json.getInt("id"));		
@@ -67,7 +81,7 @@ public class ExecutedPathway {
 		ePathway.setIdResponsible(json.getInt("responsavel_id"));
 		ePathway.setLastprofessional(lastProfessional);
 		ePathway.setResponsible(responsible);
-		ePathway.setPathway(pathway);
+		ePathway.setPathway(pathway);			
 		
 		String creationStr = json.getString("data_criacao");
 		Date creationDate = dateFormat.parse(creationStr);

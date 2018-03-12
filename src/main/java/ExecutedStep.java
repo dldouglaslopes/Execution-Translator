@@ -27,13 +27,12 @@ import MetamodelExecution.PrescribedExamination;
 import MetamodelExecution.PrescriptionExam;
 import MetamodelExecution.Question;
 import MetamodelExecution.Step;
+import MetamodelExecution.Variable;
 import MetamodelExecution.YesOrNo;
-import pathwayMetamodel.Category;
-import pathwayMetamodel.PathwayMetamodelFactory;
 
 public class ExecutedStep {
 	public EElement addEElement(JSONObject json, EElement eElement) throws ParseException {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSXXX", Locale.getDefault());
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());
 		
 		//Set executed element/step
 		eElement.setId(json.getInt("id"));
@@ -47,10 +46,13 @@ public class ExecutedStep {
 		eElement.setExecutedById(json.getInt("executado_por_id"));
 		eElement.setIdStep(json.getInt("passo_id"));		
 		eElement.setStep(addStep(json));
-		eElement.setCreator(addCreator(json));
-		eElement.setJustification(addJustification(json));
+		eElement.setCreator(addCreator(json));		
 		eElement.setExecutor(addExecutor(json));
-		eElement.setName(json.getString(eElement.getStep().getName()));
+		eElement.setName(eElement.getStep().getName());
+		
+		if (addJustification(json) != null) {
+			eElement.setJustification(addJustification(json));
+		}		
 		
 		String creationStr = json.getString("data_criacao");
 		Date creationDate = dateFormat.parse(creationStr);
@@ -110,45 +112,45 @@ public class ExecutedStep {
 			question.setId(questionJson.getInt("id"));
 			question.setUrl(questionJson.getString("url"));
 			question.setText(questionJson.getString("texto"));
-			
-			//set category
-			JSONObject categoryJson = questionJson.getJSONObject("categoria");
-			Category category = PathwayMetamodelFactory.eINSTANCE.createCategory();
-			
-			if (categoryJson.length() > 0) {				
-				category.setName(categoryJson.getString("nome"));
 				
-				//save category
-				question.setCategory(category);
+			if (!questionJson.isNull("categoria")) {
+				question.setCategory(questionJson.getString("categoria"));
+			}
+			if (!questionJson.isNull("categoria_id")) {
+				question.setIdCategory(questionJson.getInt("categoria_id"));
 			}
 			
 			JSONObject variableJson = questionJson.getJSONObject("variavel");
+			Variable variable = Execution_metamodelFactory.eINSTANCE.createVariable();
+			variable.setId(variableJson.getInt("id"));
+			variable.setUrl(json.getString("url"));
+			variable.setType(json.getString("type"));
+			variable.setTypeVerbose(json.getString("type_verbose"));
+			variable.setName(variableJson.getString("nome"));
+			variable.setWeight(variableJson.getInt("peso"));
 			
 			if (type.equals("RespostaSimOuNao")) {			
 				//set yes or no
-				pathwayMetamodel.YesOrNo variable = PathwayMetamodelFactory.eINSTANCE.createYesOrNo();
-				variable.setId(variableJson.getInt("id"));	
-				variable.setName(variableJson.getString("nome"));
-				variable.setValue(variableJson.getBoolean("valor"));
-				variable.setWeight(variableJson.getInt("peso"));		
+				YesOrNo yesOrNo = Execution_metamodelFactory.eINSTANCE.createYesOrNo();
+				yesOrNo.setValue(variableJson.getBoolean("valor"));	
 				
-				//save variable
-				question.getVariable().add(variable);
+				//save yes or no
+				variable.setValue(yesOrNo);
 			}
 			else if (type.equals("RespostaNumerica")) {
 				//set numeric
-				pathwayMetamodel.Numeric variable = PathwayMetamodelFactory.eINSTANCE.createNumeric();
-				variable.setId(variableJson.getInt("id"));	
-				variable.setName(variableJson.getString("nome"));
-				variable.setValue(variableJson.getDouble("valor"));
-				variable.setWeight(variableJson.getInt("peso"));
+				Numeric numeric = Execution_metamodelFactory.eINSTANCE.createNumeric();
+				numeric.setValue(variableJson.getDouble("valor"));
 				
-				//save variable
-				question.getVariable().add(variable);
+				//save numeric
+				variable.setValue(numeric);
 			}	
 			
+			//save variable
+			question.setVariable(variable);
+			
 			//save question
-			answer.getQuestion().add(question);
+			answer.setQuestion(question);
 			
 			//save answer
 			eAuxiliaryConduct.getAnswer().add(answer);
@@ -158,7 +160,7 @@ public class ExecutedStep {
 	}
 	
 	public ETreatment addETreatment(JSONObject json, Resource resource) throws ParseException{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSXXX", Locale.getDefault());
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());
 
 		//set executed treatment
 		ETreatment eTreatment = Execution_metamodelFactory.eINSTANCE.createETreatment();		
@@ -209,7 +211,7 @@ public class ExecutedStep {
 			prescriptionExam.setSuccess(prescriptionExamJson.getBoolean("sucesso"));
 			prescriptionExam.setMessage(prescriptionExamJson.getString("mensagem"));
 			
-			String requestStr = json.getString("data_solicitacao");
+			String requestStr = prescriptionExamJson.getString("data_solicitacao");
 			Date requestDate = dateFormat.parse(requestStr);			
 			prescriptionExam.setRequestDate(requestDate);	
 			
@@ -222,7 +224,7 @@ public class ExecutedStep {
 			complement.setId(complementJson.getInt("id"));
 			complement.setSideLimb(complementJson.getString("lado_membro"));
 			complement.setSideLimbDisplay(complementJson.getString("lado_membro_display"));
-			complement.setJustification(complementJson.getString(""));
+			complement.setJustification(complementJson.getString("justificativa"));
 			complement.setClinicalIndication(complementJson.getString("indicacao_clinica"));
 			
 			//set quantity
@@ -324,6 +326,10 @@ public class ExecutedStep {
 		return eDischarge;
 	}
 	
+	public String getNameStep() {
+		return null;
+	}
+	
 	//Set step
 	public Step addStep(JSONObject json) {
 		JSONObject stepJson = json.getJSONObject("passo");
@@ -342,10 +348,9 @@ public class ExecutedStep {
 	}
 	
 	//Set justification
-	public Justification addJustification(JSONObject json) {
-		JSONObject justificationJson = json.getJSONObject("justificativa");
-		
-		if (justificationJson != null) {
+	public Justification addJustification(JSONObject json) {		
+		if (!json.isNull("justificativa")) {
+			JSONObject justificationJson = json.getJSONObject("justificativa");
 			Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
 			justification.setId(justificationJson.getInt("id"));
 			justification.setReason(justificationJson.getString("razao"));

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class File {	
+public class FileConfig {	
 	public JSONObject toJSONObject(String path) throws IOException, JSONException{
 		String file = "";
         BufferedReader br = new BufferedReader(new FileReader(path));        

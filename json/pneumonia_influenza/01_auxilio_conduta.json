@@ -1,0 +1,127 @@
+{
+    "id": 2567,
+    "type": "AuxilioCondutaExecutado",
+    "type_verbose": "Auxílio Conduta Executado",
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/",
+    "previous": null,
+    "next": {
+        "url": "/atendimentos/624/protocolos/1129/passos/2568/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/"
+    },
+    "is_current": false,
+    "reworked": false,
+    "executado": true,
+    "data_criacao": "2017-10-26T09:15:53.596243-03:00",
+    "data_modificacao": "2017-10-26T09:16:05.061237-03:00",
+    "data_execucao": "2017-10-26T09:16:05.034776-03:00",
+    "justificativa": null,
+    "criado_por_id": 161,
+    "criado_por": {
+        "id": 161,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/",
+        "codigo": 2,
+        "email": "",
+        "login": "CRM1",
+        "nome": "LUIZ",
+        "numero_conselho": 1,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "executado_por_id": 161,
+    "executado_por": {
+        "id": 161,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/",
+        "codigo": 2,
+        "email": "",
+        "login": "CRM1",
+        "nome": "LUIZ",
+        "numero_conselho": 1,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "passo_id": 401,
+    "passo": {
+        "id": 401,
+        "type": "AuxilioConduta",
+        "type_verbose": "Auxílio Conduta",
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/",
+        "nome": "Verificar Critérios para SEPSE",
+        "descricao": "Verifique os critérios para SIRS",
+        "is_initial": true,
+        "is_terminal": false,
+        "obrigatoriedade": false
+    },
+    "protocolo_id": 21,
+    "protocolo_executado_id": 1129,
+    "respostas": [
+        {
+            "id": 4773,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 321,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/perguntas/321/",
+                "texto": "TAX > 37.8ºc ou < 35ºc?",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 501,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/501/",
+                    "nome": "ver_sepse_tax",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 4774,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 322,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/perguntas/322/",
+                "texto": "FC > 90 bpm?",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 502,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/502/",
+                    "nome": "ver_sep_fc",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": true
+        },
+        {
+            "id": 4775,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 323,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/perguntas/323/",
+                "texto": "FR > 20 irpm?",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 503,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/variaveis-globais/503/",
+                    "nome": "ver_sep_fr",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": false
+        }
+    ]
+}

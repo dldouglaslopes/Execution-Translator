@@ -1,5 +1,6 @@
 
 
+import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 
@@ -9,18 +10,19 @@ import org.json.JSONObject;
 
 public class AppInitializer {
 	public static void main(String[] args) throws JSONException, IOException, ParseException {
-		String path = "/json/pneumonia_influenza/modelagem.json";
-		File file = new File();		
-		JSONObject json = file.toJSONObject(path);
+		FileConfig fileConfig = new FileConfig();
+		Translator translator = new Translator("./xmi/pneumonia_influenza.xmi");
+		String path = "./json/pneumonia_influenza";		
+		File file = new File(path);				
+		String[] namesJson = file.list(); //names of JSON files
 		
-		Translator translator = new Translator();
-		
-		for (int i = 0; i < args.length; i++) {
-			System.out.println("Tranlate file " + i + "...");
+		for(String nameJson : namesJson){					
+			JSONObject json = fileConfig.toJSONObject(path + "/" + nameJson);							
+			System.out.println(nameJson);
 			translator.toXMI(json);
-			System.out.print("OK.");
-		}
+		}	
 		
-		System.out.println("Finish.");
+		translator.saveContents();
+		System.out.println("OK.");
 	}
 }
