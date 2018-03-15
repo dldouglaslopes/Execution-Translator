@@ -54,7 +54,9 @@ public class ExecutedStep {
 		eElement.setReworked(json.getBoolean("reworked"));
 		eElement.setExecuted(json.getBoolean("executado"));		
 		eElement.setCreatedById(json.getInt("criado_por_id"));
-		eElement.setExecutedById(json.getInt("executado_por_id"));
+		if (!json.isNull("executado_por_id")) {
+			eElement.setExecutedById(json.getInt("executado_por_id"));
+		}		
 		eElement.setIdStep(json.getInt("passo_id"));		
 		eElement.setStep(createStep(json));
 		eElement.setCreator(createCreator(json));		
@@ -73,9 +75,11 @@ public class ExecutedStep {
 		Date modificationDate = dateFormat.parse(modificationStr);
 		eElement.setModificationDate(modificationDate);
 		
-		String executionStr = json.getString("data_execucao");
-		Date executionDate = dateFormat.parse(executionStr);
-		eElement.setExecutionDate(executionDate);
+		if (!json.isNull("data_execucao")) {
+			String executionStr = json.getString("data_execucao");
+			Date executionDate = dateFormat.parse(executionStr);
+			eElement.setExecutionDate(executionDate);
+		}		
 		
 		return eElement;
 	}
@@ -201,9 +205,9 @@ public class ExecutedStep {
 		for (int i = 0; i < idsPrescribedMedicationJson.length(); i++) {
 			//save prescribed medication 
 			eTreatment.getIdsPrescribedMedication().add(idsPrescribedMedicationJson.optInt(i));
-		}
+		}	
 		
-		//save prescription medication
+		//save prescribed medication
 		List<PrescribedMedication> prescribedMedications = createPrescribedMedication(json);		
 		for (int i = 0; i < prescribedMedications.size(); i++) {
 			eTreatment.getPrescribedmedication().add(prescribedMedications.get(i));
@@ -216,7 +220,9 @@ public class ExecutedStep {
 			JSONObject prescribedExaminationJson = prescribedExaminations.getJSONObject(i);
 			prescribedExamination.setId(prescribedExaminationJson.getInt("id"));
 			prescribedExamination.setReport(prescribedExaminationJson.getString("laudo"));
-			prescribedExamination.setNumberGuide(prescribedExaminationJson.getInt("numero_guia"));
+			if (!prescribedExaminationJson.isNull("numero_guia")) {
+				prescribedExamination.setNumberGuide(prescribedExaminationJson.getInt("numero_guia"));
+			}			
 			if (!prescribedExaminationJson.isNull("resultado")) {
 				prescribedExamination.setResult(prescribedExaminationJson.getString("resultado"));
 			}						
@@ -225,17 +231,19 @@ public class ExecutedStep {
 			prescribedExamination.setPrescription(createPrescription(prescribedExaminationJson));
 			
 			//set complement
-			JSONObject complementJson = prescribedExaminationJson.getJSONObject("complemento");
-			Complement complement = Execution_metamodelFactory.eINSTANCE.createComplement();
-			complement.setId(complementJson.getInt("id"));
-			complement.setSideLimb(complementJson.getString("lado_membro"));
-			complement.setSideLimbDisplay(complementJson.getString("lado_membro_display"));
-			complement.setJustification(complementJson.getString("justificativa"));
-			complement.setClinicalIndication(complementJson.getString("indicacao_clinica"));
-			if (!complementJson.isNull("quantidade")) {
-				complement.setQuantity(complementJson.getInt("quantidade"));
+			Complement complement = Execution_metamodelFactory.eINSTANCE.createComplement();			
+			if (!prescribedExaminationJson.isNull("complemento")) {				
+				JSONObject complementJson = prescribedExaminationJson.getJSONObject("complemento");
+				complement.setId(complementJson.getInt("id"));
+				complement.setSideLimb(complementJson.getString("lado_membro"));
+				complement.setSideLimbDisplay(complementJson.getString("lado_membro_display"));
+				complement.setJustification(complementJson.getString("justificativa"));
+				complement.setClinicalIndication(complementJson.getString("indicacao_clinica"));
+				if (!complementJson.isNull("quantidade")) {
+					complement.setQuantity(complementJson.getInt("quantidade"));
+				}			
 			}
-			//save complement
+			//save complement	
 			prescribedExamination.setComplement(complement);
 			
 			//set examination
@@ -381,7 +389,9 @@ public class ExecutedStep {
 			medicament.setOutpatient(medicamentJson.getBoolean("ambulatorial"));
 			medicament.setIdUnit(medicamentJson.getInt("unidade_id"));
 			medicament.setIdAccess(medicamentJson.getInt("via_acesso_id"));
-			medicament.setStandard(medicamentJson.getString("padrao"));
+			if (!medicamentJson.isNull("padrao")) {
+				medicament.setStandard(medicamentJson.getString("padrao"));
+			}			
 			medicament.setDailyDosage(medicamentJson.getInt("dose_diaria"));
 			medicament.setCycles(medicamentJson.getInt("ciclos"));
 			medicament.setFrequency(medicamentJson.getInt("frequencia"));
@@ -408,7 +418,7 @@ public class ExecutedStep {
 			unit.setId(unitJson.getInt("id"));
 			unit.setName(unitJson.getString("nome"));
 			unit.setUrl(unitJson.getString("url"));
-			unit.setCode(unitJson.getInt("codigo"));
+			unit.setCode(unitJson.getString("codigo"));
 			unit.setUnit(unitJson.getString("unidade"));
 			//save unit
 			medicament.getUnit().add(unit);
@@ -422,6 +432,8 @@ public class ExecutedStep {
 			access.setCode(accessJson.getInt("codigo"));
 			//save access
 			medicament.getAccess().add(access);
+			
+			prescribedMedication.setMedicament(medicament);
 			
 			//add prescribedMedication
 			prescribedMedications.add(prescribedMedication);
@@ -501,17 +513,20 @@ public class ExecutedStep {
 	
 	//set executor
 	private Executor createExecutor(JSONObject json) {
-		JSONObject executorJson = json.getJSONObject("executado_por");
 		Executor executor = Execution_metamodelFactory.eINSTANCE.createExecutor();
-		executor.setId(executorJson.getInt("id"));
-		executor.setUrl(executorJson.getString("url"));
-		executor.setCode(executorJson.getInt("codigo"));
-		executor.setEmail(executorJson.getString("email"));
-		executor.setLogin(executorJson.getString("login"));
-		executor.setName(executorJson.getString("nome"));
-		executor.setNumberCouncil(executorJson.getInt("numero_conselho"));
-		executor.setTypeCouncil(executorJson.getString("tipo_conselho"));
-		executor.setState(executorJson.getString("uf"));
+		
+		if (!json.isNull("executado_por")) {
+			JSONObject executorJson = json.getJSONObject("executado_por");
+			executor.setId(executorJson.getInt("id"));
+			executor.setUrl(executorJson.getString("url"));
+			executor.setCode(executorJson.getInt("codigo"));
+			executor.setEmail(executorJson.getString("email"));
+			executor.setLogin(executorJson.getString("login"));
+			executor.setName(executorJson.getString("nome"));
+			executor.setNumberCouncil(executorJson.getInt("numero_conselho"));
+			executor.setTypeCouncil(executorJson.getString("tipo_conselho"));
+			executor.setState(executorJson.getString("uf"));
+		}
 		
 		return executor;
 	}
