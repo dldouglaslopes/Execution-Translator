@@ -1,0 +1,109 @@
+{
+    "id": 1483,
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/",
+    "data_criacao": "2017-11-24T08:57:54.279087-03:00",
+    "data_conclusao": "2017-11-24T09:05:55.462477-03:00",
+    "finalizado": true,
+    "abortado": true,
+    "justificativa": {
+        "id": 881,
+        "razao": "encerramento_de_protocolo",
+        "razao_display": "Encerramento de protocolo",
+        "descricao": "LAHFADHFAdhfgsdçgg´GJKkSFK",
+        "justificado_por_id": 741,
+        "justificado_por": "PAULO"
+    },
+    "data_ultimo_passo_executado": "24 de Novembro de 2017 às 11:58",
+    "protocolo_id": 1,
+    "protocolo": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/",
+        "codigo": "H001",
+        "nome": "Fratura Exposta",
+        "repositorio_id": 1,
+        "versao": 1,
+        "finalizado": true
+    },
+    "responsavel_id": 741,
+    "responsavel": {
+        "id": 741,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/",
+        "codigo": 1,
+        "email": "",
+        "login": "CRM2",
+        "nome": "PAULO",
+        "numero_conselho": 2,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "ultimo_profissional_id": 741,
+    "ultimo_profissional": {
+        "id": 741,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/",
+        "codigo": 1,
+        "email": "",
+        "login": "CRM2",
+        "nome": "PAULO",
+        "numero_conselho": 2,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "passos_executados_ids": [
+        3247,
+        3248
+    ],
+    "passos_executados": [
+        {
+            "id": 3247,
+            "type": "AuxilioCondutaExecutado",
+            "type_verbose": "Auxílio Conduta Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3247/",
+            "previous": null,
+            "next": {
+                "url": "/atendimentos/921/protocolos/1483/passos/3248/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3248/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2017-11-24T08:57:54.314592-03:00",
+            "data_modificacao": "2017-11-24T08:58:08.235772-03:00",
+            "data_execucao": "2017-11-24T08:58:08.203011-03:00",
+            "justificativa": null,
+            "criado_por_id": 741,
+            "criado_por": "PAULO",
+            "executado_por_id": 741,
+            "executado_por": "PAULO",
+            "passo_id": 1,
+            "passo": "Auxílio Conduta: Verificar Grau da Fratura",
+            "protocolo_id": 1,
+            "protocolo_executado_id": 1483
+        },
+        {
+            "id": 3248,
+            "type": "TratamentoExecutado",
+            "type_verbose": "Tratamento Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3248/",
+            "previous": {
+                "url": "/atendimentos/921/protocolos/1483/passos/3247/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3247/"
+            },
+            "next": null,
+            "is_current": false,
+            "reworked": false,
+            "executado": false,
+            "data_criacao": "2017-11-24T08:58:08.297617-03:00",
+            "data_modificacao": "2017-11-24T08:58:08.297708-03:00",
+            "data_execucao": null,
+            "justificativa": null,
+            "criado_por_id": 741,
+            "criado_por": "PAULO",
+            "executado_por_id": null,
+            "executado_por": null,
+            "passo_id": 2,
+            "passo": "Tratamento: Tratamento Fratura de Grau I/II",
+            "protocolo_id": 1,
+            "protocolo_executado_id": 1483
+        }
+    ]
+}

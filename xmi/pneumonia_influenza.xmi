@@ -92,77 +92,77 @@
         <exam id="8182" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/8182/" code="32050038" name="RAIOX TORAX P.A" description="RX TORAX P.A" onlyEmergency="true"/>
       </examination>
       <complement id="1182" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1062" success="true" message="" requestDate="2017-10-26T09:32:49.167-0200"/>
+      <prescription id="1062" success="true" message="" requestDate="2017-10-26T09:32:49.167-0200"/>
     </prescribedexam>
     <prescribedexam id="1863" report="" numberGuide="30584836">
       <examination id="23" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/23/" idExamination="4559" sideLimb="" quantity="1" justification="Suspeita de Influenza" clinicalIndication="Nenhuma" sideLimbDisplay="">
         <exam id="4559" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/4559/" code="28040481" name="HEMOGRAMA COMPLETO (ERITROGRAMA + LEUCOGRAMA + AVALIACAO DE PLAQUETAS)" description="HEMOGRAMA COMPLETO COM REVISAO DE LAMINAS" onlyEmergency="true"/>
       </examination>
       <complement id="1183" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1063" success="true" message="" requestDate="2017-10-26T09:16:42.230-0200"/>
+      <prescription id="1063" success="true" message="" requestDate="2017-10-26T09:16:42.230-0200"/>
     </prescribedexam>
     <prescribedexam id="1864" report="" numberGuide="30584836">
       <examination id="201" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/201/" idExamination="5512" sideLimb="" quantity="1" justification="protocolo de pneumonia a influenza" clinicalIndication="tratamento de pneumonia" sideLimbDisplay="">
         <exam id="5512" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/5512/" code="29020115" name="GASOMETRIA ARTERIAL DE REPOUSO" description="GASOMETRIA ARTERIAL DE REPOUSO"/>
       </examination>
       <complement id="1184" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1064" success="true" message="" requestDate="2017-10-26T09:17:12.222-0200"/>
+      <prescription id="1064" success="true" message="" requestDate="2017-10-26T09:17:12.222-0200"/>
     </prescribedexam>
     <prescribedexam id="1865" report="" numberGuide="30584836">
       <examination id="202" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/202/" idExamination="5205" sideLimb="" quantity="1" justification="protocolo de pneumonia" clinicalIndication="tratamento de pneumonia" sideLimbDisplay="">
         <exam id="5205" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/5205/" code="28090209" name="LACTATO" description="LACTATO" onlyEmergency="true"/>
       </examination>
       <complement id="1185" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1065" success="true" message="" requestDate="2017-10-26T09:17:41.464-0200"/>
+      <prescription id="1065" success="true" message="" requestDate="2017-10-26T09:17:41.464-0200"/>
     </prescribedexam>
     <prescribedexam id="1866" report="" numberGuide="30584836">
       <examination id="203" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/203/" idExamination="8965" sideLimb="" quantity="1" justification="protocolo de pneumonia" clinicalIndication="tratamento de pneumonia" sideLimbDisplay="">
         <exam id="8965" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/8965/" code="40308391" name="PROTEINA C REATIVA, QUANTITATIVA" description="PROTEINA C REATIVA, QUANTITATIVA"/>
       </examination>
       <complement id="1186" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1066" success="true" message="" requestDate="2017-10-26T09:18:09.298-0200"/>
+      <prescription id="1066" success="true" message="" requestDate="2017-10-26T09:18:09.298-0200"/>
     </prescribedexam>
     <prescribedexam id="1867" report="" numberGuide="30584836">
       <examination id="204" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/204/" idExamination="8964" sideLimb="" quantity="1" justification="protocolo de pneumonia" clinicalIndication="tratamento de pneumonia" sideLimbDisplay="">
         <exam id="8964" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/8964/" code="40308383" name="PROTEINA C REATIVA, QUALITATIVA" description="PCR  DETERMINACAO QUANTITATIVA"/>
       </examination>
       <complement id="1187" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1067" success="true" message="" requestDate="2017-10-26T09:18:39.130-0200"/>
+      <prescription id="1067" success="true" message="" requestDate="2017-10-26T09:18:39.130-0200"/>
     </prescribedexam>
     <prescribedexam id="1868" report="" numberGuide="30584836">
       <examination id="205" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/205/" idExamination="4377" sideLimb="" quantity="1" justification="protocolo de pneumonia" clinicalIndication="tratamento de pneumonia" sideLimbDisplay="">
         <exam id="4377" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/4377/" code="28011279" name="SODIO ( SANGUE )" description="SODIO (SANGUE)" onlyEmergency="true"/>
       </examination>
       <complement id="1188" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1068" success="true" message="" requestDate="2017-10-26T09:19:05.297-0200"/>
+      <prescription id="1068" success="true" message="" requestDate="2017-10-26T09:19:05.297-0200"/>
     </prescribedexam>
     <prescribedexam id="1869" report="" numberGuide="30584836">
       <examination id="206" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/206/" idExamination="4369" sideLimb="" quantity="1" justification="protocolo de pneumonia" clinicalIndication="tratamento de pneumonia" sideLimbDisplay="">
         <exam id="4369" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/4369/" code="28011210" name="POTASSIO" description="POTASSIO" onlyEmergency="true"/>
       </examination>
       <complement id="1189" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1069" success="true" message="" requestDate="2017-10-26T09:19:32.287-0200"/>
+      <prescription id="1069" success="true" message="" requestDate="2017-10-26T09:19:32.287-0200"/>
     </prescribedexam>
     <prescribedexam id="1870" report="" numberGuide="30584836">
       <examination id="207" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/207/" idExamination="4346" sideLimb="" quantity="1" justification="protocolo pneumonia" clinicalIndication="tratamento de pneumonia" sideLimbDisplay="">
         <exam id="4346" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/4346/" code="28010973" name="GLICOSE (SANGUE)" description="GLICOSE  (SANGUE)" onlyEmergency="true"/>
       </examination>
       <complement id="1190" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1070" success="true" message="" requestDate="2017-10-26T09:19:58.675-0200"/>
+      <prescription id="1070" success="true" message="" requestDate="2017-10-26T09:19:58.675-0200"/>
     </prescribedexam>
     <prescribedexam id="1871" report="" numberGuide="30584836">
       <examination id="208" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/208/" idExamination="4388" sideLimb="" quantity="1" justification="protocolo pneumonia" clinicalIndication="tratamento de pneumonia" sideLimbDisplay="">
         <exam id="4388" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/4388/" code="28011414" name="UREIA ( SANGUE )" description="UREIA (SANGUE)" onlyEmergency="true"/>
       </examination>
       <complement id="1191" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1071" success="true" message="" requestDate="2017-10-26T09:20:25.744-0200"/>
+      <prescription id="1071" success="true" message="" requestDate="2017-10-26T09:20:25.744-0200"/>
     </prescribedexam>
     <prescribedexam id="1872" report="" numberGuide="30584836">
       <examination id="209" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/exames/209/" idExamination="4299" sideLimb="" quantity="1" justification="protocolo pneumonia" clinicalIndication="tratamento de pneumonia" sideLimbDisplay="">
         <exam id="4299" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/4299/" code="28010531" name="CREATINA (SANGUE)" description="CREATINA (SANGUE)"/>
       </examination>
       <complement id="1192" sideLimb="" sideLimbDisplay="" clinicalIndication="" justification=""/>
-      <prescriptionexam id="1072" success="true" message="" requestDate="2017-10-26T09:20:50.339-0200"/>
+      <prescription id="1072" success="true" message="" requestDate="2017-10-26T09:20:50.339-0200"/>
     </prescribedexam>
     <idsPrescribedExamination>1862</idsPrescribedExamination>
     <idsPrescribedExamination>1863</idsPrescribedExamination>
@@ -377,9 +377,8 @@
     <step id="367" type="Receita" typeVerbose="Receita" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/receitas/367/" name="[Port 2] Receita Padrão para Pneumonia" description="Atenção! Caso apresente alguns dos sintomas a seguir retornar imediatamente a emergência. Sintomas: Falta de ar; Dor no peito; Febre por mais de 3 dias após início das medicações; &#xA; Desorientação; Sonolência excessiva; Sangramentos; Desmaio; Palpitação (Coração acelerado); Diminuição ou ausência de urina. &#xA;Medicação: Azitromicina 500mg 5cp 1 cp 1x ao dia por 5 dias.  Alternativas - Amox c\ Clavulanato 875\125  1 cp 12/12h de 5 a 7 dias." isTerminal="true"/>
     <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <prescribedmedicament/>
     <prescribedprescriptionitem/>
-    <prescriptioninfo/>
+    <prescription/>
   </element>
   <idsExecutedStep>2567</idsExecutedStep>
   <idsExecutedStep>2568</idsExecutedStep>

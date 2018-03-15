@@ -1,0 +1,116 @@
+{
+    "id": 5496,
+    "type": "AuxilioCondutaExecutado",
+    "type_verbose": "Auxílio Conduta Executado",
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5496/",
+    "previous": null,
+    "next": {
+        "url": "/atendimentos/422/protocolos/3262/passos/5497/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5497/"
+    },
+    "is_current": false,
+    "reworked": false,
+    "executado": true,
+    "data_criacao": "2018-02-02T18:12:09.349827-03:00",
+    "data_modificacao": "2018-02-02T18:14:17.735772-03:00",
+    "data_execucao": "2018-02-02T18:14:17.689358-03:00",
+    "justificativa": null,
+    "criado_por_id": 1,
+    "criado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 3,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 3,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "executado_por_id": 1,
+    "executado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 3,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 3,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "passo_id": 439,
+    "passo": {
+        "id": 439,
+        "type": "AuxilioConduta",
+        "type_verbose": "Auxílio Conduta",
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/auxilios-conduta/439/",
+        "nome": "Informar Sexo do paciente",
+        "descricao": "Informe o sexo do paciente para seguir com o tratamento adequado.",
+        "is_initial": true,
+        "is_terminal": false,
+        "obrigatoriedade": false
+    },
+    "protocolo_id": 124,
+    "protocolo_executado_id": 3262,
+    "respostas": [
+        {
+            "id": 8544,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 354,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/auxilios-conduta/439/perguntas/354/",
+                "texto": "Masculino",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 538,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/variaveis-globais/538/",
+                    "nome": "sexo_masculino",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": {
+                        "id": 21,
+                        "type": "VinculoSexoPaciente",
+                        "type_verbose": "Vínculo Com O Sexo Do Paciente",
+                        "premissa_verdadeira": "M",
+                        "premissa_verdadeira_display": "Masculino"
+                    }
+                }
+            },
+            "valor": false
+        },
+        {
+            "id": 8545,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 355,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/auxilios-conduta/439/perguntas/355/",
+                "texto": "Feminino",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 539,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/variaveis-globais/539/",
+                    "nome": "sexo_feminino",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": {
+                        "id": 22,
+                        "type": "VinculoSexoPaciente",
+                        "type_verbose": "Vínculo Com O Sexo Do Paciente",
+                        "premissa_verdadeira": "F",
+                        "premissa_verdadeira_display": "Feminino"
+                    }
+                }
+            },
+            "valor": true
+        }
+    ]
+}

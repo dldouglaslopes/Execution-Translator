@@ -1,0 +1,222 @@
+{
+    "id": 3303,
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/",
+    "data_criacao": "2018-02-04T10:14:33.564313-03:00",
+    "data_conclusao": "2018-02-04T10:16:52.787969-03:00",
+    "finalizado": true,
+    "abortado": false,
+    "justificativa": null,
+    "data_ultimo_passo_executado": "4 de Fevereiro de 2018 às 13:16",
+    "protocolo_id": 764,
+    "protocolo": {
+        "id": 764,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/",
+        "codigo": "H012",
+        "nome": "Tratamento de SEPSE",
+        "repositorio_id": 202,
+        "versao": 1,
+        "finalizado": true
+    },
+    "responsavel_id": 1,
+    "responsavel": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 5,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 5,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "ultimo_profissional_id": 1,
+    "ultimo_profissional": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 5,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 5,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "passos_executados_ids": [
+        5584,
+        5585,
+        5587,
+        5588,
+        5597,
+        5598
+    ],
+    "passos_executados": [
+        {
+            "id": 5584,
+            "type": "InformacaoExecutado",
+            "type_verbose": "Informação Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5584/",
+            "previous": null,
+            "next": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5585/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5585/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2018-02-04T10:14:33.579494-03:00",
+            "data_modificacao": "2018-02-04T10:14:39.453543-03:00",
+            "data_execucao": "2018-02-04T10:14:39.453334-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 2234,
+            "passo": "Informação: Aviso: Protocolo de Tratamento de SEPSE",
+            "protocolo_id": 764,
+            "protocolo_executado_id": 3303
+        },
+        {
+            "id": 5585,
+            "type": "AuxilioCondutaExecutado",
+            "type_verbose": "Auxílio Conduta Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5585/",
+            "previous": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5584/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5584/"
+            },
+            "next": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5587/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5587/"
+            },
+            "is_current": false,
+            "reworked": true,
+            "executado": true,
+            "data_criacao": "2018-02-04T10:14:39.501631-03:00",
+            "data_modificacao": "2018-02-04T10:14:57.843395-03:00",
+            "data_execucao": "2018-02-04T10:14:57.830518-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 2241,
+            "passo": "Auxílio Conduta: Verificar Comorbidades",
+            "protocolo_id": 764,
+            "protocolo_executado_id": 3303
+        },
+        {
+            "id": 5587,
+            "type": "InformacaoExecutado",
+            "type_verbose": "Informação Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5587/",
+            "previous": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5585/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5585/"
+            },
+            "next": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5588/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5588/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2018-02-04T10:14:57.879022-03:00",
+            "data_modificacao": "2018-02-04T10:15:11.872182-03:00",
+            "data_execucao": "2018-02-04T10:15:11.872010-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 2242,
+            "passo": "Informação: Aviso: Paciente com risco de congestão",
+            "protocolo_id": 764,
+            "protocolo_executado_id": 3303
+        },
+        {
+            "id": 5588,
+            "type": "AuxilioCondutaExecutado",
+            "type_verbose": "Auxílio Conduta Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5588/",
+            "previous": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5587/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5587/"
+            },
+            "next": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5597/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5597/"
+            },
+            "is_current": false,
+            "reworked": true,
+            "executado": true,
+            "data_criacao": "2018-02-04T10:15:11.895787-03:00",
+            "data_modificacao": "2018-02-04T10:16:31.984758-03:00",
+            "data_execucao": "2018-02-04T10:16:31.887324-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 2243,
+            "passo": "Auxílio Conduta: Identificar Foco Infeccioso",
+            "protocolo_id": 764,
+            "protocolo_executado_id": 3303
+        },
+        {
+            "id": 5597,
+            "type": "TratamentoExecutado",
+            "type_verbose": "Tratamento Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5597/",
+            "previous": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5588/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5588/"
+            },
+            "next": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5598/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5598/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2018-02-04T10:16:32.096977-03:00",
+            "data_modificacao": "2018-02-04T10:16:38.628977-03:00",
+            "data_execucao": "2018-02-04T10:16:38.628771-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 2251,
+            "passo": "Tratamento: Tratamento Foco Neutropenia Febril",
+            "protocolo_id": 764,
+            "protocolo_executado_id": 3303
+        },
+        {
+            "id": 5598,
+            "type": "InformacaoExecutado",
+            "type_verbose": "Informação Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5598/",
+            "previous": {
+                "url": "/atendimentos/508/protocolos/3303/passos/5597/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5597/"
+            },
+            "next": null,
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2018-02-04T10:16:38.650186-03:00",
+            "data_modificacao": "2018-02-04T10:16:52.775359-03:00",
+            "data_execucao": "2018-02-04T10:16:52.775172-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 2252,
+            "passo": "Informação: Aviso: Encaminhar paciente ao líder local",
+            "protocolo_id": 764,
+            "protocolo_executado_id": 3303
+        }
+    ]
+}

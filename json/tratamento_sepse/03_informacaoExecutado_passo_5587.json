@@ -1,0 +1,59 @@
+{
+    "id": 5587,
+    "type": "InformacaoExecutado",
+    "type_verbose": "Informação Executado",
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5587/",
+    "previous": {
+        "url": "/atendimentos/508/protocolos/3303/passos/5585/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5585/"
+    },
+    "next": {
+        "url": "/atendimentos/508/protocolos/3303/passos/5588/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5588/"
+    },
+    "is_current": false,
+    "reworked": false,
+    "executado": true,
+    "data_criacao": "2018-02-04T10:14:57.879022-03:00",
+    "data_modificacao": "2018-02-04T10:15:11.872182-03:00",
+    "data_execucao": "2018-02-04T10:15:11.872010-03:00",
+    "justificativa": null,
+    "criado_por_id": 1,
+    "criado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 5,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 5,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "executado_por_id": 1,
+    "executado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 5,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 5,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "passo_id": 2242,
+    "passo": {
+        "id": 2242,
+        "type": "Informacao",
+        "type_verbose": "Informação",
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/informacoes/2242/",
+        "nome": "Aviso: Paciente com risco de congestão",
+        "descricao": "Neste contexto, tenha cautela na expansão volêmica. Paciente com importante risco de congestão.",
+        "is_initial": false,
+        "is_terminal": false,
+        "obrigatoriedade": false
+    },
+    "protocolo_id": 764,
+    "protocolo_executado_id": 3303
+}

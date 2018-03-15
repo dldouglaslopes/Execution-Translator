@@ -1,0 +1,192 @@
+{
+    "id": 3262,
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/",
+    "data_criacao": "2018-02-02T18:12:09.330952-03:00",
+    "data_conclusao": "2018-02-02T18:16:53.645409-03:00",
+    "finalizado": true,
+    "abortado": false,
+    "justificativa": null,
+    "data_ultimo_passo_executado": "2 de Fevereiro de 2018 às 21:16",
+    "protocolo_id": 124,
+    "protocolo": {
+        "id": 124,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/",
+        "codigo": "H008",
+        "nome": "ITU - Cistite",
+        "repositorio_id": 9,
+        "versao": 1,
+        "finalizado": true
+    },
+    "responsavel_id": 1,
+    "responsavel": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 3,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 3,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "ultimo_profissional_id": 1,
+    "ultimo_profissional": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 3,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 3,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "passos_executados_ids": [
+        5496,
+        5497,
+        5498,
+        5499,
+        5500
+    ],
+    "passos_executados": [
+        {
+            "id": 5496,
+            "type": "AuxilioCondutaExecutado",
+            "type_verbose": "Auxílio Conduta Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5496/",
+            "previous": null,
+            "next": {
+                "url": "/atendimentos/422/protocolos/3262/passos/5497/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5497/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2018-02-02T18:12:09.349827-03:00",
+            "data_modificacao": "2018-02-02T18:14:17.735772-03:00",
+            "data_execucao": "2018-02-02T18:14:17.689358-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 439,
+            "passo": "Auxílio Conduta: Informar Sexo do paciente",
+            "protocolo_id": 124,
+            "protocolo_executado_id": 3262
+        },
+        {
+            "id": 5497,
+            "type": "AuxilioCondutaExecutado",
+            "type_verbose": "Auxílio Conduta Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5497/",
+            "previous": {
+                "url": "/atendimentos/422/protocolos/3262/passos/5496/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5496/"
+            },
+            "next": {
+                "url": "/atendimentos/422/protocolos/3262/passos/5498/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5498/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2018-02-02T18:14:17.788619-03:00",
+            "data_modificacao": "2018-02-02T18:14:37.908003-03:00",
+            "data_execucao": "2018-02-02T18:14:37.817694-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 442,
+            "passo": "Auxílio Conduta: Avaliar Sintomas (FEM)",
+            "protocolo_id": 124,
+            "protocolo_executado_id": 3262
+        },
+        {
+            "id": 5498,
+            "type": "AuxilioCondutaExecutado",
+            "type_verbose": "Auxílio Conduta Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5498/",
+            "previous": {
+                "url": "/atendimentos/422/protocolos/3262/passos/5497/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5497/"
+            },
+            "next": {
+                "url": "/atendimentos/422/protocolos/3262/passos/5499/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5499/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2018-02-02T18:14:38.009658-03:00",
+            "data_modificacao": "2018-02-02T18:14:40.867120-03:00",
+            "data_execucao": "2018-02-02T18:14:40.852941-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 476,
+            "passo": "Auxílio Conduta: Verificar Gravidez",
+            "protocolo_id": 124,
+            "protocolo_executado_id": 3262
+        },
+        {
+            "id": 5499,
+            "type": "AuxilioCondutaExecutado",
+            "type_verbose": "Auxílio Conduta Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5499/",
+            "previous": {
+                "url": "/atendimentos/422/protocolos/3262/passos/5498/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5498/"
+            },
+            "next": {
+                "url": "/atendimentos/422/protocolos/3262/passos/5500/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5500/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2018-02-02T18:14:40.913030-03:00",
+            "data_modificacao": "2018-02-02T18:14:56.143313-03:00",
+            "data_execucao": "2018-02-02T18:14:56.127941-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 480,
+            "passo": "Auxílio Conduta: Verificar Fatores Agravantes",
+            "protocolo_id": 124,
+            "protocolo_executado_id": 3262
+        },
+        {
+            "id": 5500,
+            "type": "TratamentoExecutado",
+            "type_verbose": "Tratamento Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5500/",
+            "previous": {
+                "url": "/atendimentos/422/protocolos/3262/passos/5499/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5499/"
+            },
+            "next": null,
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2018-02-02T18:14:56.183846-03:00",
+            "data_modificacao": "2018-02-02T18:16:53.632872-03:00",
+            "data_execucao": "2018-02-02T18:16:53.632618-03:00",
+            "justificativa": null,
+            "criado_por_id": 1,
+            "criado_por": "LEONARDO",
+            "executado_por_id": 1,
+            "executado_por": "LEONARDO",
+            "passo_id": 482,
+            "passo": "Tratamento: Tratamento Leucorreia / Irritação Vaginal",
+            "protocolo_id": 124,
+            "protocolo_executado_id": 3262
+        }
+    ]
+}

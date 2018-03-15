@@ -1,0 +1,139 @@
+{
+    "id": 688,
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/",
+    "data_criacao": "2017-10-04T15:20:06.421074-03:00",
+    "data_conclusao": "2017-10-05T14:12:06.928277-03:00",
+    "finalizado": true,
+    "abortado": true,
+    "justificativa": {
+        "id": 365,
+        "razao": "encerramento_de_protocolo",
+        "razao_display": "Encerramento de protocolo",
+        "descricao": "protocolo teste",
+        "justificado_por_id": 143,
+        "justificado_por": "FRANCISCO"
+    },
+    "data_ultimo_passo_executado": "4 de Outubro de 2017 às 18:20",
+    "protocolo_id": 41,
+    "protocolo": {
+        "id": 41,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/",
+        "codigo": "H003",
+        "nome": "Meningite",
+        "repositorio_id": 3,
+        "versao": 1,
+        "finalizado": true
+    },
+    "responsavel_id": 143,
+    "responsavel": {
+        "id": 143,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/",
+        "codigo": 3002411,
+        "email": "@hapvida.com.br",
+        "login": "IJUNIOR",
+        "nome": "FRANCISCO",
+        "numero_conselho": 4,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "ultimo_profissional_id": 143,
+    "ultimo_profissional": {
+        "id": 143,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/",
+        "codigo": 3002411,
+        "email": "@hapvida.com.br",
+        "login": "IJUNIOR",
+        "nome": "FRANCISCO",
+        "numero_conselho": 4,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "passos_executados_ids": [
+        951,
+        952,
+        953
+    ],
+    "passos_executados": [
+        {
+            "id": 951,
+            "type": "AuxilioCondutaExecutado",
+            "type_verbose": "Auxílio Conduta Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/951/",
+            "previous": null,
+            "next": {
+                "url": "/atendimentos/423/protocolos/688/passos/952/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/952/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2017-10-04T15:20:06.433043-03:00",
+            "data_modificacao": "2017-10-04T15:20:27.401368-03:00",
+            "data_execucao": "2017-10-04T15:20:27.372105-03:00",
+            "justificativa": null,
+            "criado_por_id": 143,
+            "criado_por": "FRANCISCO",
+            "executado_por_id": 143,
+            "executado_por": "FRANCISCO",
+            "passo_id": 221,
+            "passo": "Auxílio Conduta: Verifique as condições do paciente",
+            "protocolo_id": 41,
+            "protocolo_executado_id": 688
+        },
+        {
+            "id": 952,
+            "type": "TratamentoExecutado",
+            "type_verbose": "Tratamento Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/952/",
+            "previous": {
+                "url": "/atendimentos/423/protocolos/688/passos/951/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/951/"
+            },
+            "next": {
+                "url": "/atendimentos/423/protocolos/688/passos/953/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/953/"
+            },
+            "is_current": false,
+            "reworked": false,
+            "executado": true,
+            "data_criacao": "2017-10-04T15:20:27.503199-03:00",
+            "data_modificacao": "2017-10-04T15:20:50.742815-03:00",
+            "data_execucao": "2017-10-04T15:20:50.742646-03:00",
+            "justificativa": null,
+            "criado_por_id": 143,
+            "criado_por": "FRANCISCO",
+            "executado_por_id": 143,
+            "executado_por": "FRANCISCO",
+            "passo_id": 222,
+            "passo": "Tratamento: Tratamento Padrão",
+            "protocolo_id": 41,
+            "protocolo_executado_id": 688
+        },
+        {
+            "id": 953,
+            "type": "AuxilioCondutaExecutado",
+            "type_verbose": "Auxílio Conduta Executado",
+            "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/953/",
+            "previous": {
+                "url": "/atendimentos/423/protocolos/688/passos/952/",
+                "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/952/"
+            },
+            "next": null,
+            "is_current": false,
+            "reworked": false,
+            "executado": false,
+            "data_criacao": "2017-10-04T15:20:50.763347-03:00",
+            "data_modificacao": "2017-10-04T15:20:50.763384-03:00",
+            "data_execucao": null,
+            "justificativa": null,
+            "criado_por_id": 143,
+            "criado_por": "FRANCISCO",
+            "executado_por_id": null,
+            "executado_por": null,
+            "passo_id": 226,
+            "passo": "Auxílio Conduta: Avaliar resultado dos exames",
+            "protocolo_id": 41,
+            "protocolo_executado_id": 688
+        }
+    ]
+}

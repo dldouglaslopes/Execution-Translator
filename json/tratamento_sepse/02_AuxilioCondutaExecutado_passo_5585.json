@@ -1,0 +1,84 @@
+{
+    "id": 5585,
+    "type": "AuxilioCondutaExecutado",
+    "type_verbose": "Auxílio Conduta Executado",
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5585/",
+    "previous": {
+        "url": "/atendimentos/508/protocolos/3303/passos/5584/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5584/"
+    },
+    "next": {
+        "url": "/atendimentos/508/protocolos/3303/passos/5587/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5587/"
+    },
+    "is_current": false,
+    "reworked": true,
+    "executado": true,
+    "data_criacao": "2018-02-04T10:14:39.501631-03:00",
+    "data_modificacao": "2018-02-04T10:14:57.843395-03:00",
+    "data_execucao": "2018-02-04T10:14:57.830518-03:00",
+    "justificativa": null,
+    "criado_por_id": 1,
+    "criado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 5,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 5,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "executado_por_id": 1,
+    "executado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 5,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 5,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "passo_id": 2241,
+    "passo": {
+        "id": 2241,
+        "type": "AuxilioConduta",
+        "type_verbose": "Auxílio Conduta",
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/auxilios-conduta/2241/",
+        "nome": "Verificar Comorbidades",
+        "descricao": "Verifique se o paciente apresenta algum dos fatores que podem agravar o tratamento.",
+        "is_initial": false,
+        "is_terminal": false,
+        "obrigatoriedade": false
+    },
+    "protocolo_id": 764,
+    "protocolo_executado_id": 3303,
+    "respostas": [
+        {
+            "id": 8713,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 1907,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/auxilios-conduta/2241/perguntas/1907/",
+                "texto": "Paciente apresenta Insuficiência cardíaca, doença renal crônica ou congestão pulmonar?",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 2829,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/variaveis-globais/2829/",
+                    "nome": "trat_sepse_comorbidades",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": true
+        }
+    ]
+}

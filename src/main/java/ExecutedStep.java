@@ -1,12 +1,16 @@
 import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import MetamodelExecution.Access;
 import MetamodelExecution.Answer;
 import MetamodelExecution.Complement;
 import MetamodelExecution.Creator;
@@ -22,22 +26,23 @@ import MetamodelExecution.Examination;
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.Executor;
 import MetamodelExecution.Justification;
+import MetamodelExecution.Medicament;
+import MetamodelExecution.Medicine;
 import MetamodelExecution.Numeric;
 import MetamodelExecution.PrescribedExamination;
 import MetamodelExecution.PrescribedInternment;
-import MetamodelExecution.PrescribedMedicament;
 import MetamodelExecution.PrescribedMedication;
 import MetamodelExecution.PrescribedPrescriptionItem;
 import MetamodelExecution.PrescribedProcedure;
-import MetamodelExecution.PrescriptionExam;
-import MetamodelExecution.PrescriptionInfo;
+import MetamodelExecution.Prescription;
 import MetamodelExecution.Question;
 import MetamodelExecution.Step;
+import MetamodelExecution.Unit;
 import MetamodelExecution.Variable;
 import MetamodelExecution.YesOrNo;
 
 public class ExecutedStep {
-	public EElement addEElement(JSONObject json, EElement eElement) throws ParseException {
+	public EElement createEElement(JSONObject json, EElement eElement) throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());
 		
 		//Set executed element/step
@@ -51,13 +56,13 @@ public class ExecutedStep {
 		eElement.setCreatedById(json.getInt("criado_por_id"));
 		eElement.setExecutedById(json.getInt("executado_por_id"));
 		eElement.setIdStep(json.getInt("passo_id"));		
-		eElement.setStep(addStep(json));
-		eElement.setCreator(addCreator(json));		
-		eElement.setExecutor(addExecutor(json));
+		eElement.setStep(createStep(json));
+		eElement.setCreator(createCreator(json));		
+		eElement.setExecutor(createExecutor(json));
 		eElement.setName(eElement.getStep().getName());
 		
-		if (addJustification(json) != null) {
-			eElement.setJustification(addJustification(json));
+		if (createJustification(json) != null) {
+			eElement.setJustification(createJustification(json));
 		}		
 		
 		String creationStr = json.getString("data_criacao");
@@ -75,10 +80,10 @@ public class ExecutedStep {
 		return eElement;
 	}
 	
-	public EAuxiliaryConduct addEAuxiliaryConduct(JSONObject json, Resource resource) throws ParseException{
+	public EAuxiliaryConduct createEAuxiliaryConduct(JSONObject json, Resource resource) throws ParseException{
 		//Set executed auxiliary conduct
 		EAuxiliaryConduct eAuxiliaryConduct = Execution_metamodelFactory.eINSTANCE.createEAuxiliaryConduct();
-		eAuxiliaryConduct = (EAuxiliaryConduct) addEElement(json, eAuxiliaryConduct);
+		eAuxiliaryConduct = (EAuxiliaryConduct) createEElement(json, eAuxiliaryConduct);
 		
 		//Set answers
 		JSONArray answers = json.getJSONArray("respostas");
@@ -96,19 +101,19 @@ public class ExecutedStep {
 			
 			if (type.equals("RespostaSimOuNao")) {
 				//set yes or no
-				YesOrNo value = Execution_metamodelFactory.eINSTANCE.createYesOrNo();
-				value.setValue(answerJson.getBoolean("valor"));
+				YesOrNo yesOrNo = Execution_metamodelFactory.eINSTANCE.createYesOrNo();
+				yesOrNo.setValue(answerJson.getBoolean("valor"));
 				
 				//save value
-				answer.setValue(value);
+				answer.setValue(yesOrNo);
 			}
 			else if (type.equals("RespostaNumerica")) {
 				//set numeric
-				Numeric value = Execution_metamodelFactory.eINSTANCE.createNumeric();
-				value.setValue(answerJson.getDouble("valor"));
+				Numeric numeric = Execution_metamodelFactory.eINSTANCE.createNumeric();
+				numeric.setValue(answerJson.getDouble("valor"));
 				
 				//save value
-				answer.setValue(value);
+				answer.setValue(numeric);
 			}	
 			
 			//set question
@@ -165,12 +170,10 @@ public class ExecutedStep {
 		return eAuxiliaryConduct;
 	}
 	
-	public ETreatment addETreatment(JSONObject json, Resource resource) throws ParseException{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());
-
+	public ETreatment createETreatment(JSONObject json, Resource resource) throws ParseException{
 		//set executed treatment
 		ETreatment eTreatment = Execution_metamodelFactory.eINSTANCE.createETreatment();		
-		eTreatment = (ETreatment) addEElement(json, eTreatment);	
+		eTreatment = (ETreatment) createEElement(json, eTreatment);	
 		
 		//set prescribed examination
 		JSONArray idsPrescribedExaminationJson = json.getJSONArray("exames_prescritos_ids");		
@@ -200,6 +203,12 @@ public class ExecutedStep {
 			eTreatment.getIdsPrescribedMedication().add(idsPrescribedMedicationJson.optInt(i));
 		}
 		
+		//save prescription medication
+		List<PrescribedMedication> prescribedMedications = createPrescribedMedication(json);		
+		for (int i = 0; i < prescribedMedications.size(); i++) {
+			eTreatment.getPrescribedmedication().add(prescribedMedications.get(i));
+		}
+		
 		//set prescribed examination
 		JSONArray prescribedExaminations = json.getJSONArray("exames_prescritos");			
 		for (int i = 0; i < prescribedExaminations.length(); i++) {			
@@ -210,19 +219,10 @@ public class ExecutedStep {
 			prescribedExamination.setNumberGuide(prescribedExaminationJson.getInt("numero_guia"));
 			if (!prescribedExaminationJson.isNull("resultado")) {
 				prescribedExamination.setResult(prescribedExaminationJson.getString("resultado"));
-			}			
+			}						
 			
-			//set prescription exam
-			JSONObject prescriptionExamJson = prescribedExaminationJson.getJSONObject("prescricao");
-			PrescriptionExam prescriptionExam = Execution_metamodelFactory.eINSTANCE.createPrescriptionExam();
-			prescriptionExam.setId(prescriptionExamJson.getInt("id"));
-			prescriptionExam.setSuccess(prescriptionExamJson.getBoolean("sucesso"));
-			prescriptionExam.setMessage(prescriptionExamJson.getString("mensagem"));			
-			String requestStr = prescriptionExamJson.getString("data_solicitacao");
-			Date requestDate = dateFormat.parse(requestStr);			
-			prescriptionExam.setRequestDate(requestDate);
-			//save prescription exam
-			prescribedExamination.setPrescriptionexam(prescriptionExam);
+			//save prescription 
+			prescribedExamination.setPrescription(createPrescription(prescribedExaminationJson));
 			
 			//set complement
 			JSONObject complementJson = prescribedExaminationJson.getJSONObject("complemento");
@@ -268,15 +268,7 @@ public class ExecutedStep {
 			
 			//save prescribed examination
 			eTreatment.getPrescribedexam().add(prescribedExamination);
-		}
-		
-		//set prescribed medicamention
-		JSONArray prescribedMedications = json.getJSONArray("medicamentos_prescritos");		
-		for (int i = 0; i < prescribedMedications.length(); i++) {			
-			PrescribedMedication prescribedMedicamention = Execution_metamodelFactory.eINSTANCE.createPrescribedMedication();
-			//save prescribed medicamention
-			eTreatment.getPrescribedmedication().add(prescribedMedicamention);
-		}
+		}	
 		
 		//set prescribed procedure
 		JSONArray prescribedProcedures = json.getJSONArray("procedimentos_prescritos");
@@ -296,11 +288,11 @@ public class ExecutedStep {
 		
 		return eTreatment;
 	}
-	
-	public EPrescription addEPrescription(JSONObject json, Resource resource) throws ParseException{
-		//set executed precription
+
+	//set executed precription
+	public EPrescription createEPrescription(JSONObject json, Resource resource) throws ParseException{		
 		EPrescription ePrescription = Execution_metamodelFactory.eINSTANCE.createEPrescription();
-		ePrescription = (EPrescription) addEElement(json, ePrescription);
+		ePrescription = (EPrescription) createEElement(json, ePrescription);
 		
 		ePrescription.setText(json.getString("texto"));
 		
@@ -318,54 +310,146 @@ public class ExecutedStep {
 			ePrescription.getIdsPrescribedPrescriptionItem().add(idsPrescribedPrescriptionItemJson.optInt(i));
 		}
 		
-		//set prescription info
-		PrescriptionInfo prescriptionInfo = Execution_metamodelFactory.eINSTANCE.createPrescriptionInfo();
 		//save prescription info
-		ePrescription.getPrescriptioninfo().add(prescriptionInfo);
+		ePrescription.getPrescription().add(createPrescription(json));
 		
 		//set prescription prescription item
 		PrescribedPrescriptionItem prescribedPrescriptionItem = Execution_metamodelFactory.eINSTANCE.createPrescribedPrescriptionItem();
 		//save prescription prescription item
 		ePrescription.getPrescribedprescriptionitem().add(prescribedPrescriptionItem);
 		
-		//set prescription medication
-		PrescribedMedicament prescribedMedicament = Execution_metamodelFactory.eINSTANCE.createPrescribedMedicament();
 		//save prescription medication
-		ePrescription.getPrescribedmedicament().add(prescribedMedicament);
+		List<PrescribedMedication> prescribedMedications = createPrescribedMedication(json);		
+		for (int i = 0; i < prescribedMedications.size(); i++) {
+			ePrescription.getPrescribedmedication().add(prescribedMedications.get(i));
+		}		
 		
 		return ePrescription;
 	}
-	
-	public EInformation addEInformation(JSONObject json, Resource resource) throws ParseException{
-		//set executed information
+
+	//set executed information
+	public EInformation createEInformation(JSONObject json, Resource resource) throws ParseException{		
 		EInformation eInformation = Execution_metamodelFactory.eINSTANCE.createEInformation();
-		eInformation = (EInformation) addEElement(json, eInformation);
+		eInformation = (EInformation) createEElement(json, eInformation);
 		
 		return eInformation;
 	}
 	
-	public EReferral addEReferral(JSONObject json, Resource resource) throws ParseException{
-		//set executed referral
+	//set executed referral
+	public EReferral createEReferral(JSONObject json, Resource resource) throws ParseException{		
 		EReferral eReferral = Execution_metamodelFactory.eINSTANCE.createEReferral();
-		eReferral = (EReferral) addEElement(json, eReferral);
+		eReferral = (EReferral) createEElement(json, eReferral);
 		
 		return eReferral;
 	}
 	
-	public EDischarge addEDischarge(JSONObject json, Resource resource) throws ParseException{
-		//set executed discharge
+	//set executed discharge
+	public EDischarge createEDischarge(JSONObject json, Resource resource) throws ParseException{
 		EDischarge eDischarge = Execution_metamodelFactory.eINSTANCE.createEDischarge();
-		eDischarge = (EDischarge) addEElement(json, eDischarge);
+		eDischarge = (EDischarge) createEElement(json, eDischarge);
 		
 		return eDischarge;
 	}
 	
-	public String getNameStep() {
-		return null;
+	//set prescribed medication
+	private List<PrescribedMedication> createPrescribedMedication(JSONObject json) throws ParseException {
+		JSONArray prescribedMedicationsJson = json.getJSONArray("medicamentos_prescritos");
+		List<PrescribedMedication> prescribedMedications = new ArrayList<PrescribedMedication>();
+		
+		for (int i = 0; i < prescribedMedicationsJson.length(); i++) {
+			PrescribedMedication prescribedMedication = Execution_metamodelFactory.eINSTANCE.createPrescribedMedication();
+			JSONObject prescribedMedicationJson = prescribedMedicationsJson.getJSONObject(i);
+			
+			prescribedMedication.setId(prescribedMedicationJson.getInt("id"));
+			if (!prescribedMedicationJson.isNull("resultado")) {
+				prescribedMedication.setResult(prescribedMedicationJson.getString("resultado"));
+			}
+			
+			//save prescription
+			prescribedMedication.setPrescription(createPrescription(prescribedMedicationJson));
+			
+			//set medicament
+			Medicament medicament = Execution_metamodelFactory.eINSTANCE.createMedicament();
+			JSONObject medicamentJson = prescribedMedicationJson.getJSONObject("medicamento");
+			medicament.setId(medicamentJson.getInt("id"));
+			medicament.setName(medicamentJson.getString("nome"));
+			medicament.setUrl(medicamentJson.getString("url"));
+			medicament.setCode(medicamentJson.getInt("codigo"));
+			medicament.setIdMedicament(medicamentJson.getInt("medicamento_id"));
+			medicament.setDescription(medicamentJson.getString("descricao"));
+			medicament.setBrand(medicamentJson.getString("marca"));
+			medicament.setOutpatient(medicamentJson.getBoolean("ambulatorial"));
+			medicament.setIdUnit(medicamentJson.getInt("unidade_id"));
+			medicament.setIdAccess(medicamentJson.getInt("via_acesso_id"));
+			medicament.setStandard(medicamentJson.getString("padrao"));
+			medicament.setDailyDosage(medicamentJson.getInt("dose_diaria"));
+			medicament.setCycles(medicamentJson.getInt("ciclos"));
+			medicament.setFrequency(medicamentJson.getInt("frequencia"));
+			medicament.setFrequencyDisplay(medicamentJson.getString("frequencia_display"));
+			medicament.setTimeInterval(medicamentJson.getInt("dias_intervalo"));
+			medicament.setTimeTreatement(medicamentJson.getInt("dias_tratamento"));
+			
+			//set medicine
+			Medicine medicine = Execution_metamodelFactory.eINSTANCE.createMedicine();
+			JSONObject medicineJson = medicamentJson.getJSONObject("medicamento");
+			medicine.setId(medicineJson.getInt("id"));
+			medicine.setName(medicineJson.getString("nome"));
+			medicine.setUrl(medicineJson.getString("url"));
+			medicine.setCode(medicineJson.getInt("codigo"));
+			medicine.setOutpatient(medicineJson.getBoolean("ambulatorial"));
+			medicine.setBrand(medicineJson.getString("marca"));
+			medicine.setDescription(medicineJson.getString("descricao"));
+			//save medicine
+			medicament.getMedicine().add(medicine);
+			
+			//set unit
+			Unit unit = Execution_metamodelFactory.eINSTANCE.createUnit();
+			JSONObject unitJson = medicamentJson.getJSONObject("unidade");
+			unit.setId(unitJson.getInt("id"));
+			unit.setName(unitJson.getString("nome"));
+			unit.setUrl(unitJson.getString("url"));
+			unit.setCode(unitJson.getInt("codigo"));
+			unit.setUnit(unitJson.getString("unidade"));
+			//save unit
+			medicament.getUnit().add(unit);
+			
+			//set access
+			Access access = Execution_metamodelFactory.eINSTANCE.createAccess();
+			JSONObject accessJson = medicamentJson.getJSONObject("via_acesso");
+			access.setId(accessJson.getInt("id"));
+			access.setName(accessJson.getString("nome"));
+			access.setUrl(accessJson.getString("url"));
+			access.setCode(accessJson.getInt("codigo"));
+			//save access
+			medicament.getAccess().add(access);
+			
+			//add prescribedMedication
+			prescribedMedications.add(prescribedMedication);
+		}		
+		
+		return prescribedMedications;
 	}
 	
-	//Set step
-	public Step addStep(JSONObject json) {
+	//set prescription exam
+	private Prescription createPrescription(JSONObject json) throws ParseException {
+		Prescription prescription = Execution_metamodelFactory.eINSTANCE.createPrescription();
+		
+		if (!json.isNull("prescricao")) {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());
+			JSONObject prescriptionJson = json.getJSONObject("prescricao");			
+			prescription.setId(prescriptionJson.getInt("id"));
+			prescription.setSuccess(prescriptionJson.getBoolean("sucesso"));
+			prescription.setMessage(prescriptionJson.getString("mensagem"));			
+			String requestStr = prescriptionJson.getString("data_solicitacao");
+			Date requestDate = dateFormat.parse(requestStr);			
+			prescription.setRequestDate(requestDate);
+		}		
+		
+		return prescription;
+	}
+	
+	//set step
+	private Step createStep(JSONObject json) {
 		JSONObject stepJson = json.getJSONObject("passo");
 		Step step = Execution_metamodelFactory.eINSTANCE.createStep();
 		step.setId(stepJson.getInt("id"));
@@ -381,8 +465,8 @@ public class ExecutedStep {
 		return step;
 	}
 	
-	//Set justification
-	public Justification addJustification(JSONObject json) {			
+	//set justification
+	private Justification createJustification(JSONObject json) {			
 		Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
 
 		if (!json.isNull("justificativa")) {	
@@ -398,8 +482,8 @@ public class ExecutedStep {
 		return justification;
 	}
 	
-	//Set creator
-	public Creator addCreator(JSONObject json) {
+	//set creator
+	private Creator createCreator(JSONObject json) {
 		JSONObject creatorJson = json.getJSONObject("criado_por");
 		Creator creator = Execution_metamodelFactory.eINSTANCE.createCreator();
 		creator.setId(creatorJson.getInt("id"));
@@ -415,8 +499,8 @@ public class ExecutedStep {
 		return creator;
 	}
 	
-	//Set executor
-	public Executor addExecutor(JSONObject json) {
+	//set executor
+	private Executor createExecutor(JSONObject json) {
 		JSONObject executorJson = json.getJSONObject("executado_por");
 		Executor executor = Execution_metamodelFactory.eINSTANCE.createExecutor();
 		executor.setId(executorJson.getInt("id"));

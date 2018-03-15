@@ -1,0 +1,84 @@
+{
+    "id": 5499,
+    "type": "AuxilioCondutaExecutado",
+    "type_verbose": "Auxílio Conduta Executado",
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5499/",
+    "previous": {
+        "url": "/atendimentos/422/protocolos/3262/passos/5498/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5498/"
+    },
+    "next": {
+        "url": "/atendimentos/422/protocolos/3262/passos/5500/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5500/"
+    },
+    "is_current": false,
+    "reworked": false,
+    "executado": true,
+    "data_criacao": "2018-02-02T18:14:40.913030-03:00",
+    "data_modificacao": "2018-02-02T18:14:56.143313-03:00",
+    "data_execucao": "2018-02-02T18:14:56.127941-03:00",
+    "justificativa": null,
+    "criado_por_id": 1,
+    "criado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 3,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 3,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "executado_por_id": 1,
+    "executado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 3,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 3,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "passo_id": 480,
+    "passo": {
+        "id": 480,
+        "type": "AuxilioConduta",
+        "type_verbose": "Auxílio Conduta",
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/auxilios-conduta/480/",
+        "nome": "Verificar Fatores Agravantes",
+        "descricao": "Verificar se a paciente apresenta presença de leucorréia ou irritação vaginal. (negativo para gravidez)",
+        "is_initial": false,
+        "is_terminal": false,
+        "obrigatoriedade": false
+    },
+    "protocolo_id": 124,
+    "protocolo_executado_id": 3262,
+    "respostas": [
+        {
+            "id": 8553,
+            "type": "RespostaSimOuNao",
+            "type_verbose": "Resposta Sim Ou Não",
+            "pergunta": {
+                "id": 372,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/auxilios-conduta/480/perguntas/372/",
+                "texto": "Paciente apresenta leucorréia ou irritação vaginal?",
+                "categoria_id": null,
+                "categoria": null,
+                "variavel": {
+                    "id": 568,
+                    "type": "SimOuNao",
+                    "type_verbose": "Sim Ou Não",
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/variaveis-globais/568/",
+                    "nome": "leucorreia_irritacao",
+                    "peso": 1.0,
+                    "valor": false,
+                    "vinculo": null
+                }
+            },
+            "valor": true
+        }
+    ]
+}

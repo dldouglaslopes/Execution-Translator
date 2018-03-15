@@ -1,0 +1,242 @@
+{
+    "id": 3248,
+    "type": "TratamentoExecutado",
+    "type_verbose": "Tratamento Executado",
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3248/",
+    "previous": {
+        "url": "/atendimentos/921/protocolos/1483/passos/3247/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3247/"
+    },
+    "next": null,
+    "is_current": false,
+    "reworked": false,
+    "executado": false,
+    "data_criacao": "2017-11-24T08:58:08.297617-03:00",
+    "data_modificacao": "2017-11-24T08:58:08.297708-03:00",
+    "data_execucao": null,
+    "justificativa": null,
+    "criado_por_id": 741,
+    "criado_por": {
+        "id": 741,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/",
+        "codigo": 1,
+        "email": "",
+        "login": "CRM2",
+        "nome": "PAULO",
+        "numero_conselho": 2,
+        "tipo_conselho": "CRM",
+        "uf": "CE"
+    },
+    "executado_por_id": null,
+    "executado_por": null,
+    "passo_id": 2,
+    "passo": {
+        "id": 2,
+        "type": "Tratamento",
+        "type_verbose": "Tratamento",
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/tratamentos/2/",
+        "nome": "Tratamento Fratura de Grau I/II",
+        "descricao": "Orientação de antibioticoterapia e tratamento cirurgico pré-definidos com equipe de ccih e ortopedia para fratura grau I/II.",
+        "is_initial": false,
+        "is_terminal": false,
+        "obrigatoriedade": false
+    },
+    "protocolo_id": 1,
+    "protocolo_executado_id": 1483,
+    "exames_prescritos_ids": [
+        2425,
+        2426
+    ],
+    "exames_prescritos": [
+        {
+            "id": 2425,
+            "prescricao": {
+                "id": 1467,
+                "sucesso": true,
+                "mensagem": "",
+                "data_solicitacao": "2017-11-24T08:58:19.864075-03:00"
+            },
+            "resultado": null,
+            "exame": {
+                "id": 1,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/tratamentos/2/exames/1/",
+                "exame_id": 5268,
+                "exame": {
+                    "id": 5268,
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/5268/",
+                    "codigo": 28100581,
+                    "nome": "CULTURAS EM GERAL COMPREENDENDO CITO-PARASITOLOGICO (QUANDO NECESSARIO), BACTERIOSCOPICO E IDENTIFICACAO DE BACTERIAS AEROBIAS EM MATERIAS OU LIQUIDOS ORGANICOS, TAIS COMO, EXSUDATOS,TRANSUDATOS, ESCARRO, ESPERMA, LIQUOR, URINA E SECRECOES",
+                    "descricao": "CULTURAS EM GERAL",
+                    "somente_emergencia": false,
+                    "membros_pares": false
+                },
+                "lado_membro": "",
+                "lado_membro_display": "",
+                "quantidade": 1,
+                "justificativa": "Protocolo de Fratura Exposta",
+                "indicacao_clinica": "Protocolo de Fratura Exposta"
+            },
+            "numero_guia": 30883445,
+            "laudo": "",
+            "complemento": {
+                "id": 1553,
+                "lado_membro": "",
+                "lado_membro_display": "",
+                "quantidade": null,
+                "justificativa": "",
+                "indicacao_clinica": ""
+            }
+        },
+        {
+            "id": 2426,
+            "prescricao": {
+                "id": 1468,
+                "sucesso": true,
+                "mensagem": "",
+                "data_solicitacao": "2017-11-24T08:58:19.909986-03:00"
+            },
+            "resultado": null,
+            "exame": {
+                "id": 81,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/tratamentos/2/exames/81/",
+                "exame_id": 5288,
+                "exame": {
+                    "id": 5288,
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/5288/",
+                    "codigo": 28100670,
+                    "nome": "ANTIBIOGRAMA AUTOMATIZADO",
+                    "descricao": "ANTIBIOGRAMA AUTOMATIZADO",
+                    "somente_emergencia": true,
+                    "membros_pares": false
+                },
+                "lado_membro": "",
+                "lado_membro_display": "",
+                "quantidade": 1,
+                "justificativa": "infecção",
+                "indicacao_clinica": "fratura exposta"
+            },
+            "numero_guia": 30883445,
+            "laudo": "",
+            "complemento": {
+                "id": 1554,
+                "lado_membro": "",
+                "lado_membro_display": "",
+                "quantidade": null,
+                "justificativa": "",
+                "indicacao_clinica": ""
+            }
+        }
+    ],
+    "procedimentos_prescritos_ids": [],
+    "procedimentos_prescritos": [],
+    "internamentos_prescritos_ids": [],
+    "internamentos_prescritos": [],
+    "medicamentos_prescritos_ids": [
+        2427,
+        2428
+    ],
+    "medicamentos_prescritos": [
+        {
+            "id": 2427,
+            "prescricao": {
+                "id": 1465,
+                "sucesso": true,
+                "mensagem": "Medicamento prescrito com sucesso",
+                "data_solicitacao": "2017-11-24T08:58:15.328525-03:00"
+            },
+            "resultado": null,
+            "medicamento": {
+                "id": 2,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/tratamentos/2/medicamentos/2/",
+                "medicamento_id": 317,
+                "medicamento": {
+                    "id": 317,
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/medicamentos/317/",
+                    "codigo": 37400,
+                    "nome": "GENTAMICINA 80 MG AMPL 2 ML",
+                    "descricao": "",
+                    "marca": "BIOCHIMICO",
+                    "ambulatorial": true
+                },
+                "codigo": "37400",
+                "nome": "GENTAMICINA 80 MG AMPL 2 ML",
+                "descricao": "",
+                "marca": "BIOCHIMICO",
+                "ambulatorial": true,
+                "unidade_id": 50,
+                "unidade": {
+                    "id": 50,
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/unidades-usuais/50/",
+                    "codigo": "MG",
+                    "nome": "MILIGRAMA",
+                    "unidade": "mg"
+                },
+                "via_acesso_id": 8,
+                "via_acesso": {
+                    "id": 8,
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/vias-de-acesso/8/",
+                    "codigo": 6,
+                    "nome": "ENDOVENOSA"
+                },
+                "dose_diaria": 240,
+                "ciclos": 1,
+                "dias_intervalo": 1,
+                "dias_tratamento": 10,
+                "frequencia": "24",
+                "frequencia_display": "24/24",
+                "padrao": null
+            }
+        },
+        {
+            "id": 2428,
+            "prescricao": {
+                "id": 1466,
+                "sucesso": true,
+                "mensagem": "Medicamento prescrito com sucesso",
+                "data_solicitacao": "2017-11-24T08:58:15.376754-03:00"
+            },
+            "resultado": null,
+            "medicamento": {
+                "id": 221,
+                "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/tratamentos/2/medicamentos/221/",
+                "medicamento_id": 753,
+                "medicamento": {
+                    "id": 753,
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/medicamentos/753/",
+                    "codigo": 42099,
+                    "nome": "KEFLIN 1 GR FRAP 1 UD",
+                    "descricao": "",
+                    "marca": "LILLY",
+                    "ambulatorial": true
+                },
+                "codigo": "42099",
+                "nome": "KEFLIN 1 GR FRAP 1 UD",
+                "descricao": "",
+                "marca": "LILLY",
+                "ambulatorial": true,
+                "unidade_id": 49,
+                "unidade": {
+                    "id": 49,
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/unidades-usuais/49/",
+                    "codigo": "GR",
+                    "nome": "GRAMA",
+                    "unidade": "g"
+                },
+                "via_acesso_id": 8,
+                "via_acesso": {
+                    "id": 8,
+                    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/vias-de-acesso/8/",
+                    "codigo": 6,
+                    "nome": "ENDOVENOSA"
+                },
+                "dose_diaria": 2,
+                "ciclos": 1,
+                "dias_intervalo": 1,
+                "dias_tratamento": 1,
+                "frequencia": "4",
+                "frequencia_display": "4/4",
+                "padrao": null
+            }
+        }
+    ]
+}

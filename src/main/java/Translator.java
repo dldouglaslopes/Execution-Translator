@@ -33,27 +33,27 @@ public class Translator {
 			
 			switch (type) {
 			case "AuxilioCondutaExecutado":					
-				ePathway.getElement().add(executedStep.addEAuxiliaryConduct(json, resource));
+				ePathway.getElement().add(executedStep.createEAuxiliaryConduct(json, resource));
 				break;
 				
 			case "TratamentoExecutado":	
-				ePathway.getElement().add(executedStep.addETreatment(json, resource));
+				ePathway.getElement().add(executedStep.createETreatment(json, resource));
 				break;
 						
 			case "ReceitaExecutado":	
-				ePathway.getElement().add(executedStep.addEPrescription(json, resource));
+				ePathway.getElement().add(executedStep.createEPrescription(json, resource));
 				break;
 				
 			case "EncaminhamentoExecutado":	
-				ePathway.getElement().add(executedStep.addEReferral(json, resource));
+				ePathway.getElement().add(executedStep.createEReferral(json, resource));
 				break;
 				
 			case "InformacaoExecutado":
-				ePathway.getElement().add(executedStep.addEInformation(json, resource));
+				ePathway.getElement().add(executedStep.createEInformation(json, resource));
 				break;
 				
 			case "AltaExecutado":
-				ePathway.getElement().add(executedStep.addEDischarge(json, resource));
+				ePathway.getElement().add(executedStep.createEDischarge(json, resource));
 				break;
 	
 			default:				

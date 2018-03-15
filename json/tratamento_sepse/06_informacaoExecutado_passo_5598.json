@@ -1,0 +1,56 @@
+{
+    "id": 5598,
+    "type": "InformacaoExecutado",
+    "type_verbose": "Informação Executado",
+    "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5598/",
+    "previous": {
+        "url": "/atendimentos/508/protocolos/3303/passos/5597/",
+        "absolute_url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5597/"
+    },
+    "next": null,
+    "is_current": false,
+    "reworked": false,
+    "executado": true,
+    "data_criacao": "2018-02-04T10:16:38.650186-03:00",
+    "data_modificacao": "2018-02-04T10:16:52.775359-03:00",
+    "data_execucao": "2018-02-04T10:16:52.775172-03:00",
+    "justificativa": null,
+    "criado_por_id": 1,
+    "criado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 5,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 5,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "executado_por_id": 1,
+    "executado_por": {
+        "id": 1,
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/",
+        "codigo": 5,
+        "email": "@hapvida.com.br",
+        "login": "LEOBERNA",
+        "nome": "LEONARDO",
+        "numero_conselho": 5,
+        "tipo_conselho": "CRM",
+        "uf": "RN"
+    },
+    "passo_id": 2252,
+    "passo": {
+        "id": 2252,
+        "type": "Informacao",
+        "type_verbose": "Informação",
+        "url": "http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/informacoes/2252/",
+        "nome": "Aviso: Encaminhar paciente ao líder local",
+        "descricao": "* ATENÇÃO:\nDar seguimento ao tratamento junto ao líder local:\n\n- MONITORIZAÇÃO PA + OXIMETRIA DE PULSO (SE PAM< 65 OU LACTATO > 18MG/DL)\n- PASSAR SVD E ACOMPANHAR DÉBITO URINÁRIO (ALVO 0,5ML/KG/H)",
+        "is_initial": false,
+        "is_terminal": true,
+        "obrigatoriedade": false
+    },
+    "protocolo_id": 764,
+    "protocolo_executado_id": 3303
+}
