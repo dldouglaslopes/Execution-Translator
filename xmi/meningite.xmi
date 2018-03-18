@@ -5,35 +5,41 @@
     <step id="221" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/auxilios-conduta/221/" name="Verifique as condições do paciente" description="Avalie as condições do paciente para dar seguimento ao tratamento adequado." isInitial="true"/>
     <creator id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="ivojr@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
     <executor id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="ivojr@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
+    <previous/>
+    <next url="/atendimentos/423/protocolos/688/passos/952/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/952/"/>
     <answer id="1560" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
-      <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+      <value xsi:type="MetamodelExecution:YesOrNo"/>
       <question id="183" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/auxilios-conduta/221/perguntas/183/" name="Idade > 50 anos?">
         <variable id="283" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/951/" name="idade" weight="1.0">
-          <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+          <value xsi:type="MetamodelExecution:YesOrNo"/>
+          <bond/>
         </variable>
       </question>
     </answer>
     <answer id="1561" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
-      <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+      <value xsi:type="MetamodelExecution:YesOrNo"/>
       <question id="184" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/auxilios-conduta/221/perguntas/184/" name="Histórico de etilismo?">
         <variable id="284" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/951/" name="etilismo" weight="1.0">
-          <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+          <value xsi:type="MetamodelExecution:YesOrNo"/>
+          <bond/>
         </variable>
       </question>
     </answer>
     <answer id="1562" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
-      <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+      <value xsi:type="MetamodelExecution:YesOrNo"/>
       <question id="185" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/auxilios-conduta/221/perguntas/185/" name="Imunossupressão?">
         <variable id="285" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/951/" name="imunossupressao" weight="1.0">
-          <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+          <value xsi:type="MetamodelExecution:YesOrNo"/>
+          <bond/>
         </variable>
       </question>
     </answer>
     <answer id="1563" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
-      <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+      <value xsi:type="MetamodelExecution:YesOrNo"/>
       <question id="186" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/auxilios-conduta/221/perguntas/186/" name="Procedimento Neurocirúrgico?">
         <variable id="286" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/951/" name="neurocirurgico" weight="1.0">
-          <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+          <value xsi:type="MetamodelExecution:YesOrNo"/>
+          <bond/>
         </variable>
       </question>
     </answer>
@@ -43,6 +49,8 @@
     <step id="222" type="Tratamento" typeVerbose="Tratamento" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/tratamentos/222/" name="Tratamento Padrão" description="Tratamento para pacientes que não possuem nenhum dos critérios agravantes."/>
     <creator id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
     <executor id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
+    <previous url="/atendimentos/423/protocolos/688/passos/951/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/951/"/>
+    <next url="/atendimentos/423/protocolos/688/passos/953/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/953/"/>
     <prescribedexam id="725" report="">
       <examination id="61" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/tratamentos/222/exames/61/" idExamination="5238" sideLimb="" quantity="1" justification="Protocolo de Meningite" clinicalIndication="Protocolo de Meningite" sideLimbDisplay="">
         <exam id="5238" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/5238/" code="28100298" name="HEMOCULTURA (POR AMOSTRA, ANTIBIOGRAMA INCLUIDO QUANDO NECESSARIO)" description="HEMOCULTURA" onlyEmergency="true"/>
@@ -91,11 +99,14 @@
     <step id="226" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/auxilios-conduta/226/" name="Avaliar resultado dos exames" description="Avalie o resultado dos exames do paciente."/>
     <creator id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
     <executor/>
+    <previous url="/atendimentos/423/protocolos/688/passos/952/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/952/"/>
+    <next/>
     <answer id="1564" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
-      <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+      <value xsi:type="MetamodelExecution:YesOrNo"/>
       <question id="201" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/auxilios-conduta/226/perguntas/201/" name="Paciente apresenta hipertensão craniana?">
         <variable id="305" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/953/" name="hiper-craniana" weight="1.0">
-          <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+          <value xsi:type="MetamodelExecution:YesOrNo"/>
+          <bond/>
         </variable>
       </question>
     </answer>

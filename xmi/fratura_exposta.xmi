@@ -5,19 +5,23 @@
     <step id="1" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/auxilios-conduta/1/" name="Verificar Grau da Fratura" description="Informe o Grau da fratura baseado na classificação de Gustillo" isInitial="true"/>
     <creator id="741" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/" code="1" email="" name="PAULO" typeCouncil="CRM" login="CRM2" numberCouncil="2" state="CE"/>
     <executor id="741" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/" code="1" email="" name="PAULO" typeCouncil="CRM" login="CRM2" numberCouncil="2" state="CE"/>
+    <previous/>
+    <next url="/atendimentos/921/protocolos/1483/passos/3248/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3248/"/>
     <answer id="6285" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
       <question id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/auxilios-conduta/1/perguntas/1/" name="Fratura exposta Grau I / II">
         <variable id="1" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3247/" name="frat-grau12" weight="1.0">
-          <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+          <value xsi:type="MetamodelExecution:YesOrNo"/>
+          <bond/>
         </variable>
       </question>
     </answer>
     <answer id="6286" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
-      <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+      <value xsi:type="MetamodelExecution:YesOrNo"/>
       <question id="2" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/auxilios-conduta/1/perguntas/2/" name="Fratura exposta Grau III / IV">
         <variable id="2" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3247/" name="frat-grau34" weight="1.0">
-          <value xsi:type="MetamodelExecution:YesOrNo" value="false"/>
+          <value xsi:type="MetamodelExecution:YesOrNo"/>
+          <bond/>
         </variable>
       </question>
     </answer>
@@ -27,6 +31,8 @@
     <step id="2" type="Tratamento" typeVerbose="Tratamento" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/tratamentos/2/" name="Tratamento Fratura de Grau I/II" description="Orientação de antibioticoterapia e tratamento cirurgico pré-definidos com equipe de ccih e ortopedia para fratura grau I/II."/>
     <creator id="741" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/" code="1" email="" name="PAULO" typeCouncil="CRM" login="CRM2" numberCouncil="2" state="CE"/>
     <executor/>
+    <previous url="/atendimentos/921/protocolos/1483/passos/3247/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3247/"/>
+    <next/>
     <prescribedexam id="2425" report="" numberGuide="30883445">
       <examination id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/tratamentos/2/exames/1/" idExamination="5268" sideLimb="" quantity="1" justification="Protocolo de Fratura Exposta" clinicalIndication="Protocolo de Fratura Exposta" sideLimbDisplay="">
         <exam id="5268" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/integracao/exames/5268/" code="28100581" name="CULTURAS EM GERAL COMPREENDENDO CITO-PARASITOLOGICO (QUANDO NECESSARIO), BACTERIOSCOPICO E IDENTIFICACAO DE BACTERIAS AEROBIAS EM MATERIAS OU LIQUIDOS ORGANICOS, TAIS COMO, EXSUDATOS,TRANSUDATOS, ESCARRO, ESPERMA, LIQUOR, URINA E SECRECOES" description="CULTURAS EM GERAL"/>

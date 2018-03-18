@@ -91,8 +91,7 @@ public class ExecutedPathway {
 		Date conclusionDate = dateFormat.parse(conclusionStr);
 		ePathway.setConclusionDate(conclusionDate);
 		
-		JSONArray idsExecutionStepJson = json.getJSONArray("passos_executados_ids");
-		
+		JSONArray idsExecutionStepJson = json.getJSONArray("passos_executados_ids");		
 		for (int i = 0; i < idsExecutionStepJson.length(); i++) {
 			ePathway.getIdsExecutedStep().add(idsExecutionStepJson.optInt(i));
 		}

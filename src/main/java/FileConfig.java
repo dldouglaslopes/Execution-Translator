@@ -16,6 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class FileConfig {	
+	//convert json file to xmi file
 	public JSONObject toJSONObject(String path) throws IOException, JSONException{
 		String file = "";
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));        
@@ -29,6 +30,8 @@ public class FileConfig {
         return (new JSONObject(file));	
 	}
 	
+	
+	//create a resource of the xmi type
 	public Resource createResource(String output, String[] fileExtensions, ResourceSet resourceSet) {
 	     for (String fileExtension : fileExtensions) {
 	        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(fileExtension, new XMLResourceFactoryImpl());
@@ -41,6 +44,7 @@ public class FileConfig {
 	     return resource;
 	}
 	
+	//configure xmi file
 	public void saveResource(Resource resource) {
 		Map saveOptions = ((XMLResource)resource).getDefaultSaveOptions();
 		saveOptions.put(XMLResource.OPTION_CONFIGURATION_CACHE, Boolean.TRUE);
