@@ -1,3 +1,4 @@
+package translator;
 import java.text.ParseException;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -6,6 +7,9 @@ import org.json.JSONObject;
 
 import MetamodelExecution.EPathway;
 import MetamodelExecution.Execution_metamodelFactory;
+import config.file.FileConfig;
+import translator.pathway.ExecutedPathway;
+import translator.pathway.step.ExecutedStep;
 
 public class Translator {
 	private Resource resource;
