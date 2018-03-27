@@ -57,5 +57,11 @@
 		<artifactId>mongo-java-driver</artifactId>
 		<version>3.6.0</version>
 	</dependency>
+	
+	<dependency>
+	    <groupId>org.mongodb</groupId>
+	    <artifactId>mongodb-driver-core</artifactId>
+	    <version>3.6.0</version>
+	</dependency>
   </dependencies>
 </project>

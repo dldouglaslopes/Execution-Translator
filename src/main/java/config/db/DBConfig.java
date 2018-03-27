@@ -1,29 +1,34 @@
 package config.db;
 
+import org.bson.Document;
+import org.bson.codecs.Codec;
+import org.bson.codecs.configuration.CodecRegistries;
+import org.bson.codecs.configuration.CodecRegistry;
+
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
+import MetamodelExecution.EPathway;
+import MetamodelExecution.impl.EPathwayImpl;
+
 public class DBConfig {
-	private MongoClient mongo;
-	private MongoDatabase db;
+	private MongoClient mongoClient;
+	private MongoDatabase mongoDatabase;
 	
-	public MongoDatabase getDb() {
-		return db;
+	public DBConfig() {		
+		this.mongoClient = new MongoClient("localhost"); //creating a Mongo client
+		this.mongoDatabase = mongoClient.getDatabase("teste"); //creating a database
 	}
 	
-	public MongoClient getMongo() {
-		return mongo;
+	public void saveEPathway(EPathway ePathway) {
+		MongoCollection<EPathwayImpl> collection =  mongoDatabase.getCollection("testpathway", EPathwayImpl.class);
+		//Document ePathwayDoc = new Document().append("test", ePathway);
+		collection.insertOne((EPathwayImpl) ePathway);				
 	}
-	
-	public void connect() {
-		this.mongo = new MongoClient("localhost", 27017);
-	}
-	
-	public void createDatabase(String database) {
-		this.db = mongo.getDatabase(database);
-	}
-	
-	public void createCollection(String collection) {
-		db.getCollection(collection);
+
+	public void close() {
+		mongoClient.close();
 	}
 }

@@ -2,7 +2,6 @@ package translator;
 import java.text.ParseException;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.json.JSONObject;
 
 import MetamodelExecution.EPathway;
@@ -12,27 +11,28 @@ import translator.pathway.ExecutedPathway;
 import translator.pathway.step.ExecutedStep;
 
 public class Translator {
-	private Resource resource;
-	private FileConfig file;	
 	private EPathway ePathway;
-	private ExecutedPathway executedPathway;
-	private ExecutedStep executedStep;	
 	
+	public EPathway getePathway() {
+		return ePathway;
+	}
+
 	//Constructor
-	public Translator(String output){
-		this.file = new FileConfig();
-		this.resource = file.createResource(output, new String[] {"xml", "xmi"}, new ResourceSetImpl());
+	public Translator(){		
 		this.ePathway = Execution_metamodelFactory.eINSTANCE.createEPathway();	
-		this.executedPathway = new ExecutedPathway();
-		this.executedStep = new ExecutedStep();	
 	}
 	
 	//convert JSON files in one XMI file
 	public void toXMI(JSONObject json) throws ParseException{
+		FileConfig fileConfig = new FileConfig();
+		Resource resource = fileConfig.getResource();		
+		
 		if (!json.has("type")) {
+			ExecutedPathway executedPathway = new ExecutedPathway();
 			ePathway = executedPathway.addEPathway(json, resource, ePathway);
 		}
 		else{
+			ExecutedStep executedStep = new ExecutedStep();	
 			String type = json.getString("type");
 			
 			switch (type) {
@@ -60,15 +60,10 @@ public class Translator {
 				ePathway.getElement().add(executedStep.createEDischarge(json, resource));
 				break;
 	
-			default:				
+			default:
+				System.out.println("UNKNOWN TYPE!");
 				break;
 			}	
 		}		
-	}
-	
-	public void saveContents() {
-		//save all contents
-		resource.getContents().add(ePathway);		
-		file.saveResource(resource);
 	}
 }
