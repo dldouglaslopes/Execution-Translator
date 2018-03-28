@@ -18,7 +18,7 @@ import config.file.FileConfig;
 import translator.Translator;
 
 public class Init {
-	public static void main(String[] args) throws JSONException, IOException, ParseException, ParserConfigurationException, SAXException {
+	public static void main(String[] args) throws JSONException, IOException, ParseException, ParserConfigurationException, SAXException, InterruptedException {
 		List<EPathway> pathways = new ArrayList<EPathway>();
 		
 		//JSON to XMI
@@ -44,13 +44,14 @@ public class Init {
 			fileConfig.saveContents(translator.getePathway()); //save the generated contents			
 			pathways.add(translator.getePathway());
 			System.out.println("\n*" + namesFoldersJson[i] + ".xmi ---> OK \n");
-		}
+		}	
 		
-		//add XMIs in MongoDB
-		DBConfig dbConfig = new DBConfig();
-		System.out.println("*Connected to the database --> OK");		
-		dbConfig.saveEPathway(pathways.get(0));	
+		//add XMIs in MongoDB{			
+		DBConfig dbConfig = new DBConfig(); //config mongo
+		System.out.println("*Connected to the database --> OK");				
+		dbConfig.saveEPathway(pathways.get(0));			
+		System.out.println("-->XMI(s) added in MongoDB.");			
 		dbConfig.close();
-		System.out.println("\n--> XMI added in MongoDB.");
+		System.out.println("*Closed to the database --> OK");
 	}
 }
