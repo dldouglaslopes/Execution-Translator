@@ -43,15 +43,24 @@ public class Init {
 			
 			fileConfig.saveContents(translator.getePathway()); //save the generated contents			
 			pathways.add(translator.getePathway());
-			System.out.println("\n*" + namesFoldersJson[i] + ".xmi ---> OK \n");
+			System.err.println("\n" + namesFoldersJson[i] + ".xmi ---> OK \n");
 		}	
-		
-		//add XMIs in MongoDB{			
-		DBConfig dbConfig = new DBConfig(); //config mongo
+				
+		DBConfig dbConfig = new DBConfig(); //configuring MongoDB
 		System.out.println("*Connected to the database --> OK");				
-		dbConfig.saveEPathway(pathways.get(0));			
-		System.out.println("-->XMI(s) added in MongoDB.");			
-		dbConfig.close();
+		
+		if (dbConfig.hasEPathway(pathways.get(0).getName())) {
+			dbConfig.updateEPathway(pathways.get(0).getName(), pathways.get(0));
+			System.out.println("-->XMI(s) updated in MongoDB.");			
+		}
+		else {
+			dbConfig.saveEPathway(pathways.get(0));	//adding executed pathway in MongoDB
+			System.out.println("-->XMI(s) added in MongoDB.");
+		}
+				
+		//dbConfig.deleteEPathway(pathways.get(0).getName()); //deleting the contents of executed pathway
+					
+		dbConfig.close(); //closing MongoDB client
 		System.out.println("*Closed to the database --> OK");
 	}
 }
