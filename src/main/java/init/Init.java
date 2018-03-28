@@ -15,6 +15,7 @@ import org.xml.sax.SAXException;
 import MetamodelExecution.EPathway;
 import config.db.DBConfig;
 import config.file.FileConfig;
+import database.DBOperations;
 import translator.Translator;
 
 public class Init {
@@ -47,14 +48,15 @@ public class Init {
 		}	
 				
 		DBConfig dbConfig = new DBConfig(); //configuring MongoDB
+		DBOperations dbOperations = new DBOperations(); //operation of MongoDB
 		System.out.println("*Connected to the database --> OK");				
 		
-		if (dbConfig.hasEPathway(pathways.get(0).getName())) {
-			dbConfig.updateEPathway(pathways.get(0).getName(), pathways.get(0));
+		if (dbOperations.hasEPathway(pathways.get(0).getName())) {
+			dbOperations.updateEPathway(pathways.get(0).getName(), pathways.get(0));
 			System.out.println("-->XMI(s) updated in MongoDB.");			
 		}
 		else {
-			dbConfig.saveEPathway(pathways.get(0));	//adding executed pathway in MongoDB
+			dbOperations.saveEPathway(pathways.get(0));	//adding executed pathway in MongoDB
 			System.out.println("-->XMI(s) added in MongoDB.");
 		}
 				
