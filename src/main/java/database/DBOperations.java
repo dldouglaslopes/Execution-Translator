@@ -30,6 +30,6 @@ public class DBOperations {
 	}
 	
 	public boolean hasEPathway(String name) {
-		return collection.find(Filters.eq("name", name)) != null;
+		return collection.count(Filters.eq("name", name)) > 0;
 	}
 }

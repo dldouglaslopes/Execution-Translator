@@ -25,8 +25,8 @@ public class DBConfig {
 	public DBConfig() {	
 		this.codecRegistry = fromRegistries(MongoClient.getDefaultCodecRegistry(),fromProviders(PojoCodecProvider.builder().automatic(true).build())); //create a codec registry
 		this.mongoClient = new MongoClient("localhost", MongoClientOptions.builder().codecRegistry(codecRegistry).build()); //creating a Mongo client
-		this.mongoDatabase = mongoClient.getDatabase("teste6").withCodecRegistry(codecRegistry); //create a database
-		this.collection = mongoDatabase.getCollection("ExecutedPathway").withCodecRegistry(codecRegistry); //create a collection
+		this.mongoDatabase = mongoClient.getDatabase("novo").withCodecRegistry(codecRegistry); //create a database
+		this.collection = mongoDatabase.getCollection("executedpathway").withCodecRegistry(codecRegistry); //create a collection
 	}
 	
 	public void close() {

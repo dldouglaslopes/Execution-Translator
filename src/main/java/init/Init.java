@@ -47,16 +47,17 @@ public class Init {
 			System.err.println("\n" + namesFoldersJson[i] + ".xmi ---> OK \n");
 		}	
 				
+		EPathway pathway = pathways.get(0);
 		DBConfig dbConfig = new DBConfig(); //configuring MongoDB
 		DBOperations dbOperations = new DBOperations(); //operation of MongoDB
-		System.out.println("*Connected to the database --> OK");				
+		System.out.println("*Connected to the database --> OK");		
 		
-		if (dbOperations.hasEPathway(pathways.get(0).getName())) {
-			dbOperations.updateEPathway(pathways.get(0).getName(), pathways.get(0));
+		if (dbOperations.hasEPathway(pathway.getName())) {
+			dbOperations.updateEPathway(pathway.getName(), pathway);
 			System.out.println("-->XMI(s) updated in MongoDB.");			
 		}
 		else {
-			dbOperations.saveEPathway(pathways.get(0));	//adding executed pathway in MongoDB
+			dbOperations.saveEPathway(pathway);	//adding executed pathway in MongoDB
 			System.out.println("-->XMI(s) added in MongoDB.");
 		}
 				
