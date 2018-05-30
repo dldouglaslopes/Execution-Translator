@@ -16,7 +16,7 @@ public class DBOperations {
 		this.collection = new DBConfig().getCollection();
 	}	
 	
-	public void saveEPathway(EPathway ePathway) {		
+	public void saveEPathway(String name, EPathway ePathway) {		
 		Document ePathwayDoc = new Document("name", ePathway.getName()).append("xmi", ePathway); //send epathway to document
 		collection.insertOne(ePathwayDoc);	//insert a document	in a collection
 	}

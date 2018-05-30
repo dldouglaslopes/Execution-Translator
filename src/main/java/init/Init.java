@@ -47,21 +47,24 @@ public class Init {
 			System.err.println("\n" + namesFoldersJson[i] + ".xmi ---> OK \n");
 		}	
 				
-		EPathway pathway = pathways.get(0);
 		DBConfig dbConfig = new DBConfig(); //configuring MongoDB
 		DBOperations dbOperations = new DBOperations(); //operation of MongoDB
 		System.out.println("*Connected to the database --> OK");		
 		
-		if (dbOperations.hasEPathway(pathway.getName())) {
-			dbOperations.updateEPathway(pathway.getName(), pathway);
-			System.out.println("-->XMI(s) updated in MongoDB.");			
+		for (int i = 0; i < pathways.size(); i++) {
+			if (dbOperations.hasEPathway(pathways.get(i).getName())) {
+				dbOperations.updateEPathway(pathways.get(i).getName(), pathways.get(i));
+				System.out.println("-->XMI(s) updated in MongoDB.");			
+			}
+			else {
+				dbOperations.saveEPathway(pathways.get(i).getName(), pathways.get(i));	//adding executed pathway in MongoDB
+				System.out.println("-->XMI(s) added in MongoDB.");
+			}
+					
+			//dbConfig.deleteEPathway(pathways.get(0).getName()); //deleting the contents of executed pathway
 		}
-		else {
-			dbOperations.saveEPathway(pathway);	//adding executed pathway in MongoDB
-			System.out.println("-->XMI(s) added in MongoDB.");
-		}
-				
-		//dbConfig.deleteEPathway(pathways.get(0).getName()); //deleting the contents of executed pathway
+		
+		//Adicionar diretamente de pasta com arquivo XMI
 					
 		dbConfig.close(); //closing MongoDB client
 		System.out.println("*Closed to the database --> OK");

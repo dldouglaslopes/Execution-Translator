@@ -422,7 +422,6 @@
     <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <previous url="/atendimentos/624/protocolos/1129/passos/2584/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/"/>
     <next/>
-    <prescribedprescriptionitem/>
     <prescription/>
   </element>
   <idsExecutedStep>2567</idsExecutedStep>

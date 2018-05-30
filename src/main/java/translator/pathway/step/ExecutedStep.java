@@ -382,14 +382,14 @@ public class ExecutedStep {
 		
 		ePrescription.setText(json.getString("texto"));
 		
-		//set prescribed medication 
+		//set ids prescribed medication 
 		JSONArray idsPrescribedMedicationJson = json.getJSONArray("medicamentos_prescritos_ids");		
 		for (int i = 0; i < idsPrescribedMedicationJson.length(); i++) {
 			//save prescribed medication 
 			ePrescription.getIdsPrescribedMedication().add(idsPrescribedMedicationJson.optInt(i));
 		}
 		
-		//set prescribed prescription item
+		//set ids prescribed prescription item
 		JSONArray idsPrescribedPrescriptionItemJson = json.getJSONArray("medicamentos_prescritos_ids");		
 		for (int i = 0; i < idsPrescribedPrescriptionItemJson.length(); i++) {
 			//save prescribed PrescriptionItem 
@@ -400,9 +400,12 @@ public class ExecutedStep {
 		ePrescription.getPrescription().add(createPrescription(json));
 		
 		//set prescription prescription item
-		PrescribedPrescriptionItem prescribedPrescriptionItem = Execution_metamodelFactory.eINSTANCE.createPrescribedPrescriptionItem();
-		//save prescription prescription item
-		ePrescription.getPrescribedprescriptionitem().add(prescribedPrescriptionItem);
+		JSONArray prescribedPrescriptionItens = json.getJSONArray("itens_receita_prescritos");
+		for (int i = 0; i < prescribedPrescriptionItens.length(); i++) {			
+			PrescribedPrescriptionItem prescribedPrescriptionItem = Execution_metamodelFactory.eINSTANCE.createPrescribedPrescriptionItem();
+			//save prescription prescription item
+			ePrescription.getPrescribedprescriptionitem().add(prescribedPrescriptionItem);
+		}
 		
 		//save prescription medication
 		List<PrescribedMedication> prescribedMedications = createPrescribedMedication(json);		
