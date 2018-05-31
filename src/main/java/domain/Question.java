@@ -6,29 +6,28 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Pathway implements Serializable{
+public class Question implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	private Integer id;
 
-	private String code;
 	private String name;
-	private Integer version;
-	private Boolean completed;
-	private Integer idRepository;
+	private Integer idCategory;
+	private String category;
 	
-	public Pathway() {}
+	//------------------------
+	private Variable variable;
+	
+	public Question() {}
 
-	public Pathway(Integer id, String code, String name, Integer version, Boolean completed,
-			Integer idRepository) {
+	public Question(Integer id, String name, Integer idCategory, String category, Variable variable) {
 		super();
 		this.id = id;
-		this.code = code;
 		this.name = name;
-		this.version = version;
-		this.completed = completed;
-		this.idRepository = idRepository;
+		this.idCategory = idCategory;
+		this.category = category;
+		this.variable = variable;
 	}
 
 	public Integer getId() {
@@ -39,14 +38,6 @@ public class Pathway implements Serializable{
 		this.id = id;
 	}
 
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -55,28 +46,28 @@ public class Pathway implements Serializable{
 		this.name = name;
 	}
 
-	public Integer getVersion() {
-		return version;
+	public Integer getIdCategory() {
+		return idCategory;
 	}
 
-	public void setVersion(Integer version) {
-		this.version = version;
+	public void setIdCategory(Integer idCategory) {
+		this.idCategory = idCategory;
 	}
 
-	public Boolean getCompleted() {
-		return completed;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setCompleted(Boolean completed) {
-		this.completed = completed;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
-	public Integer getIdRepository() {
-		return idRepository;
+	public Variable getVariable() {
+		return variable;
 	}
 
-	public void setIdRepository(Integer idRepository) {
-		this.idRepository = idRepository;
+	public void setVariable(Variable variable) {
+		this.variable = variable;
 	}
 
 	@Override
@@ -95,7 +86,7 @@ public class Pathway implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pathway other = (Pathway) obj;
+		Question other = (Question) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -103,4 +94,6 @@ public class Pathway implements Serializable{
 			return false;
 		return true;
 	}
+	
+	
 }

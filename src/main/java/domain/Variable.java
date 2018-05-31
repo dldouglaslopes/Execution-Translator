@@ -6,29 +6,29 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Pathway implements Serializable{
+public class Variable implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	private Integer id;
-
-	private String code;
-	private String name;
-	private Integer version;
-	private Boolean completed;
-	private Integer idRepository;
 	
-	public Pathway() {}
+	private String name;
+	
+	private Object value;
+	private Double weight;
 
-	public Pathway(Integer id, String code, String name, Integer version, Boolean completed,
-			Integer idRepository) {
+	//--------------------------
+	private Bond bond;
+	
+	public Variable() {}
+
+	public Variable(Integer id, String name, Object value, Double weight, Bond bond) {
 		super();
 		this.id = id;
-		this.code = code;
 		this.name = name;
-		this.version = version;
-		this.completed = completed;
-		this.idRepository = idRepository;
+		this.value = value;
+		this.weight = weight;
+		this.bond = bond;
 	}
 
 	public Integer getId() {
@@ -39,14 +39,6 @@ public class Pathway implements Serializable{
 		this.id = id;
 	}
 
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -55,28 +47,28 @@ public class Pathway implements Serializable{
 		this.name = name;
 	}
 
-	public Integer getVersion() {
-		return version;
+	public Object getValue() {
+		return value;
 	}
 
-	public void setVersion(Integer version) {
-		this.version = version;
+	public void setValue(Object value) {
+		this.value = value;
 	}
 
-	public Boolean getCompleted() {
-		return completed;
+	public Double getWeight() {
+		return weight;
 	}
 
-	public void setCompleted(Boolean completed) {
-		this.completed = completed;
+	public void setWeight(Double weight) {
+		this.weight = weight;
 	}
 
-	public Integer getIdRepository() {
-		return idRepository;
+	public Bond getBond() {
+		return bond;
 	}
 
-	public void setIdRepository(Integer idRepository) {
-		this.idRepository = idRepository;
+	public void setBond(Bond bond) {
+		this.bond = bond;
 	}
 
 	@Override
@@ -95,7 +87,7 @@ public class Pathway implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pathway other = (Pathway) obj;
+		Variable other = (Variable) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -103,4 +95,6 @@ public class Pathway implements Serializable{
 			return false;
 		return true;
 	}
+	
+	
 }
