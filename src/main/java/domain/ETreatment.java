@@ -12,8 +12,8 @@ public class ETreatment implements Serializable{
 	
 	//--------------------------
 	private List<PrescribedExamination> prescribedExaminations = new ArrayList<>();
-	private List<PrescribedProcedures> prescribedProcedures = new ArrayList<>();
-	private List<PescribedInternment> prescribedInternments = new ArrayList<>();
+	private List<PrescribedProcedure> prescribedProcedures = new ArrayList<>();
+	private List<PrescribedInternment> prescribedInternments = new ArrayList<>();
 	private List<PrescribedMedication> prescribedMedications = new ArrayList<>();
 
 	public ETreatment() {}
@@ -26,19 +26,19 @@ public class ETreatment implements Serializable{
 		this.prescribedExaminations = prescribedExaminations;
 	}
 
-	public List<PrescribedProcedures> getPrescribedProcedures() {
+	public List<PrescribedProcedure> getPrescribedProcedures() {
 		return prescribedProcedures;
 	}
 
-	public void setPrescribedProcedures(List<PrescribedProcedures> prescribedProcedures) {
+	public void setPrescribedProcedures(List<PrescribedProcedure> prescribedProcedures) {
 		this.prescribedProcedures = prescribedProcedures;
 	}
 
-	public List<PescribedInternment> getPrescribedInternments() {
+	public List<PrescribedInternment> getPrescribedInternments() {
 		return prescribedInternments;
 	}
 
-	public void setPrescribedInternments(List<PescribedInternment> prescribedInternments) {
+	public void setPrescribedInternments(List<PrescribedInternment> prescribedInternments) {
 		this.prescribedInternments = prescribedInternments;
 	}
 

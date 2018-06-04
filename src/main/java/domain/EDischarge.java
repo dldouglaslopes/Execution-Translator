@@ -1,11 +1,10 @@
 package domain;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 
-@Entity	
-public class PrescribedProcedures implements Serializable{
+@Entity
+public class EDischarge extends EElement {
 	private static final long serialVersionUID = 1L;
+
 
 }
