@@ -22,5 +22,5 @@ public class EAuxiliaryConduct extends EElement{
 
 	public void setAnswers(List<Answer> answers) {
 		this.answers = answers;
-	}	
+	}
 }
