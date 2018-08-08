@@ -3,8 +3,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="951" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/951/" executed="true" creationDate="2017-10-04T15:27:19.043-0300" modificationDate="2017-10-04T15:27:08.368-0300" executionDate="2017-10-04T15:26:39.105-0300" createdById="143" executedById="143" idStep="221" name="Verifique as condições do paciente">
     <justification/>
     <step id="221" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/auxilios-conduta/221/" name="Verifique as condições do paciente" description="Avalie as condições do paciente para dar seguimento ao tratamento adequado." isInitial="true"/>
-    <creator id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="ivojr@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
-    <executor id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="ivojr@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
     <previous/>
     <next url="/atendimentos/423/protocolos/688/passos/952/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/952/"/>
     <answer id="1560" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -47,8 +45,6 @@
   <element xsi:type="MetamodelExecution:ETreatment" id="952" type="TratamentoExecutado" typeVerbose="Tratamento Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/952/" executed="true" creationDate="2017-10-04T15:28:50.199-0300" modificationDate="2017-10-04T15:33:12.815-0300" executionDate="2017-10-04T15:33:12.646-0300" createdById="143" executedById="143" idStep="222" name="Tratamento Padrão">
     <justification/>
     <step id="222" type="Tratamento" typeVerbose="Tratamento" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/tratamentos/222/" name="Tratamento Padrão" description="Tratamento para pacientes que não possuem nenhum dos critérios agravantes."/>
-    <creator id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
-    <executor id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
     <previous url="/atendimentos/423/protocolos/688/passos/951/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/951/"/>
     <next url="/atendimentos/423/protocolos/688/passos/953/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/953/"/>
     <prescribedexam id="725" report="">
@@ -97,8 +93,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="953" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/953/" creationDate="2017-10-04T15:33:33.347-0300" modificationDate="2017-10-04T15:33:33.384-0300" createdById="143" idStep="226" name="Avaliar resultado dos exames">
     <justification/>
     <step id="226" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/auxilios-conduta/226/" name="Avaliar resultado dos exames" description="Avalie o resultado dos exames do paciente."/>
-    <creator id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="4" email="@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
-    <executor/>
     <previous url="/atendimentos/423/protocolos/688/passos/952/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/423/protocolos/688/passos/952/"/>
     <next/>
     <answer id="1564" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -114,8 +108,6 @@
   <idsExecutedStep>951</idsExecutedStep>
   <idsExecutedStep>952</idsExecutedStep>
   <idsExecutedStep>953</idsExecutedStep>
-  <pathway id="41" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/" code="H003" name="Meningite" version="1" completed="true" idRepository="3"/>
-  <responsible id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="3002411" email="@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
-  <lastprofessional id="143" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/143/" code="3002411" email="@hapvida.com.br" name="FRANCISCO" typeCouncil="CRM" login="IJUNIOR" numberCouncil="4" state="CE"/>
+  <pathway id="41" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/41/" code="H003" name="Meningite" version="1" completed="true"/>
   <justification id="365" reason="encerramento_de_protocolo" reasonDisplay="Encerramento de protocolo" description="protocolo teste" justifiedById="143" justifiedBy="FRANCISCO"/>
 </MetamodelExecution:EPathway>

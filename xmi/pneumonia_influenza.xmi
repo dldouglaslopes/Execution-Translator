@@ -3,8 +3,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2567" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/" executed="true" creationDate="2017-10-26T09:25:49.243-0200" modificationDate="2017-10-26T09:17:06.237-0200" executionDate="2017-10-26T09:16:39.776-0200" createdById="161" executedById="161" idStep="401" name="Verificar Critérios para SEPSE">
     <justification/>
     <step id="401" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/401/" name="Verificar Critérios para SEPSE" description="Verifique os critérios para SIRS" isInitial="true"/>
-    <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <previous/>
     <next url="/atendimentos/624/protocolos/1129/passos/2568/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/"/>
     <answer id="4773" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -38,8 +36,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2568" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/" reworked="true" executed="true" creationDate="2017-10-26T09:18:17.637-0200" modificationDate="2017-10-26T09:29:12.996-0200" executionDate="2017-10-26T09:28:39.243-0200" createdById="161" executedById="161" idStep="402" name="Verificar Fatores Agravantes Para SEPSE">
     <justification/>
     <step id="402" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/402/" name="Verificar Fatores Agravantes Para SEPSE" description="Verifique se o paciente apresenta algum dos fatores a seguir."/>
-    <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <previous url="/atendimentos/624/protocolos/1129/passos/2567/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2567/"/>
     <next url="/atendimentos/624/protocolos/1129/passos/2570/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2570/"/>
     <answer id="4776" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -82,8 +78,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2570" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2570/" executed="true" creationDate="2017-10-26T09:30:38.059-0200" modificationDate="2017-10-26T09:26:14.810-0200" executionDate="2017-10-26T09:26:04.304-0200" createdById="161" executedById="161" idStep="42" name="Verificar Idade do Paciente">
     <justification/>
     <step id="42" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/42/" name="Verificar Idade do Paciente" description="Verifique a idade do paciente"/>
-    <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <previous url="/atendimentos/624/protocolos/1129/passos/2568/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2568/"/>
     <next url="/atendimentos/624/protocolos/1129/passos/2571/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2571/"/>
     <answer id="4781" type="RespostaNumerica" typeVerbose="Resposta Numérica">
@@ -99,8 +93,6 @@
   <element xsi:type="MetamodelExecution:ETreatment" id="2571" type="TratamentoExecutado" typeVerbose="Tratamento Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2571/" executed="true" creationDate="2017-10-26T09:27:03.783-0200" modificationDate="2017-10-26T09:21:52.553-0200" executionDate="2017-10-26T09:21:52.386-0200" createdById="161" executedById="161" idStep="45" name="Raio X + Pacote de Exames Laboratoriais">
     <justification/>
     <step id="45" type="Tratamento" typeVerbose="Tratamento" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/tratamentos/45/" name="Raio X + Pacote de Exames Laboratoriais" description="Paciente apresenta fatores complicadores para o tratamento, idade avançada ou presença de comorbidades, recomenda-se solicitar além do raio X do tórax o pacote de exames laboratoriais a seguir:"/>
-    <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <previous url="/atendimentos/624/protocolos/1129/passos/2570/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2570/"/>
     <next url="/atendimentos/624/protocolos/1129/passos/2572/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/"/>
     <prescribedexam id="1862" report="" numberGuide="30584836">
@@ -195,8 +187,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2572" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/" executed="true" creationDate="2017-10-26T09:22:16.076-0200" modificationDate="2017-10-26T14:35:37.657-0200" executionDate="2017-10-26T14:33:10.052-0200" createdById="161" executedById="161" idStep="141" name="Cálculo do Port">
     <justification/>
     <step id="141" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/141/" name="Cálculo do Port" description="Verifique os exames do paciente e preencha a tabela a seguir para calcular o PORT e seguir com o tratamento mais adequado."/>
-    <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <previous url="/atendimentos/624/protocolos/1129/passos/2571/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2571/"/>
     <next url="/atendimentos/624/protocolos/1129/passos/2584/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/"/>
     <answer id="4782" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -383,8 +373,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2584" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/" executed="true" creationDate="2017-10-26T14:38:30.817-0200" modificationDate="2017-10-26T14:25:15.166-0200" executionDate="2017-10-26T14:24:55.065-0200" createdById="161" executedById="161" idStep="105" name="[Port 2] Avaliar Fatores de Risco Para Influenza">
     <justification/>
     <step id="105" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/auxilios-conduta/105/" name="[Port 2] Avaliar Fatores de Risco Para Influenza" description="Avalie se o paciente apresenta fatores que indicam risco de Influenza."/>
-    <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <previous url="/atendimentos/624/protocolos/1129/passos/2572/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2572/"/>
     <next url="/atendimentos/624/protocolos/1129/passos/2585/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2585/"/>
     <answer id="4824" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -418,8 +406,6 @@
   <element xsi:type="MetamodelExecution:EPrescription" id="2585" type="ReceitaExecutado" typeVerbose="Receita Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2585/" executed="true" creationDate="2017-10-26T14:26:19.242-0200" modificationDate="2017-10-26T14:34:19.182-0200" executionDate="2017-10-26T14:34:19.012-0200" createdById="161" executedById="161" idStep="367" name="[Port 2] Receita Padrão para Pneumonia" text="">
     <justification/>
     <step id="367" type="Receita" typeVerbose="Receita" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/receitas/367/" name="[Port 2] Receita Padrão para Pneumonia" description="Atenção! Caso apresente alguns dos sintomas a seguir retornar imediatamente a emergência. Sintomas: Falta de ar; Dor no peito; Febre por mais de 3 dias após início das medicações; &#xA; Desorientação; Sonolência excessiva; Sangramentos; Desmaio; Palpitação (Coração acelerado); Diminuição ou ausência de urina. &#xA;Medicação: Azitromicina 500mg 5cp 1 cp 1x ao dia por 5 dias.  Alternativas - Amox c\ Clavulanato 875\125  1 cp 12/12h de 5 a 7 dias." isTerminal="true"/>
-    <creator id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-    <executor id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
     <previous url="/atendimentos/624/protocolos/1129/passos/2584/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/624/protocolos/1129/passos/2584/"/>
     <next/>
     <prescription/>
@@ -431,8 +417,6 @@
   <idsExecutedStep>2572</idsExecutedStep>
   <idsExecutedStep>2584</idsExecutedStep>
   <idsExecutedStep>2585</idsExecutedStep>
-  <pathway id="21" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/" code="H002" name="Pneumonia &amp; Influenza" version="1" completed="true" idRepository="2"/>
-  <responsible id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
-  <lastprofessional id="161" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/161/" code="2" email="" name="LUIZ" typeCouncil="CRM" login="CRM1" numberCouncil="1" state="CE"/>
+  <pathway id="21" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/21/" code="H002" name="Pneumonia &amp; Influenza" version="1" completed="true"/>
   <justification/>
 </MetamodelExecution:EPathway>

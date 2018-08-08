@@ -1,6 +1,5 @@
 package com.executedpathway.translator.pathway.step;
 import java.text.ParseException;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,7 +14,6 @@ import MetamodelExecution.Access;
 import MetamodelExecution.Answer;
 import MetamodelExecution.Bond;
 import MetamodelExecution.Complement;
-import MetamodelExecution.Creator;
 import MetamodelExecution.EAuxiliaryConduct;
 import MetamodelExecution.EDischarge;
 import MetamodelExecution.EElement;
@@ -26,7 +24,6 @@ import MetamodelExecution.ETreatment;
 import MetamodelExecution.Exam;
 import MetamodelExecution.Examination;
 import MetamodelExecution.Execution_metamodelFactory;
-import MetamodelExecution.Executor;
 import MetamodelExecution.Justification;
 import MetamodelExecution.Medicament;
 import MetamodelExecution.Medicine;
@@ -62,32 +59,32 @@ public class ExecutedStep {
 		}
 		
 		//set executor
-		Executor executor = Execution_metamodelFactory.eINSTANCE.createExecutor();		
-		if (!json.isNull("executado_por")) {
-			JSONObject executorJson = json.getJSONObject("executado_por");
-			executor.setId(executorJson.getInt("id"));
-			executor.setUrl(executorJson.getString("url"));
-			executor.setCode(executorJson.getInt("codigo"));
-			executor.setEmail(executorJson.getString("email"));
-			executor.setLogin(executorJson.getString("login"));
-			executor.setName(executorJson.getString("nome"));
-			executor.setNumberCouncil(executorJson.getInt("numero_conselho"));
-			executor.setTypeCouncil(executorJson.getString("tipo_conselho"));
-			executor.setState(executorJson.getString("uf"));
-		}
+//		Executor executor = Execution_metamodelFactory.eINSTANCE.createExecutor();		
+//		if (!json.isNull("executado_por")) {
+//			JSONObject executorJson = json.getJSONObject("executado_por");
+//			executor.setId(executorJson.getInt("id"));
+//			executor.setUrl(executorJson.getString("url"));
+//			executor.setCode(executorJson.getInt("codigo"));
+//			executor.setEmail(executorJson.getString("email"));
+//			executor.setLogin(executorJson.getString("login"));
+//			executor.setName(executorJson.getString("nome"));
+//			executor.setNumberCouncil(executorJson.getInt("numero_conselho"));
+//			executor.setTypeCouncil(executorJson.getString("tipo_conselho"));
+//			executor.setState(executorJson.getString("uf"));
+//		}
 		
 		//set creator
-		JSONObject creatorJson = json.getJSONObject("criado_por");
-		Creator creator = Execution_metamodelFactory.eINSTANCE.createCreator();
-		creator.setId(creatorJson.getInt("id"));
-		creator.setUrl(creatorJson.getString("url"));
-		creator.setCode(creatorJson.getInt("codigo"));
-		creator.setEmail(creatorJson.getString("email"));
-		creator.setLogin(creatorJson.getString("login"));
-		creator.setName(creatorJson.getString("nome"));
-		creator.setNumberCouncil(creatorJson.getInt("numero_conselho"));
-		creator.setTypeCouncil(creatorJson.getString("tipo_conselho"));
-		creator.setState(creatorJson.getString("uf"));	
+//		JSONObject creatorJson = json.getJSONObject("criado_por");
+//		Creator creator = Execution_metamodelFactory.eINSTANCE.createCreator();
+//		creator.setId(creatorJson.getInt("id"));
+//		creator.setUrl(creatorJson.getString("url"));
+//		creator.setCode(creatorJson.getInt("codigo"));
+//		creator.setEmail(creatorJson.getString("email"));
+//		creator.setLogin(creatorJson.getString("login"));
+//		creator.setName(creatorJson.getString("nome"));
+//		creator.setNumberCouncil(creatorJson.getInt("numero_conselho"));
+//		creator.setTypeCouncil(creatorJson.getString("tipo_conselho"));
+//		creator.setState(creatorJson.getString("uf"));	
 		
 		//set step
 		JSONObject stepJson = json.getJSONObject("passo");
@@ -131,8 +128,8 @@ public class ExecutedStep {
 		eElement.setCreatedById(json.getInt("criado_por_id"));		
 		eElement.setIdStep(json.getInt("passo_id"));		
 		eElement.setStep(step);
-		eElement.setCreator(creator);		
-		eElement.setExecutor(executor);
+//		eElement.setCreator(creator);		
+//		eElement.setExecutor(executor);
 		eElement.setName(eElement.getStep().getName());	
 		eElement.setJustification(justification);
 		

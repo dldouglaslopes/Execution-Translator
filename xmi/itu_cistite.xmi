@@ -3,8 +3,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="5496" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5496/" executed="true" creationDate="2018-02-02T18:17:58.827-0200" modificationDate="2018-02-02T18:26:32.772-0200" executionDate="2018-02-02T18:25:46.358-0200" createdById="1" executedById="1" idStep="439" name="Informar Sexo do paciente">
     <justification/>
     <step id="439" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/auxilios-conduta/439/" name="Informar Sexo do paciente" description="Informe o sexo do paciente para seguir com o tratamento adequado." isInitial="true"/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
     <previous/>
     <next url="/atendimentos/422/protocolos/3262/passos/5497/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5497/"/>
     <answer id="8544" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -29,8 +27,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="5497" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5497/" executed="true" creationDate="2018-02-02T18:27:25.619-0200" modificationDate="2018-02-02T18:29:45.003-0200" executionDate="2018-02-02T18:28:14.694-0200" createdById="1" executedById="1" idStep="442" name="Avaliar Sintomas (FEM)">
     <justification/>
     <step id="442" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/auxilios-conduta/442/" name="Avaliar Sintomas (FEM)" description="Informe os sintomas apresentados pelo paciente."/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
     <previous url="/atendimentos/422/protocolos/3262/passos/5496/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5496/"/>
     <next url="/atendimentos/422/protocolos/3262/passos/5498/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5498/"/>
     <answer id="8546" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -91,8 +87,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="5498" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5498/" executed="true" creationDate="2018-02-02T18:14:47.658-0200" modificationDate="2018-02-02T18:29:07.120-0200" executionDate="2018-02-02T18:28:52.941-0200" createdById="1" executedById="1" idStep="476" name="Verificar Gravidez">
     <justification/>
     <step id="476" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/auxilios-conduta/476/" name="Verificar Gravidez" description="Verificar se paciente está grávida"/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
     <previous url="/atendimentos/422/protocolos/3262/passos/5497/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5497/"/>
     <next url="/atendimentos/422/protocolos/3262/passos/5499/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5499/"/>
     <answer id="8552" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -108,8 +102,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="5499" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5499/" executed="true" creationDate="2018-02-02T18:29:53.030-0200" modificationDate="2018-02-02T18:17:19.313-0200" executionDate="2018-02-02T18:17:03.941-0200" createdById="1" executedById="1" idStep="480" name="Verificar Fatores Agravantes">
     <justification/>
     <step id="480" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/auxilios-conduta/480/" name="Verificar Fatores Agravantes" description="Verificar se a paciente apresenta presença de leucorréia ou irritação vaginal. (negativo para gravidez)"/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
     <previous url="/atendimentos/422/protocolos/3262/passos/5498/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5498/"/>
     <next url="/atendimentos/422/protocolos/3262/passos/5500/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5500/"/>
     <answer id="8553" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -125,8 +117,6 @@
   <element xsi:type="MetamodelExecution:ETreatment" id="5500" type="TratamentoExecutado" typeVerbose="Tratamento Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5500/" executed="true" creationDate="2018-02-02T18:17:59.846-0200" modificationDate="2018-02-02T18:27:25.872-0200" executionDate="2018-02-02T18:27:25.618-0200" createdById="1" executedById="1" idStep="482" name="Tratamento Leucorreia / Irritação Vaginal">
     <justification/>
     <step id="482" type="Tratamento" typeVerbose="Tratamento" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/tratamentos/482/" name="Tratamento Leucorreia / Irritação Vaginal" description="pendente de informações para preencher o tratamento." isTerminal="true"/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
     <previous url="/atendimentos/422/protocolos/3262/passos/5499/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/422/protocolos/3262/passos/5499/"/>
     <next/>
   </element>
@@ -135,8 +125,6 @@
   <idsExecutedStep>5498</idsExecutedStep>
   <idsExecutedStep>5499</idsExecutedStep>
   <idsExecutedStep>5500</idsExecutedStep>
-  <pathway id="124" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/" code="H008" name="ITU - Cistite" version="1" completed="true" idRepository="9"/>
-  <responsible id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
-  <lastprofessional id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="3" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="3" state="RN"/>
+  <pathway id="124" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/124/" code="H008" name="ITU - Cistite" version="1" completed="true"/>
   <justification/>
 </MetamodelExecution:EPathway>

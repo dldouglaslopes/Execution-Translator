@@ -3,16 +3,12 @@
   <element xsi:type="MetamodelExecution:EInformation" id="5584" type="InformacaoExecutado" typeVerbose="Informação Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5584/" executed="true" creationDate="2018-02-04T10:24:12.494-0200" modificationDate="2018-02-04T10:22:12.543-0200" executionDate="2018-02-04T10:22:12.334-0200" createdById="1" executedById="1" idStep="2234" name="Aviso: Protocolo de Tratamento de SEPSE">
     <justification/>
     <step id="2234" type="Informacao" typeVerbose="Informação" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/informacoes/2234/" name="Aviso: Protocolo de Tratamento de SEPSE" description="Aviso: você está no Protocolo de Tratamento de SEPSE" isInitial="true"/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
     <previous/>
     <next url="/atendimentos/508/protocolos/3303/passos/5585/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5585/"/>
   </element>
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="5585" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5585/" reworked="true" executed="true" creationDate="2018-02-04T10:23:00.631-0200" modificationDate="2018-02-04T10:29:00.395-0200" executionDate="2018-02-04T10:28:47.518-0200" createdById="1" executedById="1" idStep="2241" name="Verificar Comorbidades">
     <justification/>
     <step id="2241" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/auxilios-conduta/2241/" name="Verificar Comorbidades" description="Verifique se o paciente apresenta algum dos fatores que podem agravar o tratamento."/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
     <previous url="/atendimentos/508/protocolos/3303/passos/5584/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5584/"/>
     <next url="/atendimentos/508/protocolos/3303/passos/5587/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5587/"/>
     <answer id="8713" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -28,16 +24,12 @@
   <element xsi:type="MetamodelExecution:EInformation" id="5587" type="InformacaoExecutado" typeVerbose="Informação Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5587/" executed="true" creationDate="2018-02-04T10:29:36.022-0200" modificationDate="2018-02-04T10:29:43.182-0200" executionDate="2018-02-04T10:29:43.010-0200" createdById="1" executedById="1" idStep="2242" name="Aviso: Paciente com risco de congestão">
     <justification/>
     <step id="2242" type="Informacao" typeVerbose="Informação" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/informacoes/2242/" name="Aviso: Paciente com risco de congestão" description="Neste contexto, tenha cautela na expansão volêmica. Paciente com importante risco de congestão."/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
     <previous url="/atendimentos/508/protocolos/3303/passos/5585/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5585/"/>
     <next url="/atendimentos/508/protocolos/3303/passos/5588/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5588/"/>
   </element>
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="5588" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5588/" reworked="true" executed="true" creationDate="2018-02-04T10:30:06.787-0200" modificationDate="2018-02-04T10:32:55.758-0200" executionDate="2018-02-04T10:31:18.324-0200" createdById="1" executedById="1" idStep="2243" name="Identificar Foco Infeccioso">
     <justification/>
     <step id="2243" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/auxilios-conduta/2243/" name="Identificar Foco Infeccioso" description="Defina o foco infeccioso do paciente para uma melhor condução do tratamento"/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
     <previous url="/atendimentos/508/protocolos/3303/passos/5587/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5587/"/>
     <next url="/atendimentos/508/protocolos/3303/passos/5597/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5597/"/>
     <answer id="8722" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -116,16 +108,12 @@
   <element xsi:type="MetamodelExecution:ETreatment" id="5597" type="TratamentoExecutado" typeVerbose="Tratamento Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5597/" executed="true" creationDate="2018-02-04T10:18:08.977-0200" modificationDate="2018-02-04T10:27:06.977-0200" executionDate="2018-02-04T10:27:06.771-0200" createdById="1" executedById="1" idStep="2251" name="Tratamento Foco Neutropenia Febril">
     <justification/>
     <step id="2251" type="Tratamento" typeVerbose="Tratamento" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/tratamentos/2251/" name="Tratamento Foco Neutropenia Febril" description=""/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
     <previous url="/atendimentos/508/protocolos/3303/passos/5588/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5588/"/>
     <next url="/atendimentos/508/protocolos/3303/passos/5598/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5598/"/>
   </element>
   <element xsi:type="MetamodelExecution:EInformation" id="5598" type="InformacaoExecutado" typeVerbose="Informação Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5598/" executed="true" creationDate="2018-02-04T10:27:28.186-0200" modificationDate="2018-02-04T10:29:47.359-0200" executionDate="2018-02-04T10:29:47.172-0200" createdById="1" executedById="1" idStep="2252" name="Aviso: Encaminhar paciente ao líder local">
     <justification/>
     <step id="2252" type="Informacao" typeVerbose="Informação" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/informacoes/2252/" name="Aviso: Encaminhar paciente ao líder local" description="* ATENÇÃO:&#xA;Dar seguimento ao tratamento junto ao líder local:&#xA;&#xA;- MONITORIZAÇÃO PA + OXIMETRIA DE PULSO (SE PAM&lt; 65 OU LACTATO > 18MG/DL)&#xA;- PASSAR SVD E ACOMPANHAR DÉBITO URINÁRIO (ALVO 0,5ML/KG/H)" isTerminal="true"/>
-    <creator id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
-    <executor id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
     <previous url="/atendimentos/508/protocolos/3303/passos/5597/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/508/protocolos/3303/passos/5597/"/>
     <next/>
   </element>
@@ -135,8 +123,6 @@
   <idsExecutedStep>5588</idsExecutedStep>
   <idsExecutedStep>5597</idsExecutedStep>
   <idsExecutedStep>5598</idsExecutedStep>
-  <pathway id="764" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/" code="H012" name="Tratamento de SEPSE" version="1" completed="true" idRepository="202"/>
-  <responsible id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
-  <lastprofessional id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/1/" code="5" email="@hapvida.com.br" name="LEONARDO" typeCouncil="CRM" login="LEOBERNA" numberCouncil="5" state="RN"/>
+  <pathway id="764" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/764/" code="H012" name="Tratamento de SEPSE" version="1" completed="true"/>
   <justification/>
 </MetamodelExecution:EPathway>

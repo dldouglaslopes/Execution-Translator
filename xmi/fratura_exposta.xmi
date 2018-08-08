@@ -3,8 +3,6 @@
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="3247" type="AuxilioCondutaExecutado" typeVerbose="Auxílio Conduta Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3247/" executed="true" creationDate="2017-11-24T09:03:08.592-0200" modificationDate="2017-11-24T09:02:03.772-0200" executionDate="2017-11-24T09:01:31.011-0200" createdById="741" executedById="741" idStep="1" name="Verificar Grau da Fratura">
     <justification/>
     <step id="1" type="AuxilioConduta" typeVerbose="Auxílio Conduta" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/auxilios-conduta/1/" name="Verificar Grau da Fratura" description="Informe o Grau da fratura baseado na classificação de Gustillo" isInitial="true"/>
-    <creator id="741" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/" code="1" email="" name="PAULO" typeCouncil="CRM" login="CRM2" numberCouncil="2" state="CE"/>
-    <executor id="741" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/" code="1" email="" name="PAULO" typeCouncil="CRM" login="CRM2" numberCouncil="2" state="CE"/>
     <previous/>
     <next url="/atendimentos/921/protocolos/1483/passos/3248/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3248/"/>
     <answer id="6285" type="RespostaSimOuNao" typeVerbose="Resposta Sim Ou Não">
@@ -29,8 +27,6 @@
   <element xsi:type="MetamodelExecution:ETreatment" id="3248" type="TratamentoExecutado" typeVerbose="Tratamento Executado" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3248/" creationDate="2017-11-24T09:03:05.617-0200" modificationDate="2017-11-24T09:03:05.708-0200" createdById="741" idStep="2" name="Tratamento Fratura de Grau I/II">
     <justification/>
     <step id="2" type="Tratamento" typeVerbose="Tratamento" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/tratamentos/2/" name="Tratamento Fratura de Grau I/II" description="Orientação de antibioticoterapia e tratamento cirurgico pré-definidos com equipe de ccih e ortopedia para fratura grau I/II."/>
-    <creator id="741" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/" code="1" email="" name="PAULO" typeCouncil="CRM" login="CRM2" numberCouncil="2" state="CE"/>
-    <executor/>
     <previous url="/atendimentos/921/protocolos/1483/passos/3247/" urlAbsolute="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/atendimentos/921/protocolos/1483/passos/3247/"/>
     <next/>
     <prescribedexam id="2425" report="" numberGuide="30883445">
@@ -70,8 +66,6 @@
   </element>
   <idsExecutedStep>3247</idsExecutedStep>
   <idsExecutedStep>3248</idsExecutedStep>
-  <pathway id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/" code="H001" name="Fratura Exposta" version="1" completed="true" idRepository="1"/>
-  <responsible id="741" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/" code="1" email="" name="PAULO" typeCouncil="CRM" login="CRM2" numberCouncil="2" state="CE"/>
-  <lastprofessional id="741" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/execucao/profissionais/741/" code="1" email="" name="PAULO" typeCouncil="CRM" login="CRM2" numberCouncil="2" state="CE"/>
+  <pathway id="1" url="http://app-desenv.hapvida.com.br/api/protocolo/hospitalar/protmed/autoria/protocolos/1/" code="H001" name="Fratura Exposta" version="1" completed="true"/>
   <justification id="881" reason="encerramento_de_protocolo" reasonDisplay="Encerramento de protocolo" description="LAHFADHFAdhfgsdçgg´GJKkSFK" justifiedById="741" justifiedBy="PAULO"/>
 </MetamodelExecution:EPathway>

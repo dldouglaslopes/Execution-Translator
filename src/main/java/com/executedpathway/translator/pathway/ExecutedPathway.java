@@ -11,9 +11,7 @@ import org.json.JSONObject;
 import MetamodelExecution.EPathway;
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.Justification;
-import MetamodelExecution.LastProfessional;
 import MetamodelExecution.Pathway;
-import MetamodelExecution.Responsible;
 
 
 public class ExecutedPathway {	
@@ -29,33 +27,33 @@ public class ExecutedPathway {
 		pathway.setName(pathwayJson.getString("nome"));				
 		pathway.setVersion(pathwayJson.getInt("versao"));
 		pathway.setCompleted(pathwayJson.getBoolean("finalizado"));
-		pathway.setIdRepository(pathwayJson.getInt("repositorio_id"));
+//		pathway.setIdRepository(pathwayJson.getInt("repositorio_id"));
 	
 		//Set responsible
-		JSONObject responsibleJson = json.getJSONObject("responsavel");
-		Responsible responsible = Execution_metamodelFactory.eINSTANCE.createResponsible();
-		responsible.setId(responsibleJson.getInt("id"));
-		responsible.setUrl(responsibleJson.getString("url"));
-		responsible.setCode(responsibleJson.getInt("codigo"));
-		responsible.setEmail(responsibleJson.getString("email"));
-		responsible.setLogin(responsibleJson.getString("login"));
-		responsible.setName(responsibleJson.getString("nome"));
-		responsible.setNumberCouncil(responsibleJson.getInt("numero_conselho"));
-		responsible.setTypeCouncil(responsibleJson.getString("tipo_conselho"));
-		responsible.setState(responsibleJson.getString("uf"));
+//		JSONObject responsibleJson = json.getJSONObject("responsavel");
+//		Responsible responsible = Execution_metamodelFactory.eINSTANCE.createResponsible();
+//		responsible.setId(responsibleJson.getInt("id"));
+//		responsible.setUrl(responsibleJson.getString("url"));
+//		responsible.setCode(responsibleJson.getInt("codigo"));
+//		responsible.setEmail(responsibleJson.getString("email"));
+//		responsible.setLogin(responsibleJson.getString("login"));
+//		responsible.setName(responsibleJson.getString("nome"));
+//		responsible.setNumberCouncil(responsibleJson.getInt("numero_conselho"));
+//		responsible.setTypeCouncil(responsibleJson.getString("tipo_conselho"));
+//		responsible.setState(responsibleJson.getString("uf"));
 		
 		//Set last professional
-		JSONObject lastProfessionalJson = json.getJSONObject("ultimo_profissional");
-		LastProfessional lastProfessional = Execution_metamodelFactory.eINSTANCE.createLastProfessional();
-		lastProfessional.setId(lastProfessionalJson.getInt("id"));
-		lastProfessional.setUrl(lastProfessionalJson.getString("url"));
-		lastProfessional.setCode(lastProfessionalJson.getInt("codigo"));
-		lastProfessional.setEmail(lastProfessionalJson.getString("email"));
-		lastProfessional.setLogin(lastProfessionalJson.getString("login"));
-		lastProfessional.setName(lastProfessionalJson.getString("nome"));
-		lastProfessional.setNumberCouncil(lastProfessionalJson.getInt("numero_conselho"));
-		lastProfessional.setTypeCouncil(lastProfessionalJson.getString("tipo_conselho"));
-		lastProfessional.setState(lastProfessionalJson.getString("uf"));
+//		JSONObject lastProfessionalJson = json.getJSONObject("ultimo_profissional");
+//		LastProfessional lastProfessional = Execution_metamodelFactory.eINSTANCE.createLastProfessional();
+//		lastProfessional.setId(lastProfessionalJson.getInt("id"));
+//		lastProfessional.setUrl(lastProfessionalJson.getString("url"));
+//		lastProfessional.setCode(lastProfessionalJson.getInt("codigo"));
+//		lastProfessional.setEmail(lastProfessionalJson.getString("email"));
+//		lastProfessional.setLogin(lastProfessionalJson.getString("login"));
+//		lastProfessional.setName(lastProfessionalJson.getString("nome"));
+//		lastProfessional.setNumberCouncil(lastProfessionalJson.getInt("numero_conselho"));
+//		lastProfessional.setTypeCouncil(lastProfessionalJson.getString("tipo_conselho"));
+//		lastProfessional.setState(lastProfessionalJson.getString("uf"));
 		
 		//set justification			
 		Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
@@ -80,8 +78,8 @@ public class ExecutedPathway {
 		ePathway.setIdPathway(json.getInt("protocolo_id"));
 		ePathway.setIdLastProfessional(json.getInt("ultimo_profissional_id"));		
 		ePathway.setIdResponsible(json.getInt("responsavel_id"));
-		ePathway.setLastprofessional(lastProfessional);
-		ePathway.setResponsible(responsible);
+//		ePathway.setLastprofessional(lastProfessional);
+//		ePathway.setResponsible(responsible);
 		ePathway.setPathway(pathway);			
 		
 		String creationStr = json.getString("data_criacao");
