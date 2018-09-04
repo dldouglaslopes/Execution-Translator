@@ -10,16 +10,18 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.xml.sax.SAXException;
 
-import com.executedpathway.translator.config.DBConfig;
 import com.executedpathway.translator.config.FileConfig;
-import com.executedpathway.translator.database.DBOperations;
 import com.executedpathway.translator.model.Translator;
-
-import MetamodelExecution.EPathway;
+import com.executedpathway.translator.mongo.domain.EPathway;
+import com.executedpathway.translator.mongo.repository.EPathwayRepository;
 
 public class Init {
+	@Autowired
+	private static EPathwayRepository ePathwayRepository;
+	
 	public static void main(String[] args) throws JSONException, IOException, ParseException, ParserConfigurationException, SAXException, InterruptedException {
 		List<EPathway> pathways = new ArrayList<EPathway>();
 		
@@ -46,26 +48,9 @@ public class Init {
 			fileConfig.saveContents(translator.getePathway()); //save the generated contents			
 			pathways.add(translator.getePathway());
 			System.err.println("\n" + namesFoldersJson[i] + ".xmi ---> OK \n");
-		}	
-				
-		DBConfig dbConfig = new DBConfig(); //configuring MongoDB
-		DBOperations dbOperations = new DBOperations(); //operation of MongoDB
-		System.out.println("*Connected to the database --> OK");		
+		}		
 		
-		for (int i = 0; i < pathways.size(); i++) {
-			if (dbOperations.hasEPathway(pathways.get(i).getName())) {
-				dbOperations.updateEPathway(pathways.get(i).getName(), pathways.get(i));
-				System.out.println("-->XMI(s) updated in MongoDB.");			
-			}
-			else {
-				dbOperations.saveEPathway(pathways.get(i).getName(), pathways.get(i));	//adding executed pathway in MongoDB
-				System.out.println("-->XMI(s) added in MongoDB.");
-			}
-					
-			//dbConfig.deleteEPathway(pathways.get(0).getName()); //deleting the contents of executed pathway
-		}
-						
-		dbConfig.close(); //closing MongoDB client
-		System.out.println("*Closed to the database --> OK");
+		ePathwayRepository.saveAll(pathways);
+		System.out.println("-->XMI(s) updated in MongoDB.");										
 	}
 }

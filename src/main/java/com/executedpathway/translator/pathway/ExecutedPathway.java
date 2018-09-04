@@ -8,7 +8,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import MetamodelExecution.EPathway;
+import com.executedpathway.translator.mongo.domain.EPathway;
+
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.Justification;
 import MetamodelExecution.Pathway;

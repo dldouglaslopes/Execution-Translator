@@ -5,11 +5,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.json.JSONObject;
 
 import com.executedpathway.translator.config.FileConfig;
+import com.executedpathway.translator.mongo.domain.EPathway;
 import com.executedpathway.translator.pathway.ExecutedPathway;
 import com.executedpathway.translator.pathway.step.ExecutedStep;
-
-import MetamodelExecution.EPathway;
-import MetamodelExecution.Execution_metamodelFactory;
 
 public class Translator {
 	private EPathway ePathway;
@@ -20,7 +18,7 @@ public class Translator {
 
 	//Constructor
 	public Translator(){		
-		this.ePathway = Execution_metamodelFactory.eINSTANCE.createEPathway();	
+		this.ePathway = new EPathway();	
 	}
 	
 	//convert JSON files in one XMI file
