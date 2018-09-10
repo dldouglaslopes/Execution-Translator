@@ -1,4 +1,4 @@
-package com.executedpathway.translator.mongo.resource;
+package com.executedpathway.translator.resource;
 
 import org.springframework.web.bind.annotation.RestController;
 

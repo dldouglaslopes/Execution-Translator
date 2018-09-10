@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.json.JSONObject;
 
 import com.executedpathway.translator.config.FileConfig;
-import com.executedpathway.translator.mongo.domain.EPathway;
+import com.executedpathway.translator.domain.EPathway;
 import com.executedpathway.translator.pathway.ExecutedPathway;
 import com.executedpathway.translator.pathway.step.ExecutedStep;
 

@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.executedpathway.translator.mongo.domain.EPathway;
+import com.executedpathway.translator.domain.EPathway;
 
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.Justification;
@@ -23,7 +23,6 @@ public class ExecutedPathway {
 		JSONObject pathwayJson = json.getJSONObject("protocolo");
 		Pathway pathway = Execution_metamodelFactory.eINSTANCE.createPathway();
 		pathway.setId(pathwayJson.getInt("id"));
-		pathway.setUrl(pathwayJson.getString("url"));
 		pathway.setCode(pathwayJson.getString("codigo"));		
 		pathway.setName(pathwayJson.getString("nome"));				
 		pathway.setVersion(pathwayJson.getInt("versao"));
@@ -62,7 +61,6 @@ public class ExecutedPathway {
 			JSONObject justificationJson = json.getJSONObject("justificativa");			
 			justification.setId(justificationJson.getInt("id"));
 			justification.setReason(justificationJson.getString("razao"));
-			justification.setReasonDisplay(justificationJson.getString("razao_display"));
 			justification.setDescription(justificationJson.getString("descricao"));
 			justification.setJustifiedById(justificationJson.getInt("justificado_por_id"));
 			justification.setJustifiedBy(justificationJson.getString("justificado_por"));		
@@ -71,14 +69,9 @@ public class ExecutedPathway {
 		
 		//Set executed pathway
 		ePathway.setId(json.getInt("id"));		
-		ePathway.setUrl(json.getString("url"));
 		ePathway.setName(pathwayJson.getString("nome"));
 		ePathway.setCompleted(json.getBoolean("finalizado"));
 		ePathway.setAborted(json.getBoolean("abortado"));
-		ePathway.setLastExecutedStepDate(json.getString("data_ultimo_passo_executado"));
-		ePathway.setIdPathway(json.getInt("protocolo_id"));
-		ePathway.setIdLastProfessional(json.getInt("ultimo_profissional_id"));		
-		ePathway.setIdResponsible(json.getInt("responsavel_id"));
 //		ePathway.setLastprofessional(lastProfessional);
 //		ePathway.setResponsible(responsible);
 		ePathway.setPathway(pathway);			

@@ -14,9 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.xml.sax.SAXException;
 
 import com.executedpathway.translator.config.FileConfig;
+import com.executedpathway.translator.domain.EPathway;
 import com.executedpathway.translator.model.Translator;
-import com.executedpathway.translator.mongo.domain.EPathway;
-import com.executedpathway.translator.mongo.repository.EPathwayRepository;
+import com.executedpathway.translator.repository.EPathwayRepository;
 
 public class Init {
 	@Autowired
