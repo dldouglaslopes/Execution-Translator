@@ -1,12 +1,12 @@
 package com.executedpathway.translator.pathway.step;
 import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import org.eclipse.emf.ecore.resource.Resource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -54,34 +54,6 @@ public class ExecutedStep {
 			justification.setJustifiedBy(justificationJson.getString("justificado_por"));
 		}
 		
-		//set executor
-//		Executor executor = Execution_metamodelFactory.eINSTANCE.createExecutor();		
-//		if (!json.isNull("executado_por")) {
-//			JSONObject executorJson = json.getJSONObject("executado_por");
-//			executor.setId(executorJson.getInt("id"));
-//			executor.setUrl(executorJson.getString("url"));
-//			executor.setCode(executorJson.getInt("codigo"));
-//			executor.setEmail(executorJson.getString("email"));
-//			executor.setLogin(executorJson.getString("login"));
-//			executor.setName(executorJson.getString("nome"));
-//			executor.setNumberCouncil(executorJson.getInt("numero_conselho"));
-//			executor.setTypeCouncil(executorJson.getString("tipo_conselho"));
-//			executor.setState(executorJson.getString("uf"));
-//		}
-		
-		//set creator
-//		JSONObject creatorJson = json.getJSONObject("criado_por");
-//		Creator creator = Execution_metamodelFactory.eINSTANCE.createCreator();
-//		creator.setId(creatorJson.getInt("id"));
-//		creator.setUrl(creatorJson.getString("url"));
-//		creator.setCode(creatorJson.getInt("codigo"));
-//		creator.setEmail(creatorJson.getString("email"));
-//		creator.setLogin(creatorJson.getString("login"));
-//		creator.setName(creatorJson.getString("nome"));
-//		creator.setNumberCouncil(creatorJson.getInt("numero_conselho"));
-//		creator.setTypeCouncil(creatorJson.getString("tipo_conselho"));
-//		creator.setState(creatorJson.getString("uf"));	
-		
 		//set step
 		JSONObject stepJson = json.getJSONObject("passo");
 		Step step = Execution_metamodelFactory.eINSTANCE.createStep();
@@ -101,8 +73,6 @@ public class ExecutedStep {
 		eElement.setExecuted(json.getBoolean("executado"));		
 		eElement.setCreatedById(json.getInt("criado_por_id"));		
 		eElement.setStep(step);
-//		eElement.setCreator(creator);		
-//		eElement.setExecutor(executor);
 		eElement.setName(eElement.getStep().getName());	
 		eElement.setJustification(justification);
 		
@@ -127,7 +97,7 @@ public class ExecutedStep {
 		return eElement;
 	}
 	
-	public EAuxiliaryConduct createEAuxiliaryConduct(JSONObject json, Resource resource) throws ParseException{
+	public EAuxiliaryConduct createEAuxiliaryConduct(JSONObject json) throws ParseException{
 		//Set executed auxiliary conduct
 		EAuxiliaryConduct eAuxiliaryConduct = Execution_metamodelFactory.eINSTANCE.createEAuxiliaryConduct();
 		eAuxiliaryConduct = (EAuxiliaryConduct) createEElement(json, eAuxiliaryConduct);
@@ -209,7 +179,7 @@ public class ExecutedStep {
 		return eAuxiliaryConduct;
 	}
 	
-	public ETreatment createETreatment(JSONObject json, Resource resource) throws ParseException{
+	public ETreatment createETreatment(JSONObject json) throws ParseException{
 		//set executed treatment
 		ETreatment eTreatment = Execution_metamodelFactory.eINSTANCE.createETreatment();		
 		eTreatment = (ETreatment) createEElement(json, eTreatment);	
@@ -329,7 +299,7 @@ public class ExecutedStep {
 	}
 
 	//set executed precription
-	public EPrescription createEPrescription(JSONObject json, Resource resource) throws ParseException{		
+	public EPrescription createEPrescription(JSONObject json) throws ParseException{		
 		EPrescription ePrescription = Execution_metamodelFactory.eINSTANCE.createEPrescription();
 		ePrescription = (EPrescription) createEElement(json, ePrescription);
 		
@@ -370,7 +340,7 @@ public class ExecutedStep {
 	}
 
 	//set executed information
-	public EInformation createEInformation(JSONObject json, Resource resource) throws ParseException{		
+	public EInformation createEInformation(JSONObject json) throws ParseException{		
 		EInformation eInformation = Execution_metamodelFactory.eINSTANCE.createEInformation();
 		eInformation = (EInformation) createEElement(json, eInformation);
 		
@@ -378,7 +348,7 @@ public class ExecutedStep {
 	}
 	
 	//set executed referral
-	public EReferral createEReferral(JSONObject json, Resource resource) throws ParseException{		
+	public EReferral createEReferral(JSONObject json) throws ParseException{		
 		EReferral eReferral = Execution_metamodelFactory.eINSTANCE.createEReferral();
 		eReferral = (EReferral) createEElement(json, eReferral);
 		
@@ -386,7 +356,7 @@ public class ExecutedStep {
 	}
 	
 	//set executed discharge
-	public EDischarge createEDischarge(JSONObject json, Resource resource) throws ParseException{
+	public EDischarge createEDischarge(JSONObject json) throws ParseException{
 		EDischarge eDischarge = Execution_metamodelFactory.eINSTANCE.createEDischarge();
 		eDischarge = (EDischarge) createEElement(json, eDischarge);
 		
