@@ -12,6 +12,7 @@ import org.json.JSONObject;
 
 import MetamodelExecution.Access;
 import MetamodelExecution.Answer;
+import MetamodelExecution.Audit;
 import MetamodelExecution.Bond;
 import MetamodelExecution.Complement;
 import MetamodelExecution.EAuxiliaryConduct;
@@ -51,7 +52,6 @@ public class ExecutedStep {
 			justification.setReason(justificationJson.getString("razao"));
 			justification.setDescription(justificationJson.getString("descricao"));
 			justification.setJustifiedById(justificationJson.getInt("justificado_por_id"));
-			justification.setJustifiedBy(justificationJson.getString("justificado_por"));
 		}
 		
 		//set step
@@ -64,10 +64,26 @@ public class ExecutedStep {
 		step.setIsInitial(stepJson.getBoolean("is_initial"));
 		step.setIsTerminal(stepJson.getBoolean("is_terminal"));
 		step.setMandatory(stepJson.getBoolean("obrigatoriedade"));
+				
+		//set audit
+		Audit audit = Execution_metamodelFactory.eINSTANCE.createAudit();
+		if (!stepJson.isNull("ultima_auditoria")) {
+			JSONObject auditJson = stepJson.getJSONObject("ultima_auditoria");
+			String dateStr = auditJson.getString("data");
+			Date date = dateFormat.parse(dateStr);	
+			audit.setDate(date);
+		}
+		step.setAudit(audit);	
+		
+		//set dates
+		String creationStr = json.getString("data_criacao");
+		Date creationDate = dateFormat.parse(creationStr);
+		String modificationStr = json.getString("data_modificacao");
+		Date modificationDate = dateFormat.parse(modificationStr);
 		
 		//Set executed element/step
 		eElement.setId(json.getInt("id"));
-		eElement.setType(json.getString("type"));
+		//eElement.setType(json.getString("type"));
 		eElement.setIsCurrent(json.getBoolean("is_current"));
 		eElement.setReworked(json.getBoolean("reworked"));
 		eElement.setExecuted(json.getBoolean("executado"));		
@@ -75,18 +91,12 @@ public class ExecutedStep {
 		eElement.setStep(step);
 		eElement.setName(eElement.getStep().getName());	
 		eElement.setJustification(justification);
+		eElement.setCreationDate(creationDate);	
+		eElement.setModificationDate(modificationDate);
 		
 		if (!json.isNull("executado_por_id")) {
 			eElement.setExecutedById(json.getInt("executado_por_id"));
-		}	
-			
-		String creationStr = json.getString("data_criacao");
-		Date creationDate = dateFormat.parse(creationStr);
-		eElement.setCreationDate(creationDate);		
-		
-		String modificationStr = json.getString("data_modificacao");
-		Date modificationDate = dateFormat.parse(modificationStr);
-		eElement.setModificationDate(modificationDate);
+		}
 		
 		if (!json.isNull("data_execucao")) {
 			String executionStr = json.getString("data_execucao");
@@ -133,7 +143,8 @@ public class ExecutedStep {
 			JSONObject questionJson = answerJson.getJSONObject("pergunta");
 			Question question = Execution_metamodelFactory.eINSTANCE.createQuestion();			
 			question.setId(questionJson.getInt("id"));
-
+			question.setText(questionJson.getString("texto"));
+			
 			if (!questionJson.isNull("categoria")) {
 				question.setCategory(questionJson.getString("categoria"));
 			}  
@@ -141,7 +152,7 @@ public class ExecutedStep {
 			JSONObject variableJson = questionJson.getJSONObject("variavel");
 			Variable variable = Execution_metamodelFactory.eINSTANCE.createVariable();
 			variable.setId(variableJson.getInt("id"));
-			variable.setType(json.getString("type"));
+			variable.setType(variableJson.getString("type"));
 			variable.setName(variableJson.getString("nome"));
 			variable.setWeight(variableJson.getInt("peso"));			
 			
@@ -150,8 +161,8 @@ public class ExecutedStep {
 				YesOrNo yesOrNo = Execution_metamodelFactory.eINSTANCE.createYesOrNo();
 				yesOrNo.setValue(variableJson.getBoolean("valor"));					
 				//save yes or no
-				variable.setValue(yesOrNo);			}
-			else if (type.equals("RespostaNumerica")) {
+				variable.setValue(yesOrNo);			
+			}else if (type.equals("RespostaNumerica")) {
 				//set numeric
 				Numeric numeric = Execution_metamodelFactory.eINSTANCE.createNumeric();
 				numeric.setValue(variableJson.getDouble("valor"));				
@@ -165,9 +176,11 @@ public class ExecutedStep {
 				bond.setId(bondJson.getInt("id"));
 				bond.setType(bondJson.getString("type"));
 			}
+						
+			//save comorbidity
+			//bond.setComorbidity(comorbidity);			
 			//save bond
 			variable.setBond(bond);
-			
 			//save variable
 			question.setVariable(variable);			
 			//save question
@@ -385,15 +398,18 @@ public class ExecutedStep {
 			JSONObject medicamentJson = prescribedMedicationJson.getJSONObject("medicamento");
 			medicament.setId(medicamentJson.getInt("id"));
 			medicament.setName(medicamentJson.getString("nome"));
-			medicament.setCode(medicamentJson.getInt("codigo"));
+			medicament.setCode(medicamentJson.getString("codigo"));
 			medicament.setDescription(medicamentJson.getString("descricao"));
 			medicament.setBrand(medicamentJson.getString("marca"));
-			medicament.setOutpatient(medicamentJson.getBoolean("ambulatorial"));
 			medicament.setDailyDosage(medicamentJson.getInt("dose_diaria"));
 			medicament.setCycles(medicamentJson.getInt("ciclos"));
 			medicament.setFrequency(medicamentJson.getInt("frequencia"));
 			medicament.setTimeInterval(medicamentJson.getInt("dias_intervalo"));
 			medicament.setTimeTreatement(medicamentJson.getInt("dias_tratamento"));
+			
+			if (!medicamentJson.isNull("ambulatorial")) {
+				medicament.setOutpatient(medicamentJson.getBoolean("ambulatorial"));
+			}
 			
 			if (!medicamentJson.isNull("padrao")) {
 				medicament.setStandard(medicamentJson.getString("padrao"));

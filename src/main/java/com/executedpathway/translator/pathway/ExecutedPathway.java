@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import com.executedpathway.translator.domain.EPathway;
 
 import MetamodelExecution.Attendance;
+import MetamodelExecution.Audit;
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.Justification;
 import MetamodelExecution.Pathway;
@@ -27,7 +28,16 @@ public class ExecutedPathway {
 		pathway.setName(pathwayJson.getString("nome"));				
 		pathway.setVersion(pathwayJson.getInt("versao"));
 		pathway.setCompleted(pathwayJson.getBoolean("finalizado"));
-		pathway.setLastAuditing(pathwayJson.getString("ultima_auditoria"));
+		
+		//set audit
+		Audit audit = Execution_metamodelFactory.eINSTANCE.createAudit();
+		if (!pathwayJson.isNull("ultima_auditoria")) {
+			JSONObject auditJson = pathwayJson.getJSONObject("ultima_auditoria");
+			String dateStr = auditJson.getString("data");
+			Date date = dateFormat.parse(dateStr);	
+			audit.setDate(date);
+		}
+		pathway.setAudit(audit);	
 		
 		//set justification			
 		Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
@@ -42,9 +52,14 @@ public class ExecutedPathway {
 		
 		//set dates
 		String creationStr = json.getString("data_criacao");
-		Date creationDate = dateFormat.parse(creationStr);				
-		String conclusionStr = json.getString("data_conclusao");
-		Date conclusionDate = dateFormat.parse(conclusionStr);
+		Date creationDate = dateFormat.parse(creationStr);		
+		
+		Date conclusionDate= null;
+		if (!json.isNull("data_conclusao")) {
+			String conclusionStr = json.getString("data_conclusao");
+			conclusionDate = dateFormat.parse(conclusionStr);
+		}
+		
 		
 		//set attendance
 		JSONObject attendanceJson = json.getJSONObject("atendimento");
@@ -65,7 +80,7 @@ public class ExecutedPathway {
 		ePathway.setCreationDate(creationDate);
 		ePathway.setAttendance(attendance);
 		ePathway.setCid(json.getString("cid"));
-		ePathway.setTimeExecution(json.getDouble(""));
+		ePathway.setTimeExecution(json.getDouble("tempo_execucao"));
 		
 		JSONArray idsExecutionStepJson = json.getJSONArray("passos_executados_ids");		
 		for (int i = 0; i < idsExecutionStepJson.length(); i++) {

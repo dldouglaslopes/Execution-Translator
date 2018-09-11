@@ -29,11 +29,11 @@ public class Translator {
 		ePathway = executedPathway.addEPathway(json, ePathway);
 		
 		//set executed steps
-		JSONArray executedStepsJson = json.getJSONArray("passos_executados");	
+		JSONArray executedStepJsons = json.getJSONArray("passos_executados");	
 	
-		for (int i = 0; i < executedStepsJson.length(); i++) {
-			JSONObject executedStepJson = executedStepsJson.getJSONObject(i);
-			String type = executedStepJson.getString("type");
+		for (int i = 0; i < executedStepJsons.length(); i++) {
+			JSONObject executedStepJson = executedStepJsons.getJSONObject(i);
+			String type = executedStepJson.getJSONObject("passo").getString("type");
 			selectEStep(type, executedStepJson, executedStep);
 		}
 		
@@ -53,39 +53,39 @@ public class Translator {
 			ExecutedStep executedStep) throws ParseException {
 		
 		switch (type) {
-		case "AuxilioCondutaExecutado":					
+		case "AuxilioConduta":					
 			ePathway.getElement().add(executedStep.createEAuxiliaryConduct(json));
 			break;
 			
-		case "TratamentoExecutado":	
+		case "Tratamento":	
 			ePathway.getElement().add(executedStep.createETreatment(json));
 			break;
 					
-		case "ReceitaExecutado":	
+		case "Receita":	
 			ePathway.getElement().add(executedStep.createEPrescription(json));
 			break;
 			
-		case "EncaminhamentoExecutado":	
+		case "Encaminhamento":	
 			ePathway.getElement().add(executedStep.createEReferral(json));
 			break;
 			
-		case "InformacaoExecutado":
+		case "Informacao":
 			ePathway.getElement().add(executedStep.createEInformation(json));
 			break;
 			
-		case "AltaExecutado":
+		case "Alta":
 			ePathway.getElement().add(executedStep.createEDischarge(json));
 			break;
 			
-		case "PausaExecutado":
+		case "Pausa":
 			//ePathway.getElement().add(executedStep.createEDischarge(json));
 			break;
 			
-		case "AcaoExecutado":
+		case "Acao":
 			//ePathway.getElement().add(executedStep.createEDischarge(json));
 			break;
 			
-		case "ProcessoExecutado":
+		case "Processo":
 			//ePathway.getElement().add(executedStep.createEDischarge(json));
 			break;
 

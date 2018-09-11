@@ -26,31 +26,32 @@ public class Init {
 		List<EPathway> pathways = new ArrayList<EPathway>();
 		
 		//JSON to XMI
-		String folderStr = "./json/";	//path of JSON folder
+		String folderStr = "C:/Users/dldou/Dropbox/Pesquisa/ArquivosExecucao/Novo/ProtocolosExecutados/";	//path of JSON folder
 		File folder = new File(folderStr);	
-		String[] namesFoldersJson = folder.list(); // names of folders that contain in JSON folder
+		String[] namesStr = folder.list(); // names of folders that contain in JSON folder
 		
-		for (int i = 0; i < namesFoldersJson.length; i++) {
-			String pathStr = folderStr + namesFoldersJson[i]; //create the path of each folder in JSON folder
-			File path = new File(pathStr);
-			String[] namesJson = path.list(); //names of JSON files	
+		for (int i = 0; i < namesStr.length; i++) {
+			String pathStr = folderStr + namesStr[i]; //create the path of each folder in JSON folder
+			System.out.println(namesStr[i]);
+			
+			int pos = namesStr[i].lastIndexOf(".");
+			if (pos > 0 && pos < (namesStr[i].length() - 1)) {
+				namesStr[i] = namesStr[i].substring(0, pos);
+			}
 			
 			FileConfig fileConfig = new FileConfig(); //configure files
-			fileConfig.setResource("./xmi/" + namesFoldersJson[i] + ".xmi");
-			Translator translator = new Translator();		
-			
-			for(String nameJson : namesJson){					
-				JSONObject json = fileConfig.toJSONObject(path + "/" + nameJson); //convert JSON file to JSON object							
-				System.out.print(nameJson + " / "); 
-				translator.toXMI(json); //convert JSON object to XMI file
-			}	
+			fileConfig.setResource("./xmi/" +  namesStr[i] + ".xmi");
+			Translator translator = new Translator();				
+								
+			JSONObject json = fileConfig.toJSONObject(pathStr); //convert JSON file to JSON object
+			translator.toXMI(json); //convert JSON object to XMI files				
 			
 			fileConfig.saveContents(translator.getePathway()); //save the generated contents			
 			pathways.add(translator.getePathway());
-			System.err.println("\n" + namesFoldersJson[i] + ".xmi ---> OK \n");
+			System.err.println("\n" + namesStr[i] + ".xmi ---> OK \n");
 		}		
 		
-		ePathwayRepository.saveAll(pathways);
-		System.out.println("-->XMI(s) updated in MongoDB.");										
+//		ePathwayRepository.saveAll(pathways);
+//		System.out.println("-->XMI(s) updated in MongoDB.");										
 	}
 }
