@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetamodelExecution:EPathway xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1" url="http://18.228.43.112/hospitalar/execucao/atendimentos/1/protocolos/1/" creationDate="2018-03-16T15:31:07.352-0300" conclusionDate="2018-03-16T15:31:34.610-0300" completed="true" lastExecutedStepDate="16 de Mar�o de 2018 �s 15:27" idPathway="1" idLastProfessional="1" idResponsible="1" name="Pneumonia &amp; Influenza">
+  <idsExecutedStep>1</idsExecutedStep>
+  <idsExecutedStep>2</idsExecutedStep>
+  <idsExecutedStep>3</idsExecutedStep>
+  <pathway id="1" url="http://18.228.43.112/hospitalar/autoria/protocolos/1/" code="H002" name="Pneumonia &amp; Influenza" version="1" completed="true"/>
+  <justification/>
+</MetamodelExecution:EPathway>
