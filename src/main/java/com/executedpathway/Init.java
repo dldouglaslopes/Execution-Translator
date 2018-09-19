@@ -19,39 +19,48 @@ import com.executedpathway.translator.model.Translator;
 import com.executedpathway.translator.repository.EPathwayRepository;
 
 public class Init {
-	@Autowired
+	@Autowired(required = true)
 	private static EPathwayRepository ePathwayRepository;
 	
 	public static void main(String[] args) throws JSONException, IOException, ParseException, ParserConfigurationException, SAXException, InterruptedException {
-		List<EPathway> pathways = new ArrayList<EPathway>();
+		List<EPathway> pathways = new ArrayList<EPathway>(6);
 		
-		//JSON to XMI
-		String folderStr = "C:/Users/dldou/Dropbox/Pesquisa/ArquivosExecucao/Novo/ProtocolosExecutados/";	//path of JSON folder
-		File folder = new File(folderStr);	
-		String[] namesStr = folder.list(); // names of folders that contain in JSON folder
+		try {
+			//JSON to XMI
+			String folderStr = "C:/Users/dldou/Dropbox/Pesquisa/ArquivosExecucao/Novo/ProtocolosExecutados/";	//path of JSON folder
+			File folder = new File(folderStr);	
+			String[] namesStr = folder.list(); // names of folders that contain in JSON folder
+			
+			for (int i = 0; i < namesStr.length; i++) {
+				String pathStr = folderStr + namesStr[i]; //create the path of each folder in JSON folder
+				System.out.println(namesStr[i]);
+				
+				int pos = namesStr[i].lastIndexOf(".");
+				if (pos > 0 && pos < (namesStr[i].length() - 1)) {
+					namesStr[i] = namesStr[i].substring(0, pos);
+				}
+				
+				FileConfig fileConfig = new FileConfig(); //configure files
+				fileConfig.setResource("./xmi/" +  namesStr[i] + ".xmi");
+				Translator translator = new Translator();				
+				
+				JSONObject json = fileConfig.toJSONObject(pathStr); //convert JSON file to JSON object
+				translator.toXMI(json); //convert JSON object to XMI files				
+				
+				fileConfig.saveContents(translator.getePathway()); //save the generated contents			
+				pathways.add(translator.getePathway());
+				//ePathwayRepository.save(translator.getePathway());
+				System.err.println("\n" + namesStr[i] + ".xmi ---> OK \n");
+			}		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
-		for (int i = 0; i < namesStr.length; i++) {
-			String pathStr = folderStr + namesStr[i]; //create the path of each folder in JSON folder
-			System.out.println(namesStr[i]);
-			
-			int pos = namesStr[i].lastIndexOf(".");
-			if (pos > 0 && pos < (namesStr[i].length() - 1)) {
-				namesStr[i] = namesStr[i].substring(0, pos);
-			}
-			
-			FileConfig fileConfig = new FileConfig(); //configure files
-			fileConfig.setResource("./xmi/" +  namesStr[i] + ".xmi");
-			Translator translator = new Translator();				
-								
-			JSONObject json = fileConfig.toJSONObject(pathStr); //convert JSON file to JSON object
-			translator.toXMI(json); //convert JSON object to XMI files				
-			
-			fileConfig.saveContents(translator.getePathway()); //save the generated contents			
-			pathways.add(translator.getePathway());
-			System.err.println("\n" + namesStr[i] + ".xmi ---> OK \n");
-		}		
-		
-//		ePathwayRepository.saveAll(pathways);
-//		System.out.println("-->XMI(s) updated in MongoDB.");										
+		try {
+			ePathwayRepository.saveAll(pathways);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println("-->XMI(s) updated in MongoDB.");										
 	}
 }

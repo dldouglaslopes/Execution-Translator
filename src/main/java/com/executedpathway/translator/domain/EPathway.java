@@ -9,7 +9,7 @@ import MetamodelExecution.impl.EPathwayImpl;
 public class EPathway extends EPathwayImpl {	
 	
 	@Id
-	private Integer id;
+	private String id;
 
 	public EPathway() {		
 		super();
