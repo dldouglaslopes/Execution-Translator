@@ -4,12 +4,14 @@ import java.text.ParseException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.executedpathway.translator.domain.EPathway;
 import com.executedpathway.translator.pathway.ExecutedPathway;
 import com.executedpathway.translator.pathway.complementaryconduct.ComplementaryConduct;
 import com.executedpathway.translator.pathway.step.ExecutedStep;
 
-public class Translator {
+import MetamodelExecution.EPathway;
+import MetamodelExecution.Execution_metamodelFactory;
+
+public class EPathwayTranslator {
 	private EPathway ePathway;
 	
 	public EPathway getePathway() {
@@ -17,8 +19,8 @@ public class Translator {
 	}
 
 	//Constructor
-	public Translator(){		
-		this.ePathway = new EPathway();	
+	public EPathwayTranslator(){		
+		this.ePathway = Execution_metamodelFactory.eINSTANCE.createEPathway();	
 	}
 	
 	//convert JSON files in one XMI file

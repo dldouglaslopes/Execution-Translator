@@ -7,10 +7,9 @@ import java.util.Locale;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.executedpathway.translator.domain.EPathway;
-
 import MetamodelExecution.Attendance;
 import MetamodelExecution.Audit;
+import MetamodelExecution.EPathway;
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.Justification;
 import MetamodelExecution.Pathway;
