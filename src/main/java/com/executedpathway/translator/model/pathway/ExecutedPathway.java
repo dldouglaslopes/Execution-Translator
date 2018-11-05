@@ -1,4 +1,4 @@
-package com.executedpathway.translator.pathway;
+package com.executedpathway.translator.model.pathway;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

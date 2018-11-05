@@ -4,9 +4,9 @@ import java.text.ParseException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.executedpathway.translator.pathway.ExecutedPathway;
-import com.executedpathway.translator.pathway.complementaryconduct.ComplementaryConduct;
-import com.executedpathway.translator.pathway.step.ExecutedStep;
+import com.executedpathway.translator.model.pathway.ExecutedPathway;
+import com.executedpathway.translator.model.pathway.complementaryconduct.ComplementaryConduct;
+import com.executedpathway.translator.model.pathway.step.ExecutedStep;
 
 import MetamodelExecution.EPathway;
 import MetamodelExecution.Execution_metamodelFactory;
@@ -57,51 +57,63 @@ public class EPathwayTranslator {
 		switch (type) {
 		case "AuxilioConduta":					
 			ePathway.getElement().add(executedStep.createEAuxiliaryConduct(json));
-			break;
-			
+			break;			
 		case "Tratamento":	
 			ePathway.getElement().add(executedStep.createETreatment(json));
-			break;
-					
+			break;					
 		case "Receita":	
 			ePathway.getElement().add(executedStep.createEPrescription(json));
-			break;
-			
+			break;			
 		case "Encaminhamento":	
 			ePathway.getElement().add(executedStep.createEReferral(json));
-			break;
-			
+			break;			
 		case "Informacao":
 			ePathway.getElement().add(executedStep.createEInformation(json));
-			break;
-			
+			break;			
 		case "Alta":
 			ePathway.getElement().add(executedStep.createEDischarge(json));
-			break;
-			
+			break;			
 		case "Pausa":
+			System.out.println("UNKNOWN STEP TYPE! - pausa");
 			//ePathway.getElement().add(executedStep.createEDischarge(json));
-			break;
-			
+			break;			
 		case "Acao":
+			System.out.println("UNKNOWN STEP TYPE! - acao");
 			//ePathway.getElement().add(executedStep.createEDischarge(json));
-			break;
-			
+			break;			
 		case "Processo":
+			System.out.println("UNKNOWN STEP TYPE! - processo");
 			//ePathway.getElement().add(executedStep.createEDischarge(json));
 			break;
-
 		default:
-			System.out.println("UNKNOWN TYPE!");
+			System.out.println("UNKNOWN STEP TYPE!");
 			break;			
 		}
 	}
 	
 	private void selectComplementaryConducts(
 			String type, 
-			JSONObject complementaryConductJson,
-			ComplementaryConduct complementaryConduct) {
-		// TODO Auto-generated method stub
+			JSONObject json,
+			ComplementaryConduct complementaryConduct) throws ParseException {
 		
+		switch (type) {
+		case "MedicamentoComplementar":
+			ePathway.getComplementaryconducts().add(complementaryConduct.createComplementaryMedicamention(json));
+			break;
+		case "ProcedimentoComplementar":
+			ePathway.getComplementaryconducts().add(complementaryConduct.createComplementaryProcedure(json));
+			break;
+		case "ReceitaComplementar":
+			System.out.println("UNKNOWN CONDUCT TYPE! - receita");
+			//ePathway.getComplementaryconducts().add(complementaryConduct.createComplementaryItemPrescription(json));
+			break;
+		case "ExameComplementar":
+			System.out.println("UNKNOWN CONDUCT TYPE! - exame");
+			//ePathway.getComplementaryconducts().add(complementaryConduct.createComplementaryExamination(json));
+			break;
+		default:
+			System.out.println("UNKNOWN CONDUCT TYPE!");
+			break;
+		}		
 	}
 }

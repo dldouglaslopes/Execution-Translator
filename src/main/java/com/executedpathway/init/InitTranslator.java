@@ -1,4 +1,4 @@
-package com.executedpathway;
+package com.executedpathway.init;
 
 import com.executedpathway.translator.Translator;
 

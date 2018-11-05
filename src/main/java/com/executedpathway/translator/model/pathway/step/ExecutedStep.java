@@ -1,6 +1,5 @@
-package com.executedpathway.translator.pathway.step;
+package com.executedpathway.translator.model.pathway.step;
 import java.text.ParseException;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -44,16 +43,6 @@ public class ExecutedStep {
 	public EStep createEElement(JSONObject json, EStep eElement) throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());
 		
-		//set justification
-		Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
-		if (!json.isNull("justificativa")) {	
-			JSONObject justificationJson = json.getJSONObject("justificativa");
-			justification.setId(justificationJson.getInt("id"));
-			justification.setReason(justificationJson.getString("razao"));
-			justification.setDescription(justificationJson.getString("descricao"));
-			justification.setJustifiedById(justificationJson.getInt("justificado_por_id"));
-		}
-		
 		//set step
 		JSONObject stepJson = json.getJSONObject("passo");
 		Step step = Execution_metamodelFactory.eINSTANCE.createStep();
@@ -66,14 +55,16 @@ public class ExecutedStep {
 		step.setMandatory(stepJson.getBoolean("obrigatoriedade"));
 				
 		//set audit
-		Audit audit = Execution_metamodelFactory.eINSTANCE.createAudit();
 		if (!stepJson.isNull("ultima_auditoria")) {
+			Audit audit = Execution_metamodelFactory.eINSTANCE.createAudit();	
 			JSONObject auditJson = stepJson.getJSONObject("ultima_auditoria");
 			String dateStr = auditJson.getString("data");
 			Date date = dateFormat.parse(dateStr);	
+			
 			audit.setDate(date);
-		}
-		step.setAudit(audit);	
+			
+			step.setAudit(audit);
+		}			
 		
 		//set dates
 		String creationStr = json.getString("data_criacao");
@@ -83,24 +74,33 @@ public class ExecutedStep {
 		
 		//Set executed element/step
 		eElement.setId(json.getInt("id"));
-		//eElement.setType(json.getString("type"));
 		eElement.setIsCurrent(json.getBoolean("is_current"));
 		eElement.setReworked(json.getBoolean("reworked"));
 		eElement.setExecuted(json.getBoolean("executado"));		
 		eElement.setCreatedById(json.getInt("criado_por_id"));		
 		eElement.setStep(step);
-		eElement.setName(eElement.getStep().getName());	
-		eElement.setJustification(justification);
+		eElement.setName(eElement.getStep().getName());		
 		eElement.setCreationDate(creationDate);	
 		eElement.setModificationDate(modificationDate);
+
+		//set justification
+		if (!json.isNull("justificativa")) {	
+			Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();
+			JSONObject justificationJson = json.getJSONObject("justificativa");
+			justification.setId(justificationJson.getInt("id"));
+			justification.setReason(justificationJson.getString("razao"));
+			justification.setDescription(justificationJson.getString("descricao"));
+			justification.setJustifiedById(justificationJson.getInt("justificado_por_id"));
 		
+			eElement.setJustification(justification);
+		}		
 		if (!json.isNull("executado_por_id")) {
 			eElement.setExecutedById(json.getInt("executado_por_id"));
-		}
-		
+		}		
 		if (!json.isNull("data_execucao")) {
 			String executionStr = json.getString("data_execucao");
 			Date executionDate = dateFormat.parse(executionStr);
+			
 			eElement.setExecutionDate(executionDate);
 		}		
 		
@@ -452,11 +452,14 @@ public class ExecutedStep {
 		if (!json.isNull("prescricao")) {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());
 			JSONObject prescriptionJson = json.getJSONObject("prescricao");			
+			
 			prescription.setId(prescriptionJson.getInt("id"));
 			prescription.setSuccess(prescriptionJson.getBoolean("sucesso"));
 			prescription.setMessage(prescriptionJson.getString("mensagem"));			
+			
 			String requestStr = prescriptionJson.getString("data_solicitacao");
 			Date requestDate = dateFormat.parse(requestStr);			
+			
 			prescription.setRequestDate(requestDate);
 		}		
 		

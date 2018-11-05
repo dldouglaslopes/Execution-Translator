@@ -11,11 +11,12 @@ import com.executedpathway.translator.config.DBConfig;
 import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.BsonField;
+import com.mongodb.client.model.Filters;
 
 public class DBQuery {
 	private DBConfig dbConfig = new DBConfig();
 	
-	public String avgTime() {
+	public String avgTimeExecution() {
 		AggregateIterable<Document> aggregate = dbConfig.getCollection()
 				.aggregate(Arrays.asList(
 						Aggregates.group("_id", 
@@ -28,6 +29,12 @@ public class DBQuery {
 		
 		return decimalFormat(time/60);
 	}
+	
+	public void countMedicineInComplementaryConducts() {}
+	
+	public long test() {
+        return dbConfig.getCollection().count(Filters.eq("name", "ITU - Cistite"));
+    }
 	
 	private String decimalFormat(double number) {
 		return new DecimalFormat("#0").format(number);
