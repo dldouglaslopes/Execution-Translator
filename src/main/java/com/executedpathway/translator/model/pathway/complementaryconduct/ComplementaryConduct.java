@@ -12,6 +12,7 @@ import MetamodelExecution.ComplementaryExamination;
 import MetamodelExecution.ComplementaryItemPrescription;
 import MetamodelExecution.ComplementaryMedication;
 import MetamodelExecution.ComplementaryProcedure;
+import MetamodelExecution.ExaminationPrescribedResource;
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.MedicationPrescribedResource;
 import MetamodelExecution.ProcedurePrescribedResource;
@@ -30,19 +31,22 @@ public class ComplementaryConduct {
 		complementaryConducts.setType(json.getString("type"));
 		complementaryConducts.setPathway(json.getString("protocolo"));
 		complementaryConducts.setCreationDate(creationDate);
-		complementaryConducts.setResource(json.getString("recurso"));
+
+		if (!json.isNull("recurso")) {
+			complementaryConducts.setResource(json.getString("recurso"));
+		}
 		
 		//set suspension
-		if (json.has("suspensao")) {
+		if (!json.isNull("suspensao")) {
 			Suspension suspension = Execution_metamodelFactory.eINSTANCE.createSuspension();
 			JSONObject suspensionJson = json.getJSONObject("suspensao");
 			
 			//set date
-			String suspensionStr = json.getString("data_solicitacao");
+			String suspensionStr = suspensionJson.getString("data_solicitacao");
 			Date suspensionDate = dateFormat.parse(suspensionStr);
 			
 			suspension.setId(suspensionJson.getInt("id"));
-			suspension.setMessage(suspensionJson.getString("messagem"));
+			suspension.setMessage(suspensionJson.getString("mensagem"));
 			suspension.setRequestDate(suspensionDate);
 			suspension.setSuccess(suspensionJson.getBoolean("sucesso"));
 			
@@ -56,20 +60,16 @@ public class ComplementaryConduct {
 		ComplementaryMedication complementaryMedication = Execution_metamodelFactory.eINSTANCE.createComplementaryMedication();
 		complementaryMedication = (ComplementaryMedication) createComplementaryConducts(json, complementaryMedication);
 		
-		MedicationPrescribedResource medicationPrescribedResource = Execution_metamodelFactory.eINSTANCE.createMedicationPrescribedResource();
-		
 		if (json.has("recurso_prescrito")) {
+			MedicationPrescribedResource medicationPrescribedResource = Execution_metamodelFactory.eINSTANCE.createMedicationPrescribedResource();
 			JSONObject resourceJson = json.getJSONObject("recurso_prescrito");
 			
 			medicationPrescribedResource.setId(resourceJson.getInt("id"));
 			medicationPrescribedResource.setIdMedication(resourceJson.getInt("medicamento_id"));
-			medicationPrescribedResource.setOutpatient(resourceJson.getBoolean("ambulatorial"));
 			medicationPrescribedResource.setName(resourceJson.getString("nome"));
-			medicationPrescribedResource.setStandard(resourceJson.getString("padrao"));
 			medicationPrescribedResource.setBrand(resourceJson.getString("marca"));
-			medicationPrescribedResource.setCode(resourceJson.getInt("codigo"));
+			medicationPrescribedResource.setCode(resourceJson.getString("codigo"));
 			medicationPrescribedResource.setCycles(resourceJson.getInt("ciclos"));
-			medicationPrescribedResource.setCategory(resourceJson.getString("categoria"));
 			medicationPrescribedResource.setDescription(resourceJson.getString("descricao"));
 			medicationPrescribedResource.setTimeInterval(resourceJson.getInt("dias_intervalo"));
 			medicationPrescribedResource.setDailyDosage(resourceJson.getInt("dose_diaria"));
@@ -79,6 +79,16 @@ public class ComplementaryConduct {
 			medicationPrescribedResource.setUnit(resourceJson.getString("unidade"));
 			medicationPrescribedResource.setAccess(resourceJson.getString("via_acesso"));
 		
+			if (!resourceJson.isNull("categoria")) {
+				medicationPrescribedResource.setCategory(resourceJson.getString("categoria"));
+			}
+			if (!resourceJson.isNull("padrao")) {
+				medicationPrescribedResource.setStandard(resourceJson.getString("padrao"));
+			}			
+			if (!resourceJson.isNull("ambulatorial")) {
+				medicationPrescribedResource.setOutpatient(resourceJson.getBoolean("ambulatorial"));
+			}
+			
 			complementaryMedication.setPrescribedresource(medicationPrescribedResource);
 		}
 		
@@ -89,17 +99,19 @@ public class ComplementaryConduct {
 		ComplementaryProcedure complementaryProcedure = Execution_metamodelFactory.eINSTANCE.createComplementaryProcedure();
 		complementaryProcedure = (ComplementaryProcedure) createComplementaryConducts(json, complementaryProcedure);
 		
-		ProcedurePrescribedResource procedurePrescribedResource = Execution_metamodelFactory.eINSTANCE.createProcedurePrescribedResource();
-		
 		if (json.has("recurso_prescrito")) {
+			ProcedurePrescribedResource procedurePrescribedResource = Execution_metamodelFactory.eINSTANCE.createProcedurePrescribedResource();
 			JSONObject resourceJson = json.getJSONObject("recurso_prescrito");
 			
 			procedurePrescribedResource.setId(resourceJson.getInt("id"));
 			procedurePrescribedResource.setIdProcedure(resourceJson.getInt("procedimento_id"));
-			procedurePrescribedResource.setQuantity(resourceJson.getInt("procedimento"));
+			procedurePrescribedResource.setQuantity(resourceJson.getInt("quantidade"));
+			procedurePrescribedResource.setProcedure(resourceJson.getString("procedimento"));
 			procedurePrescribedResource.setFrequency(resourceJson.getInt("frequencia"));
-			procedurePrescribedResource.setProcedure(resourceJson.getString("frequencia_display"));
-			procedurePrescribedResource.setCategory(resourceJson.getString("categoria"));
+			
+			if (!resourceJson.isNull("categoria")) {
+				procedurePrescribedResource.setCategory(resourceJson.getString("categoria"));	
+			}
 			
 			complementaryProcedure.setProcedureprescribedresource(procedurePrescribedResource);
 		}
@@ -110,6 +122,25 @@ public class ComplementaryConduct {
 	public ComplementaryExamination createComplementaryExamination(JSONObject json) throws ParseException {
 		ComplementaryExamination complementaryExamination = Execution_metamodelFactory.eINSTANCE.createComplementaryExamination();
 		complementaryExamination = (ComplementaryExamination) createComplementaryConducts(json, complementaryExamination);
+		
+		if (json.has("recurso_prescrito")) {
+			ExaminationPrescribedResource examinationPrescribedResource = Execution_metamodelFactory.eINSTANCE.createExaminationPrescribedResource();
+			JSONObject resourceJson = json.getJSONObject("recurso_prescrito");
+			
+			examinationPrescribedResource.setId(resourceJson.getInt("id"));
+			examinationPrescribedResource.setIdExam(resourceJson.getInt("exame_id"));
+			examinationPrescribedResource.setExam(resourceJson.getString("exame"));
+			examinationPrescribedResource.setJustification(resourceJson.getString("justificativa"));
+			examinationPrescribedResource.setQuantity(resourceJson.getInt("quantidade"));
+			examinationPrescribedResource.setSideLimb(resourceJson.getString("lado_membro"));
+			examinationPrescribedResource.setClinicalIndication(resourceJson.getString("indicacao_clinica"));
+			
+			if (!resourceJson.isNull("categoria")) {
+				examinationPrescribedResource.setCategory(resourceJson.getString("categoria"));
+			}
+			
+			complementaryExamination.setExaminationprescribedresource(examinationPrescribedResource);
+		}
 		
 		return complementaryExamination;
 	}

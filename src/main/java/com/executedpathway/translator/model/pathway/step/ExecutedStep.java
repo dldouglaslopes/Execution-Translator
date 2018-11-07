@@ -34,6 +34,7 @@ import MetamodelExecution.PrescribedPrescriptionItem;
 import MetamodelExecution.PrescribedProcedure;
 import MetamodelExecution.Prescription;
 import MetamodelExecution.Question;
+import MetamodelExecution.Result;
 import MetamodelExecution.Step;
 import MetamodelExecution.Unit;
 import MetamodelExecution.Variable;
@@ -241,7 +242,22 @@ public class ExecutedStep {
 			}			
 			
 			if (!prescribedExaminationJson.isNull("resultado")) {
-				prescribedExamination.setResult(prescribedExaminationJson.getString("resultado"));
+				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());
+				JSONObject resultJson = prescribedExaminationJson.getJSONObject("resultado");			
+				
+				Result result = Execution_metamodelFactory.eINSTANCE.createResult();
+				
+				result.setId(resultJson.getInt("id"));
+				result.setSuccess(resultJson.getBoolean("sucesso"));
+				result.setMessage(resultJson.getString("mensagem"));			
+				
+				String resultStr = resultJson.getString("data_solicitacao");
+				Date resultDate = dateFormat.parse(resultStr);			
+				
+				result.setRequestDate(resultDate);
+			
+				prescribedExamination.setResult(result);
+				
 			}						
 			
 			//save prescription 

@@ -108,8 +108,7 @@ public class EPathwayTranslator {
 			//ePathway.getComplementaryconducts().add(complementaryConduct.createComplementaryItemPrescription(json));
 			break;
 		case "ExameComplementar":
-			System.out.println("UNKNOWN CONDUCT TYPE! - exame");
-			//ePathway.getComplementaryconducts().add(complementaryConduct.createComplementaryExamination(json));
+			ePathway.getComplementaryconducts().add(complementaryConduct.createComplementaryExamination(json));
 			break;
 		default:
 			System.out.println("UNKNOWN CONDUCT TYPE!");

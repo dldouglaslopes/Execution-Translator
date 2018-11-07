@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1762" creationDate="2018-07-18T16:07:34.687-0300" name="Pneumonia &amp; Influenza" cid="J15" timeExecution="4304259.316749">
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2082" executed="true" creationDate="2018-07-18T15:51:26.514-0300" modificationDate="2018-07-18T15:55:58.724-0300" executionDate="2018-07-18T15:55:05.864-0300" createdById="141" executedById="141" name="Verificar Critérios para SEPSE">
-    <justification/>
-    <step id="1124" type="AuxilioConduta" name="Verificar Critérios para SEPSE" description="Verifique os critérios para SIRS" isInitial="true">
-      <audit/>
-    </step>
+    <step id="1124" type="AuxilioConduta" name="Verificar Critérios para SEPSE" description="Verifique os critérios para SIRS" isInitial="true"/>
     <answer id="2584" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
       <question id="887" text="TAX > 37.8ºc ou &lt; 35ºc?">
@@ -34,10 +31,7 @@
     </answer>
   </element>
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2083" executed="true" creationDate="2018-07-18T15:57:32.427-0300" modificationDate="2018-07-18T15:58:11.094-0300" executionDate="2018-07-18T15:57:09.238-0300" createdById="141" executedById="141" name="Verificar Fatores Agravantes Para SEPSE">
-    <justification/>
-    <step id="1125" type="AuxilioConduta" name="Verificar Fatores Agravantes Para SEPSE" description="Verifique se o paciente apresenta algum dos fatores a seguir.">
-      <audit/>
-    </step>
+    <step id="1125" type="AuxilioConduta" name="Verificar Fatores Agravantes Para SEPSE" description="Verifique se o paciente apresenta algum dos fatores a seguir."/>
     <answer id="2587" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
       <question id="890" text="Oligúria / Anúria?">
@@ -76,10 +70,7 @@
     </answer>
   </element>
   <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2084" executed="true" creationDate="2018-07-18T16:01:00.103-0300" modificationDate="2018-07-18T15:54:12.173-0300" executionDate="2018-07-18T15:53:46.945-0300" createdById="141" executedById="141" name="Verificar Idade do Paciente">
-    <justification/>
-    <step id="1107" type="AuxilioConduta" name="Verificar Idade do Paciente" description="Verifique a idade do paciente">
-      <audit/>
-    </step>
+    <step id="1107" type="AuxilioConduta" name="Verificar Idade do Paciente" description="Verifique a idade do paciente"/>
     <answer id="2591" type="RespostaNumerica">
       <value xsi:type="MetamodelExecution:Numeric" value="88.0"/>
       <question id="821" text="Idade:">
@@ -91,10 +82,7 @@
     </answer>
   </element>
   <element xsi:type="MetamodelExecution:ETreatment" id="2085" isCurrent="true" creationDate="2018-07-18T15:55:20.162-0300" modificationDate="2018-07-18T15:55:20.204-0300" createdById="141" name="Raio X + Pacote de Exames Laboratoriais">
-    <justification/>
-    <step id="1110" type="Tratamento" name="Raio X + Pacote de Exames Laboratoriais" description="Paciente apresenta fatores complicadores para o tratamento, idade avançada ou presença de comorbidades, recomenda-se solicitar além do raio X do tórax o pacote de exames laboratoriais a seguir:">
-      <audit/>
-    </step>
+    <step id="1110" type="Tratamento" name="Raio X + Pacote de Exames Laboratoriais" description="Paciente apresenta fatores complicadores para o tratamento, idade avançada ou presença de comorbidades, recomenda-se solicitar além do raio X do tórax o pacote de exames laboratoriais a seguir:"/>
     <prescribedexam id="2342" report="" numberGuide="33199219">
       <examination id="1124" sideLimb="" quantity="1" justification="Suspeita de Influenza" clinicalIndication="Nenhuma">
         <exam id="8644" code="28040481" name="HEMOGRAMA COMPLETO (ERITROGRAMA + LEUCOGRAMA + AVALIACAO DE PLAQUETAS)" description="" onlyEmergency="true"/>

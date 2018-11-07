@@ -29,7 +29,7 @@ public class Translator {
 			
 			for (int i = 0; i < namesStr.length; i++) {
 				String pathStr = folderStr + namesStr[i]; //create the path of each folder in JSON folder
-				System.out.println(namesStr[i]);
+				//System.out.println(namesStr[i]);
 				
 				int pos = namesStr[i].lastIndexOf(".");
 				if (pos > 0 && pos < (namesStr[i].length() - 1)) {
@@ -46,7 +46,7 @@ public class Translator {
 				
 				fileConfig.saveContents(translator.getePathway()); //save the generated contents			
 				pathways.add(translator.getePathway());
-				System.err.println("\n" + namesStr[i] + ".xmi ---> OK \n");
+				System.err.println(namesStr[i] + ".xmi ---> OK");
 			}		
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
