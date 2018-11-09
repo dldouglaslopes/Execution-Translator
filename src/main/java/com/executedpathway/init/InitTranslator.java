@@ -7,3 +7,4 @@ public class InitTranslator {
 		new Translator().translate();		
 	}
 }
+
