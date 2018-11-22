@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.json.JSONObject;
 
-import com.executedpathway.translator.config.DBConfig;
+import com.executedpathway.query.DBConfig;
+import com.executedpathway.query.DBOperations;
 import com.executedpathway.translator.config.FileConfig;
-import com.executedpathway.translator.database.DBOperations;
 import com.executedpathway.translator.model.EPathwayTranslator;
 
 import MetamodelExecution.EPathway;
@@ -28,6 +28,7 @@ public class Translator {
 			String[] namesStr = folder.list(); // names of folders that contain in JSON folder
 			
 			for (int i = 0; i < namesStr.length; i++) {
+				System.out.println(namesStr[i] + ".xmi ---> TRANSLATE...");
 				String pathStr = folderStr + namesStr[i]; //create the path of each folder in JSON folder
 				//System.out.println(namesStr[i]);
 				
@@ -46,7 +47,7 @@ public class Translator {
 				
 				fileConfig.saveContents(translator.getePathway()); //save the generated contents			
 				pathways.add(translator.getePathway());
-				System.err.println(namesStr[i] + ".xmi ---> OK");
+				System.err.println(namesStr[i] + ".xmi ---> OK!");
 			}		
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

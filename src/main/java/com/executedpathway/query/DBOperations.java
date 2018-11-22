@@ -1,8 +1,7 @@
-package com.executedpathway.translator.database;
+package com.executedpathway.query;
 
 import org.bson.Document;
 
-import com.executedpathway.translator.config.DBConfig;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;

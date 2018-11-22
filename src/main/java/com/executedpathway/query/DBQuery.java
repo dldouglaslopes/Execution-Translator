@@ -1,4 +1,4 @@
-package com.executedpathway.translator.database;
+package com.executedpathway.query;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -7,7 +7,6 @@ import org.bson.BsonDocument;
 import org.bson.BsonString;
 import org.bson.Document;
 
-import com.executedpathway.translator.config.DBConfig;
 import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.BsonField;

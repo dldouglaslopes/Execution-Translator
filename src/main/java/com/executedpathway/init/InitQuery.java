@@ -1,6 +1,6 @@
 package com.executedpathway.init;
 
-import com.executedpathway.translator.database.DBQuery;
+import com.executedpathway.query.DBQuery;
 
 public class InitQuery {
 	public static void main(String[] args) {

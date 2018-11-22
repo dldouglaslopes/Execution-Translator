@@ -16,6 +16,7 @@ import MetamodelExecution.ExaminationPrescribedResource;
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.MedicationPrescribedResource;
 import MetamodelExecution.ProcedurePrescribedResource;
+import MetamodelExecution.Standard;
 import MetamodelExecution.Suspension;
 
 public class ComplementaryConduct {
@@ -83,7 +84,24 @@ public class ComplementaryConduct {
 				medicationPrescribedResource.setCategory(resourceJson.getString("categoria"));
 			}
 			if (!resourceJson.isNull("padrao")) {
-				medicationPrescribedResource.setStandard(resourceJson.getString("padrao"));
+				Standard standard = Execution_metamodelFactory.eINSTANCE.createStandard();
+				JSONObject standardJson = resourceJson.getJSONObject("padrao");
+				
+				standard.setId(standardJson.getInt("id"));
+				standard.setNameDiluent(standardJson.getString("nome_diluente"));
+				standard.setCodeActiveAgent(standardJson.getInt("codigo_principio_ativo"));
+				standard.setCodeApresDiluent(standardJson.getString("codigo_apresentacao_diluente"));
+				standard.setCodeDiluent(standardJson.getInt("codigo_diluente"));
+				standard.setCodeEventsDiluent(standardJson.getInt("codigo_ocorrencia_diluicao"));
+				standard.setCodeOrderAdmin(standardJson.getInt("codigo_ordem_administracao"));
+				standard.setCodeUnitDosage(standardJson.getString("codigo_unidade_dosagem"));
+				standard.setAdminDiluent(standardJson.getString("administracao_diluicao"));
+				standard.setQtyDiluent(standardJson.getInt("quantidade_diluente"));
+				standard.setQtyDosage(standardJson.getInt("quantidade_dosagem"));
+				standard.setQtyVolume(standardJson.getInt("quantidade_volume"));
+				standard.setTypeAccess(standardJson.getString("tipo_acesso"));
+				standard.setTypeAdmin(standardJson.getString("tipo_administracao"));
+				standard.setMnemonic(standardJson.getString("mnemonico"));
 			}			
 			if (!resourceJson.isNull("ambulatorial")) {
 				medicationPrescribedResource.setOutpatient(resourceJson.getBoolean("ambulatorial"));

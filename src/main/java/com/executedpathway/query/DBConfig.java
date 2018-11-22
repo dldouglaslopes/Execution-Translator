@@ -1,4 +1,4 @@
-package com.executedpathway.translator.config;
+package com.executedpathway.query;
 
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
