@@ -56,16 +56,10 @@ public class Translator {
 	
 	private void saveEPathway(DBConfig dbConfig, DBOperations dbOperations) {
 		for (int i = 0; i < pathways.size(); i++) {
-			if (dbOperations.hasEPathway(pathways.get(i).getName())) {
-				dbOperations.updateEPathway(pathways.get(i).getName(), pathways.get(i));
-				System.out.println("-->XMI(s) updated in MongoDB.");			
-			}
-			else {
+			if (!dbOperations.hasEPathway(pathways.get(i).getId())) {
 				dbOperations.saveEPathway(pathways.get(i).getName(), pathways.get(i));	//adding executed pathway in MongoDB
 				System.out.println("-->XMI(s) added in MongoDB.");
 			}
-					
-			//dbConfig.deleteEPathway(pathways.get(0).getName()); //deleting the contents of executed pathway
 		}
 		
 		dbConfig.close(); //closing MongoDB client	

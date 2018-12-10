@@ -6,7 +6,10 @@ public class InitQuery {
 	public static void main(String[] args) {
 		DBQuery dbQuery = new DBQuery();  
 		
-		System.err.println("Average Time= " + dbQuery.avgTimeExecution() + " horas");
-		//System.err.println(dbQuery.test2());
+		//Q1
+		//System.err.println("Average Time= " + dbQuery.avgTimeExecution() + " horas");
+		
+		//Q2
+		dbQuery.countMedicineInComplementaryConducts();
 	}
 }

@@ -4,7 +4,6 @@ import org.bson.Document;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.Updates;
 
 import MetamodelExecution.EPathway;
 
@@ -35,16 +34,8 @@ public class DBOperations {
 		
 		collection.insertOne(ePathwayDoc);	//insert a document	in a collection
 	}
-	
-	public void updateEPathway(String name, EPathway ePathway) {
-		collection.updateOne(Filters.eq("name", name), Updates.set("xmi", ePathway)); 
-	}
-	
-	public void deleteEPathway(String name) {
-		collection.deleteOne(Filters.eq("name", name)); 
-	}
-	
-	public boolean hasEPathway(String name) {
-		return collection.count(Filters.eq("name", name)) > 0;
+		
+	public boolean hasEPathway(int id) {
+		return collection.count(Filters.eq("idCP", id)) > 0;
 	}
 }
