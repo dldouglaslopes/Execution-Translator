@@ -1,15 +1,9 @@
 package com.executedpathway.init;
 
-import com.executedpathway.query.DBQuery;
+import com.executedpathway.query.Query;
 
 public class InitQuery {
 	public static void main(String[] args) {
-		DBQuery dbQuery = new DBQuery();  
-		
-		//Q1
-		//System.err.println("Average Time= " + dbQuery.avgTimeExecution() + " horas");
-		
-		//Q2
-		dbQuery.countMedicineInComplementaryConducts();
+		new Query().queries();
 	}
 }
