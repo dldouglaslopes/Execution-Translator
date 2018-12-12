@@ -55,5 +55,5 @@
   <pathway id="525" code="H017" name="Diarréia" version="1" completed="true">
     <audit date="2018-08-08T14:20:24.055-0300"/>
   </pathway>
-  <attendance codeAttendance="46131602" idProfessional="221" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="12842857" codeBd="hap"/>
+  <medicalcare codeMedicalCare="46131602" idProfessional="221" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="12842857"/>
 </MetamodelExecution:EPathway>

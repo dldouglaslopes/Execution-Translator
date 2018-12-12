@@ -82,5 +82,5 @@
   <pathway id="522" code="H004" name="Aminiorrexe Prematura" version="2" completed="true">
     <audit date="2018-06-08T17:11:21.364-0300"/>
   </pathway>
-  <attendance codeAttendance="49417421" idProfessional="221" hospitalUnit="ULTRA SOM SERV MED LTDA - PA PECEM" patientRecord="15436391" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49417421" idProfessional="221" hospitalUnit="ULTRA SOM SERV MED LTDA - PA PECEM" patientRecord="15436391"/>
 </MetamodelExecution:EPathway>

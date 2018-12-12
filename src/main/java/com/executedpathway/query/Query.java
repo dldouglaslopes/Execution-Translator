@@ -8,15 +8,16 @@ public class Query {
 
 	public void queries() {
 		//#Q1
+		/*
 		System.err.println("Average Time= " + 
 							dbQuery.avgTimeExecution() +
 							" horas");
 		
-		//#Q2	
+		//#Q2
 		List<Entry<String, Integer>> medicinesTop5 = dbQuery.top5MedicineInComplementaryConducts();
 		for (int i = 0; i < medicinesTop5.size(); i++) {
 			System.err.println( medicinesTop5.get(i));
-		}
+		}		
 		
 		//#Q3
 		System.err.println("The most executed care pathway is " + 
@@ -24,5 +25,9 @@ public class Query {
 							" with " +
 							dbQuery.mostExecutedCarePathway().getValue() +
 							" execution(s).");
+		*/
+		
+		//#Q4
+		dbQuery.mostRecurrentFlowInACarePathway("Pneumonia & Influenza");
 	}	
 }

@@ -26,5 +26,5 @@
   <complementaryconducts xsi:type="MetamodelExecution:ComplementaryProcedure" id="624" type="ProcedimentoComplementar" pathway="Fratura Exposta" creationDate="2018-05-29T18:47:09.682-0300" resource="OBSERVACAO:">
     <procedureprescribedresource id="441" idProcedure="1753" quantity="1" frequency="1" procedure="30299004: OBSERVACAO:"/>
   </complementaryconducts>
-  <attendance codeAttendance="49925059" idProfessional="181" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="332172" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49925059" idProfessional="181" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="332172"/>
 </MetamodelExecution:EPathway>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1162" creationDate="2018-05-30T14:33:52.683-0300" conclusionDate="2018-06-20T16:31:47.511-0300" completed="true" aborted="true" name="Cefaléia" cid="A030" timeExecution="1821597.876828">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1402" reworked="true" executed="true" creationDate="2018-05-30T14:34:33.812-0300" modificationDate="2018-05-30T14:30:38.694-0300" executionDate="2018-05-30T14:28:07.500-0300" createdById="21" executedById="21" name="Avaliar Sintomas">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1402" reworked="true" executed="true" creationDate="2018-05-30T14:34:33.812-0300" modificationDate="2018-05-30T14:30:38.694-0300" executionDate="2018-05-30T14:28:07.500-0300" createdById="21" executedById="21" name="Avaliar Sintomas" next="/atendimentos/21/protocolos/1162/passos/1406/">
     <step id="1575" type="AuxilioConduta" name="Avaliar Sintomas" description="ANAMNESE COMPLETA SOBRE CEFALEIA, PARA DIFERENCIAR SE CEFALIA PRIMÁRIA OU SECUNDÁRIA" isInitial="true"/>
     <answer id="1764" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -111,7 +111,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1406" executed="true" creationDate="2018-05-30T14:32:58.671-0300" modificationDate="2018-05-30T14:40:01.394-0300" executionDate="2018-05-30T14:39:12.749-0300" createdById="21" executedById="21" name="[Cefaleia Primaria] Classificar Cefaleia">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1406" executed="true" creationDate="2018-05-30T14:32:58.671-0300" modificationDate="2018-05-30T14:40:01.394-0300" executionDate="2018-05-30T14:39:12.749-0300" createdById="21" executedById="21" name="[Cefaleia Primaria] Classificar Cefaleia" previous="/atendimentos/21/protocolos/1162/passos/1402/" next="/atendimentos/21/protocolos/1162/passos/1407/">
     <step id="1576" type="AuxilioConduta" name="[Cefaleia Primaria] Classificar Cefaleia" description="Classificar tipo de cefaleia conforme sintomas apresentados"/>
     <answer id="1776" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -141,7 +141,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1407" reworked="true" executed="true" creationDate="2018-05-30T14:40:56.487-0300" modificationDate="2018-06-20T16:32:57.918-0300" executionDate="2018-06-20T16:30:49.493-0300" createdById="21" executedById="21" name="[Enxaqueca] Duração">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1407" reworked="true" executed="true" creationDate="2018-05-30T14:40:56.487-0300" modificationDate="2018-06-20T16:32:57.918-0300" executionDate="2018-06-20T16:30:49.493-0300" createdById="21" executedById="21" name="[Enxaqueca] Duração" previous="/atendimentos/21/protocolos/1162/passos/1406/" next="/atendimentos/21/protocolos/1162/passos/1763/">
     <step id="1577" type="AuxilioConduta" name="[Enxaqueca] Duração" description="Duração do episódio de enxaqueca"/>
     <answer id="1779" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -153,7 +153,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="1763" creationDate="2018-06-20T16:18:02.050-0300" modificationDate="2018-06-20T16:18:02.093-0300" createdById="21" name="[Enxaqueca] Cefaléia Severa">
+  <element xsi:type="MetamodelExecution:ETreatment" id="1763" creationDate="2018-06-20T16:18:02.050-0300" modificationDate="2018-06-20T16:18:02.093-0300" createdById="21" name="[Enxaqueca] Cefaléia Severa" previous="/atendimentos/21/protocolos/1162/passos/1407/">
     <step id="1579" type="Tratamento" name="[Enxaqueca] Cefaléia Severa" description="Tratamento local para cefaléia severa"/>
   </element>
   <idsExecutedStep>1402</idsExecutedStep>
@@ -164,5 +164,5 @@
   <pathway id="545" code="H018" name="Cefaléia" version="1" completed="true">
     <audit date="2018-05-30T14:23:22.206-0300"/>
   </pathway>
-  <attendance codeAttendance="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169" codeBd="hap"/>
+  <medicalcare codeMedicalCare="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169"/>
 </MetamodelExecution:EPathway>

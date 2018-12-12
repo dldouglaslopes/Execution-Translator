@@ -29,5 +29,5 @@
   <complementaryconducts xsi:type="MetamodelExecution:ComplementaryProcedure" id="1003" type="ProcedimentoComplementar" pathway="Lombalgia" creationDate="2018-08-03T17:35:59.192-0300" resource="GLICEMIA PELA FITA ( DX ) / HGT">
     <procedureprescribedresource id="861" idProcedure="22324" quantity="1" frequency="1" procedure="75130013: GLICEMIA PELA FITA ( DX ) / HGT"/>
   </complementaryconducts>
-  <attendance codeAttendance="49938055" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="331806" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49938055" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="331806"/>
 </MetamodelExecution:EPathway>

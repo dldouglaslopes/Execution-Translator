@@ -83,7 +83,16 @@ public class ExecutedStep {
 		eElement.setName(eElement.getStep().getName());		
 		eElement.setCreationDate(creationDate);	
 		eElement.setModificationDate(modificationDate);
-
+		
+		if(!json.isNull("previous")) {
+			JSONObject previousJson = json.getJSONObject("previous");
+			eElement.setPrevious(previousJson.getString("url"));
+		}
+		if(!json.isNull("next")) {
+			JSONObject nextJson = json.getJSONObject("next");
+			eElement.setNext(nextJson.getString("url"));
+		}
+		
 		//set justification
 		if (!json.isNull("justificativa")) {	
 			Justification justification = Execution_metamodelFactory.eINSTANCE.createJustification();

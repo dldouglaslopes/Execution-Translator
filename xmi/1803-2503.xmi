@@ -17,5 +17,5 @@
   <pathway id="1061" code="H019" name="Lombalgia" version="1" completed="true">
     <audit date="2018-07-31T10:59:09.213-0300"/>
   </pathway>
-  <attendance codeAttendance="49939852" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="331793" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49939852" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="331793"/>
 </MetamodelExecution:EPathway>

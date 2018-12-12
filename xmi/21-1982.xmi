@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1982" creationDate="2018-07-26T11:42:29.445-0300" conclusionDate="2018-07-26T14:13:43.534-0300" completed="true" aborted="true" name="Protocolo completo" cid="A90" timeExecution="8835.239089">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2304" reworked="true" executed="true" creationDate="2018-07-26T11:43:22.010-0300" modificationDate="2018-07-26T14:05:41.012-0300" executionDate="2018-07-26T14:16:47.458-0300" createdById="21" executedById="21" name="Passo A1">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2304" reworked="true" executed="true" creationDate="2018-07-26T11:43:22.010-0300" modificationDate="2018-07-26T14:05:41.012-0300" executionDate="2018-07-26T14:16:47.458-0300" createdById="21" executedById="21" name="Passo A1" next="/atendimentos/21/protocolos/1982/passos/2343/">
     <step id="2461" type="AuxilioConduta" name="Passo A1" description="Passo do tipo AUXILIO CONDUTA" isInitial="true"/>
     <answer id="2804" type="RespostaNumerica">
       <value xsi:type="MetamodelExecution:Numeric" value="10.0"/>
@@ -89,7 +89,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="2343" creationDate="2018-07-26T14:07:12.467-0300" modificationDate="2018-07-26T14:07:12.510-0300" createdById="21" name="Passo B1">
+  <element xsi:type="MetamodelExecution:ETreatment" id="2343" creationDate="2018-07-26T14:07:12.467-0300" modificationDate="2018-07-26T14:07:12.510-0300" createdById="21" name="Passo B1" previous="/atendimentos/21/protocolos/1982/passos/2304/">
     <step id="2462" type="Tratamento" name="Passo B1" description="Passo do tipo Tratamento">
       <audit date="2018-07-26T11:48:24.201-0300"/>
     </step>
@@ -124,5 +124,5 @@
   <pathway id="921" code="PRTCMP" name="Protocolo completo" version="12" completed="true">
     <audit date="2018-07-26T11:39:39.442-0300"/>
   </pathway>
-  <attendance codeAttendance="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169" codeBd="hap"/>
+  <medicalcare codeMedicalCare="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169"/>
 </MetamodelExecution:EPathway>

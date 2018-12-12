@@ -9,7 +9,6 @@ import org.json.JSONObject;
 
 import MetamodelExecution.ComplementaryConducts;
 import MetamodelExecution.ComplementaryExamination;
-import MetamodelExecution.ComplementaryItemPrescription;
 import MetamodelExecution.ComplementaryMedication;
 import MetamodelExecution.ComplementaryProcedure;
 import MetamodelExecution.ExaminationPrescribedResource;
@@ -161,12 +160,5 @@ public class ComplementaryConduct {
 		}
 		
 		return complementaryExamination;
-	}
-	
-	public ComplementaryItemPrescription createComplementaryItemPrescription(JSONObject json) throws ParseException {
-		ComplementaryItemPrescription itemPrescription = Execution_metamodelFactory.eINSTANCE.createComplementaryItemPrescription();
-		itemPrescription = (ComplementaryItemPrescription) createComplementaryConducts(json, itemPrescription);
-		
-		return itemPrescription;
 	}
 }

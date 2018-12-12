@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1782" creationDate="2018-07-19T11:34:45.981-0300" conclusionDate="2018-07-19T11:36:04.826-0300" completed="true" name="Pneumonia &amp; Influenza" cid="J15" timeExecution="44.034845">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2102" executed="true" creationDate="2018-07-19T11:35:44.600-0300" modificationDate="2018-07-19T11:34:17.489-0300" executionDate="2018-07-19T11:30:42.238-0300" createdById="141" executedById="141" name="Verificar Critérios para SEPSE">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2102" executed="true" creationDate="2018-07-19T11:35:44.600-0300" modificationDate="2018-07-19T11:34:17.489-0300" executionDate="2018-07-19T11:30:42.238-0300" createdById="141" executedById="141" name="Verificar Critérios para SEPSE" next="/atendimentos/1362/protocolos/1782/passos/2103/">
     <step id="1124" type="AuxilioConduta" name="Verificar Critérios para SEPSE" description="Verifique os critérios para SIRS" isInitial="true"/>
     <answer id="2604" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -30,7 +30,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2103" executed="true" creationDate="2018-07-19T11:36:08.560-0300" modificationDate="2018-07-19T11:40:45.225-0300" executionDate="2018-07-19T11:39:45.760-0300" createdById="141" executedById="141" name="Verificar Fatores Agravantes Para SEPSE">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2103" executed="true" creationDate="2018-07-19T11:36:08.560-0300" modificationDate="2018-07-19T11:40:45.225-0300" executionDate="2018-07-19T11:39:45.760-0300" createdById="141" executedById="141" name="Verificar Fatores Agravantes Para SEPSE" previous="/atendimentos/1362/protocolos/1782/passos/2102/" next="/atendimentos/1362/protocolos/1782/passos/2104/">
     <step id="1125" type="AuxilioConduta" name="Verificar Fatores Agravantes Para SEPSE" description="Verifique se o paciente apresenta algum dos fatores a seguir."/>
     <answer id="2607" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -69,7 +69,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2104" executed="true" creationDate="2018-07-19T11:42:15.566-0300" modificationDate="2018-07-19T11:29:16.981-0300" executionDate="2018-07-19T11:45:26.344-0300" createdById="141" executedById="141" name="Verificar Idade do Paciente">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2104" executed="true" creationDate="2018-07-19T11:42:15.566-0300" modificationDate="2018-07-19T11:29:16.981-0300" executionDate="2018-07-19T11:45:26.344-0300" createdById="141" executedById="141" name="Verificar Idade do Paciente" previous="/atendimentos/1362/protocolos/1782/passos/2103/" next="/atendimentos/1362/protocolos/1782/passos/2105/">
     <step id="1107" type="AuxilioConduta" name="Verificar Idade do Paciente" description="Verifique a idade do paciente"/>
     <answer id="2611" type="RespostaNumerica">
       <value xsi:type="MetamodelExecution:Numeric" value="82.0"/>
@@ -81,7 +81,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="2105" executed="true" creationDate="2018-07-19T11:30:16.846-0300" modificationDate="2018-07-19T11:30:43.366-0300" executionDate="2018-07-19T11:30:43.206-0300" createdById="141" executedById="141" name="Raio X + Pacote de Exames Laboratoriais">
+  <element xsi:type="MetamodelExecution:ETreatment" id="2105" executed="true" creationDate="2018-07-19T11:30:16.846-0300" modificationDate="2018-07-19T11:30:43.366-0300" executionDate="2018-07-19T11:30:43.206-0300" createdById="141" executedById="141" name="Raio X + Pacote de Exames Laboratoriais" previous="/atendimentos/1362/protocolos/1782/passos/2104/" next="/atendimentos/1362/protocolos/1782/passos/2106/">
     <step id="1110" type="Tratamento" name="Raio X + Pacote de Exames Laboratoriais" description="Paciente apresenta fatores complicadores para o tratamento, idade avançada ou presença de comorbidades, recomenda-se solicitar além do raio X do tórax o pacote de exames laboratoriais a seguir:"/>
     <prescribedexam id="2362" report="" numberGuide="33199264">
       <examination id="1124" sideLimb="" quantity="1" justification="Suspeita de Influenza" clinicalIndication="Nenhuma">
@@ -164,7 +164,7 @@
     <idsPrescribedExamination>2370</idsPrescribedExamination>
     <idsPrescribedExamination>2371</idsPrescribedExamination>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2106" executed="true" creationDate="2018-07-19T11:31:15.222-0300" modificationDate="2018-07-19T11:45:29.462-0300" executionDate="2018-07-19T11:44:54.007-0300" createdById="141" executedById="141" name="Verificar Resultados Exames Laboratoriais">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2106" executed="true" creationDate="2018-07-19T11:31:15.222-0300" modificationDate="2018-07-19T11:45:29.462-0300" executionDate="2018-07-19T11:44:54.007-0300" createdById="141" executedById="141" name="Verificar Resultados Exames Laboratoriais" previous="/atendimentos/1362/protocolos/1782/passos/2105/" next="/atendimentos/1362/protocolos/1782/passos/2107/">
     <step id="1128" type="AuxilioConduta" name="Verificar Resultados Exames Laboratoriais" description="Avalie o resultado dos exames para seguir com o tratamento adequado."/>
     <answer id="2612" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -176,7 +176,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EInformation" id="2107" executed="true" creationDate="2018-07-19T11:29:47.876-0300" modificationDate="2018-07-19T11:35:48.893-0300" executionDate="2018-07-19T11:35:48.756-0300" createdById="141" executedById="141" name="Aviso: Discutir caso com líder local">
+  <element xsi:type="MetamodelExecution:EInformation" id="2107" executed="true" creationDate="2018-07-19T11:29:47.876-0300" modificationDate="2018-07-19T11:35:48.893-0300" executionDate="2018-07-19T11:35:48.756-0300" createdById="141" executedById="141" name="Aviso: Discutir caso com líder local" previous="/atendimentos/1362/protocolos/1782/passos/2106/">
     <step id="1129" type="Informacao" name="Aviso: Discutir caso com líder local" description="Se não há pneumonia, avaliar outras possibilidades diagnósticas, se necessário discutir caso com lider local." isTerminal="true"/>
   </element>
   <idsExecutedStep>2102</idsExecutedStep>
@@ -189,5 +189,5 @@
   <pathway id="482" code="H002" name="Pneumonia &amp; Influenza" version="3" completed="true">
     <audit date="2018-05-25T18:06:08.705-0300"/>
   </pathway>
-  <attendance codeAttendance="49936552" idProfessional="141" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="349032" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49936552" idProfessional="141" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="349032"/>
 </MetamodelExecution:EPathway>

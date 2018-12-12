@@ -27,7 +27,7 @@ public class DBOperations {
 				.append("executedSteps", ePathway.getElement())
 				.append("justification", ePathway.getJustification())
 				.append("timeExecution", ePathway.getTimeExecution())
-				.append("attendance", ePathway.getAttendance())
+				.append("attendance", ePathway.getMedicalcare())
 				.append("complementaryConducts", ePathway.getComplementaryconducts())
 				.append("idsEStep", ePathway.getIdsExecutedStep())
 				.append("pathway", ePathway.getPathway());

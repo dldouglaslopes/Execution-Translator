@@ -94,5 +94,5 @@
   <pathway id="563" code="PRTCMP" name="Protocolo completo" version="8" completed="true">
     <audit date="2018-05-30T15:23:07.625-0300"/>
   </pathway>
-  <attendance codeAttendance="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169" codeBd="hap"/>
+  <medicalcare codeMedicalCare="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169"/>
 </MetamodelExecution:EPathway>

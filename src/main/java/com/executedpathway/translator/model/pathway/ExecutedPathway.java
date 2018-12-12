@@ -7,11 +7,11 @@ import java.util.Locale;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import MetamodelExecution.Attendance;
 import MetamodelExecution.Audit;
 import MetamodelExecution.EPathway;
 import MetamodelExecution.Execution_metamodelFactory;
 import MetamodelExecution.Justification;
+import MetamodelExecution.MedicalCare;
 import MetamodelExecution.Pathway;
 
 
@@ -62,12 +62,11 @@ public class ExecutedPathway {
 		
 		//set attendance
 		JSONObject attendanceJson = json.getJSONObject("atendimento");
-		Attendance attendance = Execution_metamodelFactory.eINSTANCE.createAttendance();
-		attendance.setCodeAttendance(attendanceJson.getInt("codigo_atendimento"));
-		attendance.setCodeBd(attendanceJson.getString("codigo_bd"));
-		attendance.setHospitalUnit(attendanceJson.getString("unidade"));
-		attendance.setIdProfessional(attendanceJson.getInt("profissional_id"));
-		attendance.setPatientRecord(attendanceJson.getString("prontuario"));
+		MedicalCare medicalCare = Execution_metamodelFactory.eINSTANCE.createMedicalCare();
+		medicalCare.setCodeMedicalCare(attendanceJson.getInt("codigo_atendimento"));
+		medicalCare.setHospitalUnit(attendanceJson.getString("unidade"));
+		medicalCare.setIdProfessional(attendanceJson.getInt("profissional_id"));
+		medicalCare.setPatientRecord(attendanceJson.getString("prontuario"));
 				
 		//Set executed pathway
 		ePathway.setId(json.getInt("id"));		
@@ -77,7 +76,7 @@ public class ExecutedPathway {
 		ePathway.setPathway(pathway);	
 		ePathway.setConclusionDate(conclusionDate);
 		ePathway.setCreationDate(creationDate);
-		ePathway.setAttendance(attendance);
+		ePathway.setMedicalcare(medicalCare);
 		ePathway.setCid(json.getString("cid"));
 		ePathway.setTimeExecution(json.getDouble("tempo_execucao"));
 		

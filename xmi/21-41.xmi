@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="41" creationDate="2018-03-20T09:30:41.605-0300" conclusionDate="2018-04-16T17:47:05.437-0300" completed="true" name="Pneumonia &amp; Influenza" cid="" timeExecution="2362681.901832">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="41" executed="true" creationDate="2018-03-20T09:32:34.978-0300" modificationDate="2018-03-20T13:44:57.635-0300" executionDate="2018-03-20T13:42:55.158-0300" createdById="21" executedById="1" name="Verificar Critérios para SEPSE">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="41" executed="true" creationDate="2018-03-20T09:32:34.978-0300" modificationDate="2018-03-20T13:44:57.635-0300" executionDate="2018-03-20T13:42:55.158-0300" createdById="21" executedById="1" name="Verificar Critérios para SEPSE" next="/atendimentos/21/protocolos/41/passos/61/">
     <step id="21" type="AuxilioConduta" name="Verificar Critérios para SEPSE" description="Verifique os critérios para SIRS" isInitial="true"/>
     <answer id="41" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -30,7 +30,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="61" executed="true" creationDate="2018-03-20T13:47:11.981-0300" modificationDate="2018-03-20T13:35:46.921-0300" executionDate="2018-03-20T13:34:41.315-0300" createdById="1" executedById="1" name="Verificar Fatores Agravantes Para SEPSE">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="61" executed="true" creationDate="2018-03-20T13:47:11.981-0300" modificationDate="2018-03-20T13:35:46.921-0300" executionDate="2018-03-20T13:34:41.315-0300" createdById="1" executedById="1" name="Verificar Fatores Agravantes Para SEPSE" previous="/atendimentos/21/protocolos/41/passos/41/" next="/atendimentos/21/protocolos/41/passos/62/">
     <step id="22" type="AuxilioConduta" name="Verificar Fatores Agravantes Para SEPSE" description="Verifique se o paciente apresenta algum dos fatores a seguir."/>
     <answer id="61" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -69,7 +69,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="62" executed="true" creationDate="2018-03-20T13:37:16.171-0300" modificationDate="2018-03-20T13:36:45.742-0300" executionDate="2018-03-20T13:36:17.318-0300" createdById="1" executedById="1" name="Verificar Idade do Paciente">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="62" executed="true" creationDate="2018-03-20T13:37:16.171-0300" modificationDate="2018-03-20T13:36:45.742-0300" executionDate="2018-03-20T13:36:17.318-0300" createdById="1" executedById="1" name="Verificar Idade do Paciente" previous="/atendimentos/21/protocolos/41/passos/61/" next="/atendimentos/21/protocolos/41/passos/63/">
     <step id="4" type="AuxilioConduta" name="Verificar Idade do Paciente" description="Verifique a idade do paciente"/>
     <answer id="65" type="RespostaNumerica">
       <value xsi:type="MetamodelExecution:Numeric" value="16.0"/>
@@ -81,7 +81,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="63" executed="true" creationDate="2018-03-20T13:37:49.105-0300" modificationDate="2018-03-20T13:40:40.857-0300" executionDate="2018-03-20T13:37:37.438-0300" createdById="1" executedById="1" name="Verificar Comorbidades">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="63" executed="true" creationDate="2018-03-20T13:37:49.105-0300" modificationDate="2018-03-20T13:40:40.857-0300" executionDate="2018-03-20T13:37:37.438-0300" createdById="1" executedById="1" name="Verificar Comorbidades" previous="/atendimentos/21/protocolos/41/passos/62/" next="/atendimentos/21/protocolos/41/passos/64/">
     <step id="5" type="AuxilioConduta" name="Verificar Comorbidades" description="Verifique se o paciente possui alguma comorbidade."/>
     <answer id="66" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -156,7 +156,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="64" executed="true" creationDate="2018-03-20T13:42:39.454-0300" modificationDate="2018-03-26T10:02:26.067-0300" executionDate="2018-03-26T10:15:25.047-0300" createdById="1" executedById="21" name="Raio X de Tórax">
+  <element xsi:type="MetamodelExecution:ETreatment" id="64" executed="true" creationDate="2018-03-20T13:42:39.454-0300" modificationDate="2018-03-26T10:02:26.067-0300" executionDate="2018-03-26T10:15:25.047-0300" createdById="1" executedById="21" name="Raio X de Tórax" previous="/atendimentos/21/protocolos/41/passos/63/" next="/atendimentos/21/protocolos/41/passos/201/">
     <justification id="41" reason="ausencia_de_prescricao" description="Teste" justifiedById="21"/>
     <step id="6" type="Tratamento" name="Raio X de Tórax" description="Solicite o raio X de tórax para verificar presença de infiltrados no paciente."/>
     <prescribedexam id="28" report="">
@@ -168,7 +168,7 @@
     </prescribedexam>
     <idsPrescribedExamination>28</idsPrescribedExamination>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="201" reworked="true" executed="true" creationDate="2018-03-26T10:05:09.780-0300" modificationDate="2018-04-16T17:44:09.107-0300" executionDate="2018-04-16T17:41:29.444-0300" createdById="21" executedById="21" name="Avaliar Resultados">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="201" reworked="true" executed="true" creationDate="2018-03-26T10:05:09.780-0300" modificationDate="2018-04-16T17:44:09.107-0300" executionDate="2018-04-16T17:41:29.444-0300" createdById="21" executedById="21" name="Avaliar Resultados" previous="/atendimentos/21/protocolos/41/passos/64/" next="/atendimentos/21/protocolos/41/passos/581/">
     <step id="8" type="AuxilioConduta" name="Avaliar Resultados" description="Avalie o resultado do exame do paciente. Verifique a presença de infiltrados no resultado do exame."/>
     <answer id="161" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -180,10 +180,10 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EInformation" id="581" executed="true" creationDate="2018-04-16T17:45:20.525-0300" modificationDate="2018-04-16T17:48:02.790-0300" executionDate="2018-04-16T17:48:02.641-0300" createdById="21" executedById="21" name="Aviso: Alterações Importantes">
+  <element xsi:type="MetamodelExecution:EInformation" id="581" executed="true" creationDate="2018-04-16T17:45:20.525-0300" modificationDate="2018-04-16T17:48:02.790-0300" executionDate="2018-04-16T17:48:02.641-0300" createdById="21" executedById="21" name="Aviso: Alterações Importantes" previous="/atendimentos/21/protocolos/41/passos/201/" next="/atendimentos/21/protocolos/41/passos/582/">
     <step id="10" type="Informacao" name="Aviso: Alterações Importantes" description="Aviso: Quaisquer outras alterações importantes como derrame pleural, abscesso, nódulos, massas, devem ser individualizadas. Sugere-se discutir com  o líder local para definição do procedimento mais adequado."/>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="582" executed="true" creationDate="2018-04-16T17:40:50.442-0300" modificationDate="2018-04-16T17:54:42.327-0300" executionDate="2018-04-16T17:53:46.091-0300" createdById="21" executedById="21" name="[Port 2] Avaliar Fatores de Risco Para Influenza">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="582" executed="true" creationDate="2018-04-16T17:40:50.442-0300" modificationDate="2018-04-16T17:54:42.327-0300" executionDate="2018-04-16T17:53:46.091-0300" createdById="21" executedById="21" name="[Port 2] Avaliar Fatores de Risco Para Influenza" previous="/atendimentos/21/protocolos/41/passos/581/" next="/atendimentos/21/protocolos/41/passos/583/">
     <step id="11" type="AuxilioConduta" name="[Port 2] Avaliar Fatores de Risco Para Influenza" description="Avalie se o paciente apresenta fatores que indicam risco de Influenza."/>
     <answer id="781" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -213,7 +213,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="583" executed="true" creationDate="2018-04-16T17:39:20.210-0300" modificationDate="2018-04-16T17:39:22.781-0300" executionDate="2018-04-16T17:54:53.178-0300" createdById="21" executedById="21" name="[Port 2] Avaliar Fatores Agravantes para Influenza">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="583" executed="true" creationDate="2018-04-16T17:39:20.210-0300" modificationDate="2018-04-16T17:39:22.781-0300" executionDate="2018-04-16T17:54:53.178-0300" createdById="21" executedById="21" name="[Port 2] Avaliar Fatores Agravantes para Influenza" previous="/atendimentos/21/protocolos/41/passos/582/" next="/atendimentos/21/protocolos/41/passos/584/">
     <step id="12" type="AuxilioConduta" name="[Port 2] Avaliar Fatores Agravantes para Influenza" description="Avalie se o paciente apresenta algum dos fatores que podem ser indicadores agravantes no caso de Influenza"/>
     <answer id="784" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -252,7 +252,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="584" executed="true" creationDate="2018-04-16T17:40:38.209-0300" modificationDate="2018-04-16T17:40:05.428-0300" executionDate="2018-04-16T17:52:48.002-0300" createdById="21" executedById="21" name="[Port 2] Avaliar Complicações para Influenza">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="584" executed="true" creationDate="2018-04-16T17:40:38.209-0300" modificationDate="2018-04-16T17:40:05.428-0300" executionDate="2018-04-16T17:52:48.002-0300" createdById="21" executedById="21" name="[Port 2] Avaliar Complicações para Influenza" previous="/atendimentos/21/protocolos/41/passos/583/" next="/atendimentos/21/protocolos/41/passos/585/">
     <step id="13" type="AuxilioConduta" name="[Port 2] Avaliar Complicações para Influenza" description="Verifique se o paciente possui alguma comorbidade ou fator agravante para o quadro de Influenza."/>
     <answer id="788" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -354,10 +354,10 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EInformation" id="585" executed="true" creationDate="2018-04-16T17:41:59.444-0300" modificationDate="2018-04-16T17:51:07.426-0300" executionDate="2018-04-16T17:51:07.270-0300" createdById="21" executedById="21" name="[Port 2] Aviso Influenza">
+  <element xsi:type="MetamodelExecution:EInformation" id="585" executed="true" creationDate="2018-04-16T17:41:59.444-0300" modificationDate="2018-04-16T17:51:07.426-0300" executionDate="2018-04-16T17:51:07.270-0300" createdById="21" executedById="21" name="[Port 2] Aviso Influenza" previous="/atendimentos/21/protocolos/41/passos/584/" next="/atendimentos/21/protocolos/41/passos/586/">
     <step id="3" type="Informacao" name="[Port 2] Aviso Influenza" description="Paciente em grupo de risco para influenza, sugere-se tratamento específico com Tamiflu."/>
   </element>
-  <element xsi:type="MetamodelExecution:EPrescription" id="586" executed="true" creationDate="2018-04-16T17:51:42.340-0300" modificationDate="2018-04-16T17:46:51.291-0300" executionDate="2018-04-16T17:46:51.131-0300" createdById="21" executedById="21" name="[Port 2] Receita + Influenza - Considerar tratamento com Tamiflu. Escolha um antibiótico e as opções de medicamentos sintomáticos." text="Teste">
+  <element xsi:type="MetamodelExecution:EPrescription" id="586" executed="true" creationDate="2018-04-16T17:51:42.340-0300" modificationDate="2018-04-16T17:46:51.291-0300" executionDate="2018-04-16T17:46:51.131-0300" createdById="21" executedById="21" name="[Port 2] Receita + Influenza - Considerar tratamento com Tamiflu. Escolha um antibiótico e as opções de medicamentos sintomáticos." previous="/atendimentos/21/protocolos/41/passos/585/" text="Teste">
     <step id="20" type="Receita" name="[Port 2] Receita + Influenza - Considerar tratamento com Tamiflu. Escolha um antibiótico e as opções de medicamentos sintomáticos." description="Atenção! Caso apresente alguns dos sintomas a seguir retornar imediatamente a emergência. &#xA;Sintomas: Falta de ar; Dor no peito; Febre por mais de 3 dias após início das medicações;  Desorientação; Sonolência excessiva; Sangramentos; Desmaio; Palpitação (Coração acelerado); Diminuição ou ausência de urina." isTerminal="true"/>
     <idsPrescribedMedication>701</idsPrescribedMedication>
     <idsPrescribedMedication>702</idsPrescribedMedication>
@@ -425,5 +425,5 @@
   </complementaryconducts>
   <complementaryconducts xsi:type="MetamodelExecution:ComplementaryProcedure" id="222" type="ProcedimentoComplementar" pathway="Pneumonia &amp; Influenza" creationDate="2018-04-16T15:12:03.611-0300"/>
   <complementaryconducts xsi:type="MetamodelExecution:ComplementaryProcedure" id="223" type="ProcedimentoComplementar" pathway="Pneumonia &amp; Influenza" creationDate="2018-04-16T15:14:10.444-0300"/>
-  <attendance codeAttendance="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169" codeBd="hap"/>
+  <medicalcare codeMedicalCare="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169"/>
 </MetamodelExecution:EPathway>

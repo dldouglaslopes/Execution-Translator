@@ -26,5 +26,5 @@
   <pathway id="23" code="H008" name="ITU - Cistite" version="1" completed="true">
     <audit/>
   </pathway>
-  <attendance codeAttendance="49295093" idProfessional="221" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="12789987" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49295093" idProfessional="221" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="12789987"/>
 </MetamodelExecution:EPathway>

@@ -10,5 +10,5 @@
   <pathway id="2204" code="H038" name="Asma" version="1" completed="true">
     <audit date="2018-10-31T16:29:33.600-0200"/>
   </pathway>
-  <attendance codeAttendance="49793306" idProfessional="221" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="9344347" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49793306" idProfessional="221" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="9344347"/>
 </MetamodelExecution:EPathway>

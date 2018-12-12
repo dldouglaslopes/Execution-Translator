@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1723" creationDate="2018-07-17T16:01:51.782-0300" conclusionDate="2018-07-17T16:04:54.533-0300" completed="true" aborted="true" name="Protocolo completo" cid="J15" timeExecution="154.028751">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2045" executed="true" creationDate="2018-07-17T16:05:34.886-0300" modificationDate="2018-07-17T15:56:51.639-0300" executionDate="2018-07-17T16:08:36.835-0300" createdById="241" executedById="241" name="Passo A1">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2045" executed="true" creationDate="2018-07-17T16:05:34.886-0300" modificationDate="2018-07-17T15:56:51.639-0300" executionDate="2018-07-17T16:08:36.835-0300" createdById="241" executedById="241" name="Passo A1" next="/atendimentos/745/protocolos/1723/passos/2046/">
     <step id="2301" type="AuxilioConduta" name="Passo A1" description="Passo do tipo AUXILIO CONDUTA" isInitial="true"/>
     <answer id="2534" type="RespostaNumerica">
       <value xsi:type="MetamodelExecution:Numeric" value="10.0"/>
@@ -89,7 +89,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="2046" creationDate="2018-07-17T15:58:50.073-0300" modificationDate="2018-07-17T15:58:50.115-0300" createdById="241" name="Passo B1">
+  <element xsi:type="MetamodelExecution:ETreatment" id="2046" creationDate="2018-07-17T15:58:50.073-0300" modificationDate="2018-07-17T15:58:50.115-0300" createdById="241" name="Passo B1" previous="/atendimentos/745/protocolos/1723/passos/2045/">
     <step id="2302" type="Tratamento" name="Passo B1" description="Passo do tipo Tratamento">
       <audit date="2018-07-05T16:43:52.856-0300"/>
     </step>
@@ -116,5 +116,5 @@
   <pathway id="861" code="PRTCMP" name="Protocolo completo" version="11" completed="true">
     <audit date="2018-07-05T16:34:13.189-0300"/>
   </pathway>
-  <attendance codeAttendance="49924164" idProfessional="241" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="712948" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49924164" idProfessional="241" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="712948"/>
 </MetamodelExecution:EPathway>

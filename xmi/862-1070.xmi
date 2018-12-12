@@ -15,5 +15,5 @@
   <pathway id="512" code="H001" name="Fratura Exposta" version="4" completed="true">
     <audit date="2018-05-28T18:54:19.959-0300"/>
   </pathway>
-  <attendance codeAttendance="49925059" idProfessional="181" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="332172" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49925059" idProfessional="181" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="332172"/>
 </MetamodelExecution:EPathway>

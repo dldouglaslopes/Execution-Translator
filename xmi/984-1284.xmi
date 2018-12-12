@@ -116,5 +116,5 @@
   <pathway id="562" code="H018" name="Cefaléia" version="2" completed="true">
     <audit date="2018-06-04T15:13:10.782-0300"/>
   </pathway>
-  <attendance codeAttendance="43799589" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="935572" codeBd="hap"/>
+  <medicalcare codeMedicalCare="43799589" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="935572"/>
 </MetamodelExecution:EPathway>

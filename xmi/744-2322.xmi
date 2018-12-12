@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="2322" creationDate="2018-07-31T15:27:53.721-0300" conclusionDate="2018-11-13T15:07:14.109-0200" completed="true" aborted="true" name="Pneumonia &amp; Influenza" cid="J13" timeExecution="9070411.349388">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2847" executed="true" creationDate="2018-07-31T15:28:24.101-0300" modificationDate="2018-08-01T15:18:30.504-0300" executionDate="2018-08-01T15:12:23.637-0300" createdById="21" executedById="21" name="Verificar Critérios para SEPSE">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2847" executed="true" creationDate="2018-07-31T15:28:24.101-0300" modificationDate="2018-08-01T15:18:30.504-0300" executionDate="2018-08-01T15:12:23.637-0300" createdById="21" executedById="21" name="Verificar Critérios para SEPSE" next="/atendimentos/744/protocolos/2322/passos/2923/">
     <step id="1124" type="AuxilioConduta" name="Verificar Critérios para SEPSE" description="Verifique os critérios para SIRS" isInitial="true"/>
     <answer id="3424" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -30,7 +30,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2923" creationDate="2018-08-01T15:05:17.364-0300" modificationDate="2018-08-01T15:05:17.411-0300" createdById="21" name="Verificar Fatores Agravantes Para SEPSE">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2923" creationDate="2018-08-01T15:05:17.364-0300" modificationDate="2018-08-01T15:05:17.411-0300" createdById="21" name="Verificar Fatores Agravantes Para SEPSE" previous="/atendimentos/744/protocolos/2322/passos/2847/">
     <step id="1125" type="AuxilioConduta" name="Verificar Fatores Agravantes Para SEPSE" description="Verifique se o paciente apresenta algum dos fatores a seguir."/>
     <answer id="3527" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -78,5 +78,5 @@
   <complementaryconducts xsi:type="MetamodelExecution:ComplementaryMedication" id="934" type="MedicamentoComplementar" pathway="Pneumonia &amp; Influenza" creationDate="2018-08-01T15:21:27.981-0300" resource="ACIDO FOLICO AMPL 1 UD">
     <prescribedresource id="1881" idMedication="2" name="" brand="" code="" cycles="1" description="" timeInterval="1" dailyDosage="1" frequency="18" timeTreatement="1" medication="32689: ACIDO FOLICO AMPL 1 UD" unit="5 mm" access="SUBLINGUAL"/>
   </complementaryconducts>
-  <attendance codeAttendance="49924054" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="373202" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49924054" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="373202"/>
 </MetamodelExecution:EPathway>

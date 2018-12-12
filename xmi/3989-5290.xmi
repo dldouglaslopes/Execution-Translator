@@ -62,5 +62,5 @@
   <pathway id="25" code="H009" name="IVAS" version="1" completed="true">
     <audit/>
   </pathway>
-  <attendance codeAttendance="49746948" idProfessional="391" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="13758358" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49746948" idProfessional="391" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="13758358"/>
 </MetamodelExecution:EPathway>

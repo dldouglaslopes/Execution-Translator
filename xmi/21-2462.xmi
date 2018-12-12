@@ -20,5 +20,5 @@
   <complementaryconducts xsi:type="MetamodelExecution:ComplementaryMedication" id="1102" type="MedicamentoComplementar" pathway="Lombalgia" creationDate="2018-08-17T16:59:39.084-0300" resource="ACIDO ACETILSALICILICO 100 MG COMPRIMIDO COMP 1 UD">
     <prescribedresource id="2001" idMedication="1" name="" brand="" code="" cycles="1" description="" timeInterval="1" dailyDosage="1" frequency="1" timeTreatement="1" medication="32670: ACIDO ACETILSALICILICO 100 MG COMPRIMIDO COMP 1 UD" unit="5,5 mm" access="GASTROSTOMIA"/>
   </complementaryconducts>
-  <attendance codeAttendance="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169" codeBd="hap"/>
+  <medicalcare codeMedicalCare="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169"/>
 </MetamodelExecution:EPathway>

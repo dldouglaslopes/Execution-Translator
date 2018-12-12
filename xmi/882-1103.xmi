@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1103" creationDate="2018-05-29T14:46:29.165-0300" conclusionDate="2018-05-30T14:53:48.979-0300" completed="true" aborted="true" name="Protocolo completo" cid="21" timeExecution="86539.300814">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1323" executed="true" creationDate="2018-05-29T14:47:26.477-0300" modificationDate="2018-05-29T14:49:54.908-0300" executionDate="2018-05-29T14:43:05.704-0300" createdById="161" executedById="161" name="Passo A1">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1323" executed="true" creationDate="2018-05-29T14:47:26.477-0300" modificationDate="2018-05-29T14:49:54.908-0300" executionDate="2018-05-29T14:43:05.704-0300" createdById="161" executedById="161" name="Passo A1" next="/atendimentos/882/protocolos/1103/passos/1324/">
     <step id="1052" type="AuxilioConduta" name="Passo A1" description="Passo do tipo AUXILIO CONDUTA" isInitial="true">
       <audit date="2018-05-26T17:34:35.497-0300"/>
     </step>
@@ -91,7 +91,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="1324" executed="true" creationDate="2018-05-29T14:51:42.066-0300" modificationDate="2018-05-29T14:47:53.298-0300" executionDate="2018-05-29T14:47:45.297-0300" createdById="161" executedById="161" name="Passo B1">
+  <element xsi:type="MetamodelExecution:ETreatment" id="1324" executed="true" creationDate="2018-05-29T14:51:42.066-0300" modificationDate="2018-05-29T14:47:53.298-0300" executionDate="2018-05-29T14:47:45.297-0300" createdById="161" executedById="161" name="Passo B1" previous="/atendimentos/882/protocolos/1103/passos/1323/" next="/atendimentos/882/protocolos/1103/passos/1325/">
     <justification id="663" reason="ausencia_de_prescricao" description="q" justifiedById="161"/>
     <step id="1053" type="Tratamento" name="Passo B1" description="Passo do tipo Tratamento"/>
     <prescribedexam id="1728" report="">
@@ -165,18 +165,18 @@
     <idsPrescribedMedication>1739</idsPrescribedMedication>
     <idsPrescribedMedication>1740</idsPrescribedMedication>
   </element>
-  <element xsi:type="MetamodelExecution:EPrescription" id="1325" executed="true" creationDate="2018-05-29T14:48:19.280-0300" modificationDate="2018-05-29T17:08:59.112-0300" executionDate="2018-05-29T17:08:58.962-0300" createdById="161" executedById="21" name="Passo C1" text="">
+  <element xsi:type="MetamodelExecution:EPrescription" id="1325" executed="true" creationDate="2018-05-29T14:48:19.280-0300" modificationDate="2018-05-29T17:08:59.112-0300" executionDate="2018-05-29T17:08:58.962-0300" createdById="161" executedById="21" name="Passo C1" previous="/atendimentos/882/protocolos/1103/passos/1324/" next="/atendimentos/882/protocolos/1103/passos/1362/" text="">
     <step id="1054" type="Receita" name="Passo C1" description="Passo C1 do tipo Receita"/>
     <prescribedprescriptionitem/>
     <prescribedprescriptionitem/>
     <prescribedprescriptionitem/>
     <prescribedprescriptionitem/>
   </element>
-  <element xsi:type="MetamodelExecution:EDischarge" id="1362" executed="true" creationDate="2018-05-29T17:09:38.846-0300" modificationDate="2018-05-29T16:56:30.664-0300" executionDate="2018-05-29T16:56:19.870-0300" createdById="21" executedById="21" name="Passo D1">
+  <element xsi:type="MetamodelExecution:EDischarge" id="1362" executed="true" creationDate="2018-05-29T17:09:38.846-0300" modificationDate="2018-05-29T16:56:30.664-0300" executionDate="2018-05-29T16:56:19.870-0300" createdById="21" executedById="21" name="Passo D1" previous="/atendimentos/882/protocolos/1103/passos/1325/" next="/atendimentos/882/protocolos/1103/passos/1363/">
     <justification id="682" reason="ausencia_de_prescricao" description="Teste" justifiedById="21"/>
     <step id="1055" type="Alta" name="Passo D1" description="Passo do tipo Alta"/>
   </element>
-  <element xsi:type="MetamodelExecution:EInformation" id="1363" creationDate="2018-05-29T16:56:57.692-0300" modificationDate="2018-05-29T16:56:57.732-0300" createdById="21" name="Passo E1">
+  <element xsi:type="MetamodelExecution:EInformation" id="1363" creationDate="2018-05-29T16:56:57.692-0300" modificationDate="2018-05-29T16:56:57.732-0300" createdById="21" name="Passo E1" previous="/atendimentos/882/protocolos/1103/passos/1362/">
     <step id="1056" type="Informacao" name="Passo E1" description="&lt;table border=&quot;1&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; style=&quot;width:500px&quot;>&#xA;&#x9;&lt;tbody>&#xA;&#x9;&#x9;&lt;tr>&#xA;&#x9;&#x9;&#x9;&lt;td style=&quot;text-align:center; vertical-align:middle; width:200px&quot;>Nome&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/td>&#xA;&#x9;&#x9;&#x9;&lt;td style=&quot;text-align:center; vertical-align:middle; width:200px&quot;>Cidade&lt;/td>&#xA;&#x9;&#x9;&lt;/tr>&#xA;&#x9;&#x9;&lt;tr>&#xA;&#x9;&#x9;&#x9;&lt;td>Bruno Freitas&lt;/td>&#xA;&#x9;&#x9;&#x9;&lt;td>Rio Grande do Norte&lt;/td>&#xA;&#x9;&#x9;&lt;/tr>&#xA;&#x9;&#x9;&lt;tr>&#xA;&#x9;&#x9;&#x9;&lt;td>&amp;nbsp;&lt;/td>&#xA;&#x9;&#x9;&#x9;&lt;td>&amp;nbsp;&lt;/td>&#xA;&#x9;&#x9;&lt;/tr>&#xA;&#x9;&lt;/tbody>&#xA;&lt;/table>&#xA;&#xA;&lt;p>&amp;nbsp;&lt;/p>&#xA;&#xA;&lt;p>______________________________________________________________________&lt;/p>&#xA;&#xA;&lt;p>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Assinatura&lt;/p>">
       <audit date="2018-05-25T18:10:20.611-0300"/>
     </step>
@@ -190,5 +190,5 @@
   <pathway id="442" code="PRTCMP" name="Protocolo completo" version="7" completed="true">
     <audit date="2018-05-26T17:38:31.600-0300"/>
   </pathway>
-  <attendance codeAttendance="49925162" idProfessional="1" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="331806" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49925162" idProfessional="1" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="331806"/>
 </MetamodelExecution:EPathway>

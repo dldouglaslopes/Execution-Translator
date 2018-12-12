@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="1662" creationDate="2018-07-06T08:55:43.531-0300" conclusionDate="2018-07-26T11:44:41.032-0300" completed="true" aborted="true" name="Protocolo completo" cid="A90" timeExecution="1738350.786501">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1982" reworked="true" executed="true" creationDate="2018-07-06T08:58:19.189-0300" modificationDate="2018-07-26T11:45:44.223-0300" executionDate="2018-07-26T11:55:31.149-0300" createdById="21" executedById="21" name="Passo A1">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="1982" reworked="true" executed="true" creationDate="2018-07-06T08:58:19.189-0300" modificationDate="2018-07-26T11:45:44.223-0300" executionDate="2018-07-26T11:55:31.149-0300" createdById="21" executedById="21" name="Passo A1" next="/atendimentos/21/protocolos/1662/passos/2302/">
     <step id="2301" type="AuxilioConduta" name="Passo A1" description="Passo do tipo AUXILIO CONDUTA" isInitial="true"/>
     <answer id="2464" type="RespostaNumerica">
       <value xsi:type="MetamodelExecution:Numeric" value="10.0"/>
@@ -89,7 +89,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="2302" executed="true" creationDate="2018-07-26T11:47:23.422-0300" modificationDate="2018-07-26T11:56:24.500-0300" executionDate="2018-07-26T11:54:22.529-0300" createdById="21" executedById="21" name="Passo B1">
+  <element xsi:type="MetamodelExecution:ETreatment" id="2302" executed="true" creationDate="2018-07-26T11:47:23.422-0300" modificationDate="2018-07-26T11:56:24.500-0300" executionDate="2018-07-26T11:54:22.529-0300" createdById="21" executedById="21" name="Passo B1" previous="/atendimentos/21/protocolos/1662/passos/1982/" next="/atendimentos/21/protocolos/1662/passos/2303/">
     <justification id="1402" reason="ausencia_de_prescricao" description="teste" justifiedById="21"/>
     <step id="2302" type="Tratamento" name="Passo B1" description="Passo do tipo Tratamento">
       <audit date="2018-07-05T16:43:52.856-0300"/>
@@ -111,7 +111,7 @@
     <idsPrescribedExamination>2563</idsPrescribedExamination>
     <idsPrescribedExamination>2564</idsPrescribedExamination>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="2303" creationDate="2018-07-26T11:57:48.960-0300" modificationDate="2018-07-26T11:57:48.999-0300" createdById="21" name="Tratamento Medicamento">
+  <element xsi:type="MetamodelExecution:ETreatment" id="2303" creationDate="2018-07-26T11:57:48.960-0300" modificationDate="2018-07-26T11:57:48.999-0300" createdById="21" name="Tratamento Medicamento" previous="/atendimentos/21/protocolos/1662/passos/2302/">
     <step id="2307" type="Tratamento" name="Tratamento Medicamento" description="Tratamento Medicamento"/>
     <prescribedmedication id="2565">
       <prescription/>
@@ -125,5 +125,5 @@
   <pathway id="861" code="PRTCMP" name="Protocolo completo" version="11" completed="true">
     <audit date="2018-07-05T16:34:13.189-0300"/>
   </pathway>
-  <attendance codeAttendance="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169" codeBd="hap"/>
+  <medicalcare codeMedicalCare="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169"/>
 </MetamodelExecution:EPathway>

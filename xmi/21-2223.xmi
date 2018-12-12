@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="2223" creationDate="2018-07-30T12:01:05.889-0300" conclusionDate="2018-07-30T12:31:57.319-0300" completed="true" name="IVAS" cid="A90" timeExecution="2422.42843">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2708" reworked="true" executed="true" creationDate="2018-07-30T12:02:38.148-0300" modificationDate="2018-07-30T12:38:20.948-0300" executionDate="2018-07-30T12:36:27.165-0300" createdById="21" executedById="21" name="Avaliar Critérios de Sepse">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2708" reworked="true" executed="true" creationDate="2018-07-30T12:02:38.148-0300" modificationDate="2018-07-30T12:38:20.948-0300" executionDate="2018-07-30T12:36:27.165-0300" createdById="21" executedById="21" name="Avaliar Critérios de Sepse" next="/atendimentos/21/protocolos/2223/passos/2713/">
     <step id="153" type="AuxilioConduta" name="Avaliar Critérios de Sepse" description="Avaliar Critérios de Sepse" isInitial="true"/>
     <answer id="3279" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -57,7 +57,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2713" executed="true" creationDate="2018-07-30T12:24:57.079-0300" modificationDate="2018-07-30T12:33:28.776-0300" executionDate="2018-07-30T12:30:00.902-0300" createdById="21" executedById="21" name="Avaliar Critérios de Pneumonia">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2713" executed="true" creationDate="2018-07-30T12:24:57.079-0300" modificationDate="2018-07-30T12:33:28.776-0300" executionDate="2018-07-30T12:30:00.902-0300" createdById="21" executedById="21" name="Avaliar Critérios de Pneumonia" previous="/atendimentos/21/protocolos/2223/passos/2708/" next="/atendimentos/21/protocolos/2223/passos/2714/">
     <step id="155" type="AuxilioConduta" name="Avaliar Critérios de Pneumonia" description="Avaliar Critérios de Pneumonia"/>
     <answer id="3286" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -123,7 +123,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2714" executed="true" creationDate="2018-07-30T12:35:32.321-0300" modificationDate="2018-07-30T12:33:46.533-0300" executionDate="2018-07-30T12:32:38.828-0300" createdById="21" executedById="21" name="Influenza: Fatores de Risco">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2714" executed="true" creationDate="2018-07-30T12:35:32.321-0300" modificationDate="2018-07-30T12:33:46.533-0300" executionDate="2018-07-30T12:32:38.828-0300" createdById="21" executedById="21" name="Influenza: Fatores de Risco" previous="/atendimentos/21/protocolos/2223/passos/2713/" next="/atendimentos/21/protocolos/2223/passos/2715/">
     <step id="157" type="AuxilioConduta" name="Influenza: Fatores de Risco" description="Avaliar presença de fatores de risco para influenza"/>
     <answer id="3293" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -162,7 +162,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2715" reworked="true" executed="true" creationDate="2018-07-30T12:35:28.671-0300" modificationDate="2018-07-30T12:34:13.181-0300" executionDate="2018-07-30T12:31:35.995-0300" createdById="21" executedById="21" name="Influenza: Riscos de Complicações">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2715" reworked="true" executed="true" creationDate="2018-07-30T12:35:28.671-0300" modificationDate="2018-07-30T12:34:13.181-0300" executionDate="2018-07-30T12:31:35.995-0300" createdById="21" executedById="21" name="Influenza: Riscos de Complicações" previous="/atendimentos/21/protocolos/2223/passos/2714/" next="/atendimentos/21/protocolos/2223/passos/2717/">
     <step id="158" type="AuxilioConduta" name="Influenza: Riscos de Complicações" description="Avaliar presença de riscos de complicações para influenza"/>
     <answer id="3297" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -264,7 +264,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2717" executed="true" creationDate="2018-07-30T12:36:25.902-0300" modificationDate="2018-07-30T12:43:56.516-0300" executionDate="2018-07-30T12:42:42.548-0300" createdById="21" executedById="21" name="Avaliar Sintomas Específicos">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="2717" executed="true" creationDate="2018-07-30T12:36:25.902-0300" modificationDate="2018-07-30T12:43:56.516-0300" executionDate="2018-07-30T12:42:42.548-0300" createdById="21" executedById="21" name="Avaliar Sintomas Específicos" previous="/atendimentos/21/protocolos/2223/passos/2715/" next="/atendimentos/21/protocolos/2223/passos/2718/">
     <step id="159" type="AuxilioConduta" name="Avaliar Sintomas Específicos" description="Avaliar sintomas apresentados pelo paciente"/>
     <answer id="3308" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -312,7 +312,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EPrescription" id="2718" executed="true" creationDate="2018-07-30T12:29:01.883-0300" modificationDate="2018-07-30T12:31:42.859-0300" executionDate="2018-07-30T12:31:42.695-0300" createdById="21" executedById="21" name="Rinite (Receita)" text="informação complementar">
+  <element xsi:type="MetamodelExecution:EPrescription" id="2718" executed="true" creationDate="2018-07-30T12:29:01.883-0300" modificationDate="2018-07-30T12:31:42.859-0300" executionDate="2018-07-30T12:31:42.695-0300" createdById="21" executedById="21" name="Rinite (Receita)" previous="/atendimentos/21/protocolos/2223/passos/2717/" text="informação complementar">
     <step id="168" type="Receita" name="Rinite (Receita)" description="Receita para paciente com rinite" isTerminal="true"/>
     <idsPrescribedMedication>3216</idsPrescribedMedication>
     <idsPrescribedMedication>3217</idsPrescribedMedication>
@@ -383,5 +383,5 @@
     <suspension id="2216" message="Procedimento(s) suspenso  com sucesso" requestDate="2018-07-30T12:38:47.455-0300" success="true"/>
     <procedureprescribedresource id="821" idProcedure="22254" quantity="1" frequency="1" procedure="75010020: AR COMPRIMIDO"/>
   </complementaryconducts>
-  <attendance codeAttendance="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169" codeBd="hap"/>
+  <medicalcare codeMedicalCare="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169"/>
 </MetamodelExecution:EPathway>

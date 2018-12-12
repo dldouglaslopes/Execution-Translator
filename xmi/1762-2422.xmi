@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="2422" creationDate="2018-08-06T09:34:51.770-0300" conclusionDate="2018-11-13T15:10:05.367-0200" completed="true" aborted="true" name="Pneumonia &amp; Influenza" cid="J15" timeExecution="8573999.713597">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="3022" executed="true" creationDate="2018-08-06T09:35:35.541-0300" modificationDate="2018-08-06T09:36:50.503-0300" executionDate="2018-08-06T09:36:00.731-0300" createdById="121" executedById="121" name="Verificar Critérios para SEPSE">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="3022" executed="true" creationDate="2018-08-06T09:35:35.541-0300" modificationDate="2018-08-06T09:36:50.503-0300" executionDate="2018-08-06T09:36:00.731-0300" createdById="121" executedById="121" name="Verificar Critérios para SEPSE" next="/atendimentos/1762/protocolos/2422/passos/3023/">
     <step id="1979" type="AuxilioConduta" name="Verificar Critérios para SEPSE" description="Verifique os critérios para SIRS" isInitial="true"/>
     <answer id="3684" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -30,7 +30,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="3023" executed="true" creationDate="2018-08-06T09:21:59.329-0300" modificationDate="2018-08-06T09:37:18.501-0300" executionDate="2018-08-06T09:36:21.182-0300" createdById="121" executedById="121" name="Verificar Fatores Agravantes Para SEPSE">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="3023" executed="true" creationDate="2018-08-06T09:21:59.329-0300" modificationDate="2018-08-06T09:37:18.501-0300" executionDate="2018-08-06T09:36:21.182-0300" createdById="121" executedById="121" name="Verificar Fatores Agravantes Para SEPSE" previous="/atendimentos/1762/protocolos/2422/passos/3022/" next="/atendimentos/1762/protocolos/2422/passos/3024/">
     <step id="1980" type="AuxilioConduta" name="Verificar Fatores Agravantes Para SEPSE" description="Verifique se o paciente apresenta algum dos fatores a seguir."/>
     <answer id="3687" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -69,7 +69,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="3024" executed="true" creationDate="2018-08-06T09:22:26.261-0300" modificationDate="2018-08-06T09:22:46.930-0300" executionDate="2018-08-06T09:22:18.092-0300" createdById="121" executedById="121" name="Verificar Idade do Paciente">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="3024" executed="true" creationDate="2018-08-06T09:22:26.261-0300" modificationDate="2018-08-06T09:22:46.930-0300" executionDate="2018-08-06T09:22:18.092-0300" createdById="121" executedById="121" name="Verificar Idade do Paciente" previous="/atendimentos/1762/protocolos/2422/passos/3023/" next="/atendimentos/1762/protocolos/2422/passos/3025/">
     <step id="1963" type="AuxilioConduta" name="Verificar Idade do Paciente" description="Verifique a idade do paciente"/>
     <answer id="3691" type="RespostaNumerica">
       <value xsi:type="MetamodelExecution:Numeric" value="82.0"/>
@@ -81,7 +81,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="3025" creationDate="2018-08-06T09:24:26.437-0300" modificationDate="2018-08-06T09:24:26.483-0300" createdById="121" name="Raio X + Pacote de Exames Laboratoriais">
+  <element xsi:type="MetamodelExecution:ETreatment" id="3025" creationDate="2018-08-06T09:24:26.437-0300" modificationDate="2018-08-06T09:24:26.483-0300" createdById="121" name="Raio X + Pacote de Exames Laboratoriais" previous="/atendimentos/1762/protocolos/2422/passos/3024/">
     <step id="1966" type="Tratamento" name="Raio X + Pacote de Exames Laboratoriais" description="Paciente apresenta fatores complicadores para o tratamento, idade avançada ou presença de comorbidades, recomenda-se solicitar além do raio X do tórax o pacote de exames laboratoriais a seguir:"/>
     <prescribedexam id="3602" report="" numberGuide="33200701">
       <examination id="1503" sideLimb="" quantity="1" justification="Suspeita de Influenza" clinicalIndication="Nenhuma">
@@ -185,5 +185,5 @@
   <complementaryconducts xsi:type="MetamodelExecution:ComplementaryMedication" id="1045" type="MedicamentoComplementar" pathway="Pneumonia &amp; Influenza" creationDate="2018-08-06T14:14:24.670-0300" resource="ACIDO ACETILSALICILICO 100 MG COMPRIMIDO COMP 1 UD">
     <prescribedresource id="1962" idMedication="1" name="" brand="" code="" cycles="1" description="" timeInterval="1" dailyDosage="34" frequency="72" timeTreatement="1" medication="32670: ACIDO ACETILSALICILICO 100 MG COMPRIMIDO COMP 1 UD" unit="mEq/Kcal/dia" access="NUTRICAO PARENTERAL PARCIAL"/>
   </complementaryconducts>
-  <attendance codeAttendance="49938952" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="332112" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49938952" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="332112"/>
 </MetamodelExecution:EPathway>

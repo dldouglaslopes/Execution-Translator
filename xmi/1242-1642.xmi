@@ -38,5 +38,5 @@
   <complementaryconducts xsi:type="MetamodelExecution:ComplementaryMedication" id="982" type="MedicamentoComplementar" pathway="Pneumonia &amp; Influenza" creationDate="2018-08-03T11:28:32.633-0300" resource="BUSCOPAN COMPOSTO GOTAS FRAS 20 ML">
     <prescribedresource id="1921" idMedication="22" outpatient="true" name="BUSCOPAN COMPOSTO GOTAS FRAS 20 ML" brand="" code="36048" cycles="2" description="" timeInterval="1" dailyDosage="1" frequency="2" timeTreatement="2" medication="36048: BUSCOPAN COMPOSTO GOTAS FRAS 20 ML" unit="UD" access="ORAL"/>
   </complementaryconducts>
-  <attendance codeAttendance="49934858" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="353835" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49934858" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="353835"/>
 </MetamodelExecution:EPathway>

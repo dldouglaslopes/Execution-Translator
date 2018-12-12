@@ -35,5 +35,5 @@
   <pathway id="1124" code="H002" name="Pneumonia &amp; Influenza" version="5" completed="true">
     <audit date="2018-08-08T15:03:31.074-0300"/>
   </pathway>
-  <attendance codeAttendance="49044703" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="12735083" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49044703" idProfessional="221" hospitalUnit="ATENDIMED - SERVICOS MEDICOS LTDA - HAL" patientRecord="12735083"/>
 </MetamodelExecution:EPathway>

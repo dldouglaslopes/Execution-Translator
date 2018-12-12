@@ -10,5 +10,5 @@
   <pathway id="2204" code="H038" name="Asma" version="1" completed="true">
     <audit date="2018-10-31T16:29:33.600-0200"/>
   </pathway>
-  <attendance codeAttendance="49780663" idProfessional="221" hospitalUnit="SEMED SERVICOS MEDICO HOSP DE CAMACARI LTDA" patientRecord="13175542" codeBd="hap"/>
+  <medicalcare codeMedicalCare="49780663" idProfessional="221" hospitalUnit="SEMED SERVICOS MEDICO HOSP DE CAMACARI LTDA" patientRecord="13175542"/>
 </MetamodelExecution:EPathway>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetamodelExecution:EPathway xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MetamodelExecution="http://www.example.org/MetamodelExecution" id="12384" creationDate="2018-08-28T13:53:06.651-0300" conclusionDate="2018-09-03T11:52:07.406-0300" completed="true" name="ITU - Cistite" cid="" timeExecution="511288.851755">
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="13084" executed="true" creationDate="2018-08-28T14:00:12.817-0300" modificationDate="2018-09-03T11:53:44.316-0300" executionDate="2018-09-03T11:52:06.950-0300" createdById="21" executedById="21" name="Informar Sexo do paciente">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="13084" executed="true" creationDate="2018-08-28T14:00:12.817-0300" modificationDate="2018-09-03T11:53:44.316-0300" executionDate="2018-09-03T11:52:06.950-0300" createdById="21" executedById="21" name="Informar Sexo do paciente" next="/atendimentos/21/protocolos/12384/passos/13249/">
     <step id="101" type="AuxilioConduta" name="Informar Sexo do paciente" description="Informe o sexo do paciente para seguir com o tratamento adequado." isInitial="true"/>
     <answer id="39095" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo"/>
@@ -21,7 +21,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="13249" executed="true" creationDate="2018-09-03T11:55:09.148-0300" modificationDate="2018-09-03T11:48:15.363-0300" executionDate="2018-09-03T11:44:35.395-0300" createdById="21" executedById="21" name="[Feminino] Avaliar Sintomas">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="13249" executed="true" creationDate="2018-09-03T11:55:09.148-0300" modificationDate="2018-09-03T11:48:15.363-0300" executionDate="2018-09-03T11:44:35.395-0300" createdById="21" executedById="21" name="[Feminino] Avaliar Sintomas" previous="/atendimentos/21/protocolos/12384/passos/13084/" next="/atendimentos/21/protocolos/12384/passos/13250/">
     <step id="103" type="AuxilioConduta" name="[Feminino] Avaliar Sintomas" description="Informe os sintomas apresentados pelo paciente."/>
     <answer id="39238" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -87,7 +87,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="13250" executed="true" creationDate="2018-09-03T11:50:12.667-0300" modificationDate="2018-09-03T11:52:51.826-0300" executionDate="2018-09-03T11:51:50.066-0300" createdById="21" executedById="21" name="[Feminino] Já em uso de antibiótico?">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="13250" executed="true" creationDate="2018-09-03T11:50:12.667-0300" modificationDate="2018-09-03T11:52:51.826-0300" executionDate="2018-09-03T11:51:50.066-0300" createdById="21" executedById="21" name="[Feminino] Já em uso de antibiótico?" previous="/atendimentos/21/protocolos/12384/passos/13249/" next="/atendimentos/21/protocolos/12384/passos/13251/">
     <step id="112" type="AuxilioConduta" name="[Feminino] Já em uso de antibiótico?" description="Já em uso de antibiótico nas últimas 72h sem melhora?"/>
     <answer id="39245" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -99,7 +99,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:ETreatment" id="13251" executed="true" creationDate="2018-09-03T11:54:35.091-0300" modificationDate="2018-09-03T11:50:10.006-0300" executionDate="2018-09-03T11:49:51.521-0300" createdById="21" executedById="21" name="[Feminino - Antibiótico] Realizar Exame de Imagem">
+  <element xsi:type="MetamodelExecution:ETreatment" id="13251" executed="true" creationDate="2018-09-03T11:54:35.091-0300" modificationDate="2018-09-03T11:50:10.006-0300" executionDate="2018-09-03T11:49:51.521-0300" createdById="21" executedById="21" name="[Feminino - Antibiótico] Realizar Exame de Imagem" previous="/atendimentos/21/protocolos/12384/passos/13250/" next="/atendimentos/21/protocolos/12384/passos/13252/">
     <justification id="2224" reason="ausencia_de_prescricao" description="Houve na integração" justifiedById="21"/>
     <step id="114" type="Tratamento" name="[Feminino - Antibiótico] Realizar Exame de Imagem" description="Realizar exame de imagem para evitar complicações"/>
     <prescribedexam id="12772" report="">
@@ -143,7 +143,7 @@
     <idsPrescribedExamination>12775</idsPrescribedExamination>
     <idsPrescribedExamination>12776</idsPrescribedExamination>
   </element>
-  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="13252" executed="true" creationDate="2018-09-03T11:51:41.565-0300" modificationDate="2018-09-03T11:54:12.728-0300" executionDate="2018-09-03T11:53:45.654-0300" createdById="21" executedById="21" name="[Feminino - Antibiótico] Alteração no exame de imagem?">
+  <element xsi:type="MetamodelExecution:EAuxiliaryConduct" id="13252" executed="true" creationDate="2018-09-03T11:51:41.565-0300" modificationDate="2018-09-03T11:54:12.728-0300" executionDate="2018-09-03T11:53:45.654-0300" createdById="21" executedById="21" name="[Feminino - Antibiótico] Alteração no exame de imagem?" previous="/atendimentos/21/protocolos/12384/passos/13251/" next="/atendimentos/21/protocolos/12384/passos/13253/">
     <step id="117" type="AuxilioConduta" name="[Feminino - Antibiótico] Alteração no exame de imagem?" description="Verifica se há alterações no exame de imagem"/>
     <answer id="39246" type="RespostaSimOuNao">
       <value xsi:type="MetamodelExecution:YesOrNo" value="true"/>
@@ -155,7 +155,7 @@
       </question>
     </answer>
   </element>
-  <element xsi:type="MetamodelExecution:EInformation" id="13253" executed="true" creationDate="2018-09-03T11:55:59.680-0300" modificationDate="2018-09-03T11:51:49.591-0300" executionDate="2018-09-03T11:51:49.433-0300" createdById="21" executedById="21" name="Aviso: Discutir tratamento específico com líder local">
+  <element xsi:type="MetamodelExecution:EInformation" id="13253" executed="true" creationDate="2018-09-03T11:55:59.680-0300" modificationDate="2018-09-03T11:51:49.591-0300" executionDate="2018-09-03T11:51:49.433-0300" createdById="21" executedById="21" name="Aviso: Discutir tratamento específico com líder local" previous="/atendimentos/21/protocolos/12384/passos/13252/">
     <step id="106" type="Informacao" name="Aviso: Discutir tratamento específico com líder local" description="Paciente apresenta potencial de gravidade, sugere-se discutir o caso com o líder local para definição do tratamento mais adequado." isTerminal="true"/>
   </element>
   <idsExecutedStep>13084</idsExecutedStep>
@@ -168,5 +168,5 @@
   <pathway id="23" code="H008" name="ITU - Cistite" version="1" completed="true">
     <audit/>
   </pathway>
-  <attendance codeAttendance="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169" codeBd="hap"/>
+  <medicalcare codeMedicalCare="2393353" idProfessional="21" hospitalUnit="HOSPITAL ANTONIO PRUDENTE" patientRecord="870169"/>
 </MetamodelExecution:EPathway>
