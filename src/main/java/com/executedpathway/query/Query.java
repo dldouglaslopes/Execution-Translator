@@ -1,6 +1,7 @@
 package com.executedpathway.query;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
 public class Query {
@@ -14,20 +15,26 @@ public class Query {
 							" horas");
 		
 		//#Q2
-		List<Entry<String, Integer>> medicinesTop5 = dbQuery.top5MedicineInComplementaryConducts();
+		List<Entry<String, Integer>> medicinesTop5 = dbQuery.medicineInComplementaryConducts( "top", 5);
 		for (int i = 0; i < medicinesTop5.size(); i++) {
 			System.err.println( medicinesTop5.get(i));
 		}		
 		
 		//#Q3
 		System.err.println("The most executed care pathway is " + 
-							dbQuery.mostExecutedCarePathway().getKey() +
+							dbQuery.executedCarePathway("most").getKey() +
 							" with " +
-							dbQuery.mostExecutedCarePathway().getValue() +
+							dbQuery.executedCarePathway("most").getValue() +
 							" execution(s).");
+	
+		//#Q4
+		List<Entry<String, Double>> percentFlow = dbQuery.recurrencyFlowInACarePathway("Pneumonia & Influenza", "most");
+		for (int i = 0; i < percentFlow.size(); i++) {
+			System.out.println( percentFlow.get(i).getValue() + "% -> " + percentFlow.get(i).getKey()); 
+		}	
 		*/
 		
-		//#Q4
-		dbQuery.mostRecurrentFlowInACarePathway("Pneumonia & Influenza");
+		//#Q5
+		
 	}	
 }

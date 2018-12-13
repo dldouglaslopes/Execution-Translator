@@ -26,7 +26,7 @@ import com.mongodb.client.model.Filters;
 public class DBQuery {
 	private DBConfig dbConfig = new DBConfig();
 	
-	public void mostRecurrentFlowInACarePathway( String carePathway) {
+	public List<Entry<String, Double>> recurrencyFlowInACarePathway( String carePathway, String qualify) {
 		//finding all the documents belonging to the same care pathway
 		FindIterable<Document> carePathwayDocs = allDocuments().filter( Filters.eq( "name", carePathway));
 		long size = countOccurences( "name", carePathway);
@@ -42,7 +42,7 @@ public class DBQuery {
 			
 			for (Document executedStepDoc : executedStepDocs) {
 				Document stepDoc = ( Document) executedStepDoc.get("step");
-				flow += stepDoc.getString("type") + "/";
+				flow += stepDoc.getString("type") + "-" + stepDoc.getInteger("_id") + "/";
 			}
 			
 			if (flowMap.containsKey(flow)) {
@@ -51,12 +51,27 @@ public class DBQuery {
 			}
 			else {
 				flowMap.put(flow, 1);
-			}			
+			}					
+		}		
+		
+		Map<String, Double> percentMap = new HashMap<>();
+				
+		for ( String key : flowMap.keySet()) {
+			double percent = calculatePercent( flowMap.get(key), size);
+			percentMap.put( key, percent);
 		}
 		
-		for ( String key : flowMap.keySet()) {
-			System.out.println( key + " -> " + calculatePercent( flowMap.get(key), size) + "%"); 
+		List<Entry<String, Double>> list = new LinkedList<>( percentMap.entrySet());
+		
+		//sorting the list with a comparator
+		if ( qualify.equals( "most")) {
+			descendingDouble(list);
 		}
+		if ( qualify.equals( "least")) {
+			ascendingDouble(list);
+		}
+		
+		return list;
 	}
 	
 	public String avgTimeExecution() {
@@ -75,7 +90,7 @@ public class DBQuery {
 		return decimalFormat( time/60);
 	}
 	
-	public Entry<String, Integer> mostExecutedCarePathway() {
+	public Entry<String, Integer> mostExecutedCarePathway( String qualify) {
 		Set<String> carePathwayNames = new HashSet<String>();
 		
 		//finding all the documents
@@ -94,19 +109,19 @@ public class DBQuery {
 			carePathwayTimes.put( name, ( int) carePathwayTime);			
 		}
 				
-		List<Entry<String, Integer>> list = new LinkedList<Map.Entry<String, Integer>>( carePathwayTimes.entrySet());
+		List<Entry<String, Integer>> list = new LinkedList<>( carePathwayTimes.entrySet());
 
-		//sorting the list with a comparator
-		Collections.sort( list, new Comparator<Entry<String, Integer>>() {
-			public int compare( Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-				return ( o2.getValue()).compareTo( o1.getValue());
-			}
-		});
+		if (qualify.equals("most")) {
+			descendingInteger(list);
+		}
+		if (qualify.equals("least")) {
+			ascendingInteger(list);
+		}	
 		
 		return list.get( 0);
 	}
 	
-	public List<Entry<String, Integer>> top5MedicineInComplementaryConducts() {
+	public List<Entry<String, Integer>> medicineInComplementaryConducts( String qualify, int quantity) {
 		Set<String> medicineNames = new HashSet<String>();
 				
 		//finding all the documents
@@ -138,25 +153,25 @@ public class DBQuery {
 			medicineTimes.put( name, ( int) medicineTime);			
 		}
 				
-		List<Entry<String, Integer>> list = new LinkedList<Map.Entry<String, Integer>>( medicineTimes.entrySet());
+		List<Entry<String, Integer>> list = new LinkedList<>( medicineTimes.entrySet());
 
-		//sorting the list with a comparator
-		Collections.sort( list, new Comparator<Entry<String, Integer>>() {
-			public int compare( Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-				return ( o2.getValue()).compareTo( o1.getValue());
-			}
-		});
-
-		int toIndex = 4;
+		if (qualify.equals("top")) {
+			descendingInteger(list);
+		}
+		if (qualify.equals("bottom")) {
+			ascendingInteger(list);
+		}
+		
+		int toIndex = quantity;
 		if( list.size() < toIndex) {
 			return list.subList( 0, list.size());
 		}	
 		
-		return list.subList( 0, 4);		
+		return list.subList( 0, quantity);		
 	}
 	
 	private double calculatePercent( double dividend, double divider) {
-		return ( dividend/divider) * 100;
+		return ( dividend/ divider) * 100;
 	}
 	
 	private FindIterable<Document> allDocuments() {
@@ -175,6 +190,42 @@ public class DBQuery {
 	}
 
 	private String decimalFormat( double number) {
-		return new DecimalFormat( "#0").format( number);
+		return new DecimalFormat( "####0").format( number);
+	}
+	
+	private void descendingDouble(final List<Entry<String, Double>> list) {
+		//sorting the list with a comparator
+		Collections.sort( list, new Comparator<Entry<String, Double>>() {
+			public int compare( final Map.Entry<String, Double> o1, final Map.Entry<String, Double> o2) {
+				return ( o2.getValue()).compareTo( o1.getValue());
+			}
+		});
+	}
+	
+	private void ascendingDouble(final List<Entry<String, Double>> list) {
+		//sorting the list with a comparator
+		Collections.sort( list, new Comparator<Entry<String, Double>>() {
+			public int compare( final Map.Entry<String, Double> o1, final Map.Entry<String, Double> o2) {
+				return ( o1.getValue()).compareTo( o2.getValue());
+			}
+		});
+	}
+	
+	private void descendingInteger( final List<Entry<String, Integer>> list) {
+		//sorting the list with a comparator
+		Collections.sort( list, new Comparator<Entry<String, Integer>>() {
+			public int compare( final Map.Entry<String, Integer> o1, final Map.Entry<String, Integer> o2) {
+				return ( o2.getValue()).compareTo( o1.getValue());
+			}
+		});
+	}
+	
+	private void ascendingInteger( final List<Entry<String, Integer>> list) {
+		//sorting the list with a comparator
+		Collections.sort( list, new Comparator<Entry<String, Integer>>() {
+			public int compare( final Map.Entry<String, Integer> o1, final Map.Entry<String, Integer> o2) {
+				return ( o1.getValue()).compareTo( o2.getValue());
+			}
+		});
 	}
 }
