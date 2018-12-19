@@ -23,10 +23,10 @@ import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.BsonField;
 import com.mongodb.client.model.Filters;
 
-public class DBQuery {
-	private DBConfig dbConfig = new DBConfig();
+public class QueryMethod {
+	private DBConfig dbConfig = new DBConfig();	
 	
-	public List<Entry<String, Double>> recurrencyFlowInACarePathway( String carePathway, String qualify) {
+	public List<Entry<String, Double>> recurrencyFlow( String carePathway, String qualify, int quantity) {
 		//finding all the documents belonging to the same care pathway
 		FindIterable<Document> carePathwayDocs = allDocuments().filter( Filters.eq( "name", carePathway));
 		long size = countOccurences( "name", carePathway);
@@ -64,17 +64,80 @@ public class DBQuery {
 		List<Entry<String, Double>> list = new LinkedList<>( percentMap.entrySet());
 		
 		//sorting the list with a comparator
-		if ( qualify.equals( "most")) {
-			descendingDouble(list);
-		}
-		if ( qualify.equals( "least")) {
-			ascendingDouble(list);
+		sortList(qualify, list);
+		
+		return splitList(quantity, list);	
+	}
+		
+	public List<Entry<String, Double>> occurrenceExecution( String qualify, int quantity) {
+		Set<String> carePathwayNames = new HashSet<String>();
+		
+		//finding all the documents
+		FindIterable<Document> carePathwayDocs = allDocuments();	
+		
+		//storing medication names in a set
+		for(Document doc : carePathwayDocs) {
+			carePathwayNames.add( doc.getString( "name"));
 		}
 		
-		return list;
+		Map<String, Double> carePathwayTimes = new HashMap<>();
+		
+		//counting how long the care pathway is stored in complementary conducts
+		for( String name : carePathwayNames) {
+			double carePathwayTime = countByName( "name", name);
+			carePathwayTimes.put( name, carePathwayTime);			
+		}
+				
+		List<Entry<String, Double>> list = new LinkedList<>( carePathwayTimes.entrySet());
+
+		//sorting the list with a comparator
+		sortList(qualify, list);
+		
+		return splitList(quantity, list);	
 	}
 	
-	public String avgTimeExecution() {
+	///medication in a care pathway or conduct complementary
+	public List<Entry<String, Double>> prescribedMedication( String qualify, int quantity, String field) {
+		Set<String> medicationNames = new HashSet<String>();
+				
+		//finding all the 	documents
+		FindIterable<Document> medicationComps = allDocuments();	
+		
+		//storing medication names in a set
+		for( Document doc : medicationComps) {
+			@SuppressWarnings( "unchecked")
+			List<Document> complementaryConducts = ( List<Document>) doc.get( field);
+
+			if( !complementaryConducts.isEmpty()) {				
+				for( Document complementaryConduct : complementaryConducts) {
+					Document doc2 = ( Document) complementaryConduct.get( "prescribedresource");
+											
+					if( complementaryConduct.getString( "type").equals( "MedicamentoComplementar") &&
+							!doc2.getString( "name").isEmpty()) {
+						
+						medicationNames.add( doc2.getString( "name"));
+					}	
+				}
+			}			
+        }
+		
+		Map<String, Double> medicationTimes = new HashMap<>();
+		
+		//counting how many medication occurences in complementary conducts
+		for( String name : medicationNames) {
+			double medicationTime = countByName( "complementaryConducts.prescribedresource.name", name);			
+			medicationTimes.put( name, medicationTime);			
+		}
+				
+		List<Entry<String, Double>> list = new LinkedList<>( medicationTimes.entrySet());
+
+		//sorting the list with a comparator
+		sortList(qualify, list);
+		
+		return splitList(quantity, list);				
+	}
+	
+	public String averageTime( String carePathway, String qualify, int quantity) {
 		//quering the average time
 		AggregateIterable<Document> aggregate = dbConfig.getCollection()
 				.aggregate( Arrays.asList(
@@ -90,84 +153,23 @@ public class DBQuery {
 		return decimalFormat( time/60);
 	}
 	
-	public Entry<String, Integer> mostExecutedCarePathway( String qualify) {
-		Set<String> carePathwayNames = new HashSet<String>();
-		
-		//finding all the documents
-		FindIterable<Document> carePathwayDocs = allDocuments();	
-		
-		//storing medicine names in a set
-		for(Document doc : carePathwayDocs) {
-			carePathwayNames.add( doc.getString( "name"));
-		}
-		
-		Map<String, Integer> carePathwayTimes = new HashMap<>();
-		
-		//counting how long the care pathway is stored in complementary conducts
-		for( String name : carePathwayNames) {
-			long carePathwayTime = countByName( "name", name);
-			carePathwayTimes.put( name, ( int) carePathwayTime);			
-		}
-				
-		List<Entry<String, Integer>> list = new LinkedList<>( carePathwayTimes.entrySet());
-
-		if (qualify.equals("most")) {
-			descendingInteger(list);
-		}
-		if (qualify.equals("least")) {
-			ascendingInteger(list);
-		}	
-		
-		return list.get( 0);
-	}
-	
-	public List<Entry<String, Integer>> medicineInComplementaryConducts( String qualify, int quantity) {
-		Set<String> medicineNames = new HashSet<String>();
-				
-		//finding all the documents
-		FindIterable<Document> medicineComps = allDocuments();	
-		
-		//storing medicine names in a set
-		for( Document doc : medicineComps) {
-			@SuppressWarnings( "unchecked")
-			List<Document> complementaryConducts = ( List<Document>) doc.get( "complementaryConducts");
-
-			if( !complementaryConducts.isEmpty()) {				
-				for( Document complementaryConduct : complementaryConducts) {
-					Document doc2 = ( Document) complementaryConduct.get( "prescribedresource");
-											
-					if( complementaryConduct.getString( "type").equals( "MedicamentoComplementar") &&
-							!doc2.getString( "name").isEmpty()) {
-						
-						medicineNames.add( doc2.getString( "name"));
-					}	
-				}
-			}			
-        }
-		
-		Map<String, Integer> medicineTimes = new HashMap<>();
-		
-		//counting how many medication occurences in complementary conducts
-		for( String name : medicineNames) {
-			long medicineTime = countByName( "complementaryConducts.prescribedresource.name", name);			
-			medicineTimes.put( name, ( int) medicineTime);			
-		}
-				
-		List<Entry<String, Integer>> list = new LinkedList<>( medicineTimes.entrySet());
-
-		if (qualify.equals("top")) {
-			descendingInteger(list);
-		}
-		if (qualify.equals("bottom")) {
-			ascendingInteger(list);
-		}
-		
+	private List<Entry<String, Double>> splitList(int quantity, List<Entry<String, Double>> list) {
 		int toIndex = quantity;
+		
 		if( list.size() < toIndex) {
 			return list.subList( 0, list.size());
-		}	
+		}
 		
-		return list.subList( 0, quantity);		
+		return list.subList( 0, quantity);
+	}
+	
+	private void sortList( String qualify, List<Entry<String, Double>> list) {
+		if (qualify.equals("top")) {
+			descending(list);
+		}
+		if (qualify.equals("bottom")) {
+			ascending(list);
+		}
 	}
 	
 	private double calculatePercent( double dividend, double divider) {
@@ -193,7 +195,7 @@ public class DBQuery {
 		return new DecimalFormat( "####0").format( number);
 	}
 	
-	private void descendingDouble(final List<Entry<String, Double>> list) {
+	private void descending(final List<Entry<String, Double>> list) {
 		//sorting the list with a comparator
 		Collections.sort( list, new Comparator<Entry<String, Double>>() {
 			public int compare( final Map.Entry<String, Double> o1, final Map.Entry<String, Double> o2) {
@@ -202,28 +204,10 @@ public class DBQuery {
 		});
 	}
 	
-	private void ascendingDouble(final List<Entry<String, Double>> list) {
+	private void ascending(final List<Entry<String, Double>> list) {
 		//sorting the list with a comparator
 		Collections.sort( list, new Comparator<Entry<String, Double>>() {
 			public int compare( final Map.Entry<String, Double> o1, final Map.Entry<String, Double> o2) {
-				return ( o1.getValue()).compareTo( o2.getValue());
-			}
-		});
-	}
-	
-	private void descendingInteger( final List<Entry<String, Integer>> list) {
-		//sorting the list with a comparator
-		Collections.sort( list, new Comparator<Entry<String, Integer>>() {
-			public int compare( final Map.Entry<String, Integer> o1, final Map.Entry<String, Integer> o2) {
-				return ( o2.getValue()).compareTo( o1.getValue());
-			}
-		});
-	}
-	
-	private void ascendingInteger( final List<Entry<String, Integer>> list) {
-		//sorting the list with a comparator
-		Collections.sort( list, new Comparator<Entry<String, Integer>>() {
-			public int compare( final Map.Entry<String, Integer> o1, final Map.Entry<String, Integer> o2) {
 				return ( o1.getValue()).compareTo( o2.getValue());
 			}
 		});

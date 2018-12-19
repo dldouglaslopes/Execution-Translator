@@ -1,5 +1,7 @@
 package com.executedpathway.translator.model.pathway.step;
+
 import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

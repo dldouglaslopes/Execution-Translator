@@ -1,9 +1,9 @@
 package com.executedpathway.init;
 
-import com.executedpathway.query.Query;
+import com.executedpathway.query.QueryStructure;
 
 public class InitQuery {
 	public static void main(String[] args) {
-		new Query().queries();
+		new QueryStructure().create();
 	}
 }
