@@ -1,13 +1,15 @@
 package com.executedpathway.query;
 
 import QueryMetamodel.Age;
-import QueryMetamodel.Attribute;
 import QueryMetamodel.ComplementaryConducts;
+import QueryMetamodel.Conduct;
 import QueryMetamodel.Date;
+import QueryMetamodel.EAttribute;
 import QueryMetamodel.EElement;
+import QueryMetamodel.EMethod;
 import QueryMetamodel.EQuery;
 import QueryMetamodel.EStep;
-import QueryMetamodel.Function;
+import QueryMetamodel.Field;
 import QueryMetamodel.Gender;
 import QueryMetamodel.Message;
 import QueryMetamodel.Method;
@@ -23,8 +25,8 @@ public class QueryStructure {
 	
 	public void create() {		
 		EQuery query = Query_metamodelFactory.eINSTANCE.createEQuery();
-		Method method = Query_metamodelFactory.eINSTANCE.createMethod();
-		Attribute attribute = Query_metamodelFactory.eINSTANCE.createAttribute();	
+		EMethod method = Query_metamodelFactory.eINSTANCE.createEMethod();
+		EAttribute attribute = Query_metamodelFactory.eINSTANCE.createEAttribute();	
 		Sex sex = Query_metamodelFactory.eINSTANCE.createSex();
 		Age age = Query_metamodelFactory.eINSTANCE.createAge();
 		Order order = Query_metamodelFactory.eINSTANCE.createOrder();
@@ -42,6 +44,7 @@ public class QueryStructure {
 		range.setTo(5);
 		range.setQuantity(5);
 		eStep.setStep(EElement.ALL);
+		complementaryConducts.setConduct(Conduct.NONE);
 		date.setFrom(null);
 		date.setTo(null);
 		status.setMessage(Message.ALL);
@@ -49,11 +52,11 @@ public class QueryStructure {
 		attribute.setRange(range);
 		attribute.setSex(sex);
 		attribute.setStatus(status);
-		attribute.getAge().set(0, age);
-		attribute.getDate().set(0, date);
-		attribute.getField().set(0, eStep);
-		attribute.getField().set(1, complementaryConducts);
-		method.setName(Function.AVERAGE_TIME);
+		attribute.getAge().add( age);
+		attribute.getDate().add( date);
+		attribute.getComplementaryconducts().add(complementaryConducts);
+		attribute.getEstep().add(eStep);
+		method.setName(Method.AVERAGE_BY_TIME);
 		method.setAttribute(attribute);
 		query.setMethod(method);
 		
@@ -61,6 +64,39 @@ public class QueryStructure {
 	}
 	
 	private void call(EQuery eQuery) {
-	
+		System.out.println(toString(eQuery));
 	}
+	
+	private String toString(EQuery eQuery) {
+		String method = ".";
+		
+		method += eQuery.getMethod().getName() + "(";
+		method += eQuery.getMethod().getAttribute().getAge().get(0).getFrom() + ",";
+		method += eQuery.getMethod().getAttribute().getAge().get(0).getTo() + ",";
+		method += eQuery.getMethod().getAttribute().getDate().get(0).getFrom() + ",";
+		method += eQuery.getMethod().getAttribute().getDate().get(0).getTo() + ",";		
+		method += "\"" + eQuery.getMethod().getAttribute().getEstep().get(0).getStep() + "\",";
+		method += "\"" + eQuery.getMethod().getAttribute().getComplementaryconducts().get(0).getConduct() + "\",";
+		method += "\"" + eQuery.getMethod().getAttribute().getOrder().getOrder() + "\",";
+		method += eQuery.getMethod().getAttribute().getRange().getFrom() + ",";
+		method += eQuery.getMethod().getAttribute().getRange().getQuantity() + ",";
+		method += eQuery.getMethod().getAttribute().getRange().getTo() + ",";
+		method += "\"" + eQuery.getMethod().getAttribute().getSex().getSex() + "\",";
+		method += "\"" + eQuery.getMethod().getAttribute().getStatus().getMessage() + "\")";
+		
+		return method;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

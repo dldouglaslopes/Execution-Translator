@@ -1,6 +1,7 @@
 package com.executedpathway.query;
 
 import java.text.DecimalFormat;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -137,7 +138,7 @@ public class QueryMethod {
 		return splitList(quantity, list);				
 	}
 	
-	public String averageTime( String carePathway, String qualify, int quantity) {
+	public String averageTime( String carePathway) {
 		//quering the average time
 		AggregateIterable<Document> aggregate = dbConfig.getCollection()
 				.aggregate( Arrays.asList(
@@ -192,7 +193,7 @@ public class QueryMethod {
 	}
 
 	private String decimalFormat( double number) {
-		return new DecimalFormat( "####0").format( number);
+		return new DecimalFormat("####0").format( number);
 	}
 	
 	private void descending(final List<Entry<String, Double>> list) {
