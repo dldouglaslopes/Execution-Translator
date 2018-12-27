@@ -1,7 +1,6 @@
 package com.executedpathway.query;
 
 import java.text.DecimalFormat;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,8 +23,85 @@ import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.BsonField;
 import com.mongodb.client.model.Filters;
 
+import QueryMetamodel.Age;
+import QueryMetamodel.Date;
+import QueryMetamodel.ECarePathway;
+import QueryMetamodel.EConduct;
+import QueryMetamodel.EQuery;
+import QueryMetamodel.EStep;
+import QueryMetamodel.Gender;
+import QueryMetamodel.Message;
+import QueryMetamodel.Range;
+import QueryMetamodel.Sex;
+import QueryMetamodel.Status;
+
 public class QueryMethod {
-	private DBConfig dbConfig = new DBConfig();	
+	private DBConfig dbConfig;	
+	private ECarePathway carePathway;
+	private Age age; 
+	private Date date;
+	private Range range;
+	private Sex sex;
+	private Status status;
+	
+	public QueryMethod(EQuery eQuery) {
+		dbConfig = new DBConfig();
+		this.carePathway = eQuery.getEMethod().getEAttribute().getCarePathway();
+		this.age = eQuery.getEMethod().getEAttribute().getAge(); 
+		this.date = eQuery.getEMethod().getEAttribute().getDate();
+		this.range = eQuery.getEMethod().getEAttribute().getRange();
+		this.sex = eQuery.getEMethod().getEAttribute().getSex();
+		this.status = eQuery.getEMethod().getEAttribute().getStatus();
+	}
+	
+	public FindIterable<Document> filterDocuments() {
+		FindIterable<Document> docs = dbConfig.getCollection()
+												.find()
+												.filter( Filters.all( "name", 
+																	carePathway.getNames()));
+		
+		if (!carePathway.getStep().contains(EStep.ALL) &&
+			!carePathway.getConduct().contains(EConduct.ALL)) {
+			
+			docs.filter( Filters.or( Filters.all( "executedsteps.step.name", 
+													carePathway.getStep()),
+									Filters.all( "complementaryconducts.type", 
+													carePathway.getConduct())));
+		}
+		else if (carePathway.getStep().contains(EStep.ALL) &&
+				!carePathway.getConduct().contains(EConduct.ALL)) {
+			
+			docs.filter( Filters.all( "complementaryconducts.type", 
+										carePathway.getConduct()));
+		} 
+		else if (!carePathway.getStep().contains(EStep.ALL) &&
+				carePathway.getConduct().contains(EConduct.ALL)) {
+			
+			docs.filter( Filters.all( "executedsteps.step.name", 
+										carePathway.getStep()));
+		}		
+		
+		if (!sex.getSex().equals(Gender.ALL)) {
+			docs = docs.filter( Filters.eq( "medicalcare.sex", sex.getSex()));
+		}												
+		
+		if (!status.getMessage().equals(Message.ALL)) {
+			docs = docs.filter( Filters.eq( status.getMessage().getName(), status.isValue()));
+		}
+		
+		if (age.getFrom() > 0 && age.getTo() == 0) {
+			docs.filter( Filters.gte( "medicalcare.age", 
+										age.getFrom()));
+		}		
+		else if (age.getFrom() >= 0 && age.getTo() > 0 && age.getTo() >= age.getFrom()) {
+			docs.filter( Filters.and( Filters.gte( "medicalcare.age", 
+											age.getFrom()),
+									Filters.lte( "medicalcare.age", 
+											age.getTo())));
+		}
+		
+		return docs;
+	}	
 	
 	public List<Entry<String, Double>> recurrencyFlow( String carePathway, String qualify, int quantity) {
 		//finding all the documents belonging to the same care pathway
@@ -69,7 +145,64 @@ public class QueryMethod {
 		
 		return splitList(quantity, list);	
 	}
+	
+	public String averageByTime() {	
+		//quering the average time
+		AggregateIterable<Document> aggregate = dbConfig.getCollection().aggregate( Arrays.asList(
+		Aggregates.group( "_id", new BsonField( "averageTime",	new BsonDocument( "$avg", new BsonString( "$timeExecution"))))));
+				
+		//getting the average time
+		Document result = aggregate.first();
+		double time = result.getDouble( "averageTime");
 		
+		return decimalFormat( time/60);
+	}
+	
+	/*
+	 public List<Entry<String, Double>> recurrencyFlow( String carePathway, String qualify, int quantity) {
+		//finding all the documents belonging to the same care pathway
+		FindIterable<Document> carePathwayDocs = allDocuments().filter( Filters.eq( "name", carePathway));
+		long size = countOccurences( "name", carePathway);
+		
+		Map<String, Integer> flowMap = new HashMap<>();
+
+		//quering the flows and counting how many flow occurrences
+		for( Document carePathwayDoc : carePathwayDocs) {			
+			@SuppressWarnings( "unchecked")
+			List<Document> executedStepDocs = ( List<Document>) carePathwayDoc.get( "executedSteps");
+			
+			String flow = "";
+			
+			for (Document executedStepDoc : executedStepDocs) {
+				Document stepDoc = ( Document) executedStepDoc.get("step");
+				flow += stepDoc.getString("type") + "-" + stepDoc.getInteger("_id") + "/";
+			}
+			
+			if (flowMap.containsKey(flow)) {
+				int value = flowMap.get(flow) + 1;
+				flowMap.replace(flow, value);
+			}
+			else {
+				flowMap.put(flow, 1);
+			}					
+		}		
+		
+		Map<String, Double> percentMap = new HashMap<>();
+				
+		for ( String key : flowMap.keySet()) {
+			double percent = calculatePercent( flowMap.get(key), size);
+			percentMap.put( key, percent);
+		}
+		
+		List<Entry<String, Double>> list = new LinkedList<>( percentMap.entrySet());
+		
+		//sorting the list with a comparator
+		sortList(qualify, list);
+		
+		return splitList(quantity, list);	
+	}
+	 */
+	
 	public List<Entry<String, Double>> occurrenceExecution( String qualify, int quantity) {
 		Set<String> carePathwayNames = new HashSet<String>();
 		
@@ -136,22 +269,6 @@ public class QueryMethod {
 		sortList(qualify, list);
 		
 		return splitList(quantity, list);				
-	}
-	
-	public String averageTime( String carePathway) {
-		//quering the average time
-		AggregateIterable<Document> aggregate = dbConfig.getCollection()
-				.aggregate( Arrays.asList(
-						Aggregates.group( "_id", 
-								new BsonField( "averageTime", 
-										new BsonDocument( "$avg", 
-												new BsonString( "$timeExecution"))))));
-				
-		//getting the average time
-		Document result = aggregate.first();
-		double time = result.getDouble( "averageTime");
-		
-		return decimalFormat( time/60);
 	}
 	
 	private List<Entry<String, Double>> splitList(int quantity, List<Entry<String, Double>> list) {
