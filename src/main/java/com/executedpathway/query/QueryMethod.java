@@ -31,6 +31,7 @@ import QueryMetamodel.EQuery;
 import QueryMetamodel.EStep;
 import QueryMetamodel.Gender;
 import QueryMetamodel.Message;
+import QueryMetamodel.Order;
 import QueryMetamodel.Range;
 import QueryMetamodel.Sex;
 import QueryMetamodel.Status;
@@ -58,7 +59,7 @@ public class QueryMethod {
 		FindIterable<Document> docs = dbConfig.getCollection()
 												.find()
 												.filter( Filters.all( "name", 
-																	carePathway.getNames()));
+																	carePathway.getName()));
 		
 		if (!carePathway.getStep().contains(EStep.ALL) &&
 			!carePathway.getConduct().contains(EConduct.ALL)) {
@@ -103,47 +104,57 @@ public class QueryMethod {
 		return docs;
 	}	
 	
-	public List<Entry<String, Double>> recurrencyFlow( String carePathway, String qualify, int quantity) {
+	public List<Entry<String, Double>> occurrencyFlow() {
+		
 		//finding all the documents belonging to the same care pathway
-		FindIterable<Document> carePathwayDocs = allDocuments().filter( Filters.eq( "name", carePathway));
-		long size = countOccurences( "name", carePathway);
+		FindIterable<Document> carePathwayDocs = filterDocuments();
+				
+		//count how many occurrences of same care pathway name 
+		String field = "name";
+		String name = carePathway.getName();
+		int size = count( field, name, carePathwayDocs);
 		
 		Map<String, Integer> flowMap = new HashMap<>();
-
-		//quering the flows and counting how many flow occurrences
-		for( Document carePathwayDoc : carePathwayDocs) {			
-			@SuppressWarnings( "unchecked")
-			List<Document> executedStepDocs = ( List<Document>) carePathwayDoc.get( "executedSteps");
-			
-			String flow = "";
-			
-			for (Document executedStepDoc : executedStepDocs) {
-				Document stepDoc = ( Document) executedStepDoc.get("step");
-				flow += stepDoc.getString("type") + "-" + stepDoc.getInteger("_id") + "/";
-			}
-			
-			if (flowMap.containsKey(flow)) {
-				int value = flowMap.get(flow) + 1;
-				flowMap.replace(flow, value);
-			}
-			else {
-				flowMap.put(flow, 1);
-			}					
-		}		
 		
-		Map<String, Double> percentMap = new HashMap<>();
+		//quering the flows and counting how many flow occurrences
+		for( Document carePathwayDoc : carePathwayDocs) {
+			if ( carePathway.getName().equals(carePathwayDoc.get("name"))) {
+				@SuppressWarnings( "unchecked")
+				List<Document> executedStepDocs =  (List<Document>) carePathwayDoc.get( "executedSteps");
 				
+				String flow = "";
+				
+				for (Document executedStepDoc : executedStepDocs) {
+					Document stepDoc = ( Document) executedStepDoc.get("step");
+					flow += stepDoc.getString("type") + "-" + stepDoc.getInteger("_id") + "/";
+				}
+									
+				if (flowMap.containsKey(flow)) {
+					int value = flowMap.get(flow) + 1;
+					flowMap.replace(flow, value);
+				}
+				else {
+					flowMap.put(flow, 1);
+				}					
+			}				
+		}		
+
+		Map<String, Double> percentMap = new HashMap<>();
+		
+		//calculating the percent of the flow
 		for ( String key : flowMap.keySet()) {
-			double percent = calculatePercent( flowMap.get(key), size);
-			percentMap.put( key, percent);
+			int dividend = flowMap.get(key);
+			int divider = size;
+			double percent = rate( dividend, divider);
+			percentMap.put( key, percent);	
 		}
 		
 		List<Entry<String, Double>> list = new LinkedList<>( percentMap.entrySet());
 		
-		//sorting the list with a comparator
-		sortList(qualify, list);
+		//sorting the list following the order
+		sort( list, range.getOrder());
 		
-		return splitList(quantity, list);	
+		return split( range.getQuantity(), list);	
 	}
 	
 	public String averageByTime() {	
@@ -157,51 +168,6 @@ public class QueryMethod {
 		
 		return decimalFormat( time/60);
 	}
-	
-	/*
-	 public List<Entry<String, Double>> recurrencyFlow( String carePathway, String qualify, int quantity) {
-		//finding all the documents belonging to the same care pathway
-		FindIterable<Document> carePathwayDocs = allDocuments().filter( Filters.eq( "name", carePathway));
-		long size = countOccurences( "name", carePathway);
-		
-		Map<String, Integer> flowMap = new HashMap<>();
-
-		//quering the flows and counting how many flow occurrences
-		for( Document carePathwayDoc : carePathwayDocs) {			
-			@SuppressWarnings( "unchecked")
-			List<Document> executedStepDocs = ( List<Document>) carePathwayDoc.get( "executedSteps");
-			
-			String flow = "";
-			
-			for (Document executedStepDoc : executedStepDocs) {
-				Document stepDoc = ( Document) executedStepDoc.get("step");
-				flow += stepDoc.getString("type") + "-" + stepDoc.getInteger("_id") + "/";
-			}
-			
-			if (flowMap.containsKey(flow)) {
-				int value = flowMap.get(flow) + 1;
-				flowMap.replace(flow, value);
-			}
-			else {
-				flowMap.put(flow, 1);
-			}					
-		}		
-		
-		Map<String, Double> percentMap = new HashMap<>();
-				
-		for ( String key : flowMap.keySet()) {
-			double percent = calculatePercent( flowMap.get(key), size);
-			percentMap.put( key, percent);
-		}
-		
-		List<Entry<String, Double>> list = new LinkedList<>( percentMap.entrySet());
-		
-		//sorting the list with a comparator
-		sortList(qualify, list);
-		
-		return splitList(quantity, list);	
-	}
-	 */
 	
 	public List<Entry<String, Double>> occurrenceExecution( String qualify, int quantity) {
 		Set<String> carePathwayNames = new HashSet<String>();
@@ -225,9 +191,9 @@ public class QueryMethod {
 		List<Entry<String, Double>> list = new LinkedList<>( carePathwayTimes.entrySet());
 
 		//sorting the list with a comparator
-		sortList(qualify, list);
+		//sortList(qualify, list);
 		
-		return splitList(quantity, list);	
+		return split(quantity, list);	
 	}
 	
 	///medication in a care pathway or conduct complementary
@@ -266,12 +232,12 @@ public class QueryMethod {
 		List<Entry<String, Double>> list = new LinkedList<>( medicationTimes.entrySet());
 
 		//sorting the list with a comparator
-		sortList(qualify, list);
+		//sortList(qualify, list);
 		
-		return splitList(quantity, list);				
+		return split(quantity, list);				
 	}
 	
-	private List<Entry<String, Double>> splitList(int quantity, List<Entry<String, Double>> list) {
+	private List<Entry<String, Double>> split(int quantity, List<Entry<String, Double>> list) {
 		int toIndex = quantity;
 		
 		if( list.size() < toIndex) {
@@ -281,16 +247,16 @@ public class QueryMethod {
 		return list.subList( 0, quantity);
 	}
 	
-	private void sortList( String qualify, List<Entry<String, Double>> list) {
-		if (qualify.equals("top")) {
+	private void sort( List<Entry<String, Double>> list, Order order) {
+		if (order.equals(Order.TOP)) {
 			descending(list);
 		}
-		if (qualify.equals("bottom")) {
+		if (order.equals(Order.BOTTOM)) {
 			ascending(list);
 		}
 	}
 	
-	private double calculatePercent( double dividend, double divider) {
+	private double rate( double dividend, double divider) {
 		return ( dividend/ divider) * 100;
 	}
 	
@@ -304,9 +270,16 @@ public class QueryMethod {
 											new BasicDBObject( "$regex", name)));
 	}
 	
-	private long countOccurences( String field, String name) {
-		return dbConfig.getCollection()
-						.count( Filters.eq( field, name));
+	private int count( String field, String name, FindIterable<Document> iterable) {
+		int cont = 0;
+		
+		for (Document document : iterable) {
+			if (document.get(field).equals(name)) {
+				cont ++; 
+			}
+		}
+		
+		return cont; 
 	}
 
 	private String decimalFormat( double number) {

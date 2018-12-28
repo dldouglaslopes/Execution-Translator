@@ -1,5 +1,7 @@
 package com.executedpathway.query;
 
+import java.lang.reflect.InvocationTargetException;
+
 import QueryMetamodel.Age;
 import QueryMetamodel.Date;
 import QueryMetamodel.EAttribute;
@@ -33,10 +35,10 @@ public class QueryStructure {
 		age.setFrom(0);
 		age.setTo(0);
 		range.setQuantity(5);
-		range.setOrder(Order.RANDOM);
+		range.setOrder(Order.TOP);
 		eCarePathway.getStep().add(EStep.ALL);
 		eCarePathway.getConduct().add(EConduct.ALL);
-		eCarePathway.getNames().add("Pneumonia & Influenza");
+		eCarePathway.setName("Pneumonia & Influenza");
 		date.setFrom(null);
 		date.setTo(null);
 		status.setMessage(Message.ALL);
@@ -47,19 +49,14 @@ public class QueryStructure {
 		attribute.setAge( age);
 		attribute.setDate( date);
 		attribute.setCarePathway( eCarePathway);
-		method.setName(Method.AVERAGE_BY_TIME);
+		method.setName(Method.RECURRENCY_FLOW);
 		method.setEAttribute(attribute);
 		query.setEMethod(method);
 		
 		call(query);
 	}
 	
-	private void call(EQuery eQuery) {
-		QueryMethod queryMethod = new QueryMethod(eQuery);
-		
-		queryMethod.filterDocuments();
-		
-		/*		
+	private void call(EQuery eQuery) {			
 		java.lang.reflect.Method method;
 		
 		try {
@@ -73,6 +70,6 @@ public class QueryStructure {
 		} catch (NoSuchMethodException | SecurityException e) {
 			e.printStackTrace();
 		}
-		*/	
+			
 	}
 }
