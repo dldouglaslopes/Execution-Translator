@@ -49,7 +49,7 @@ public class QueryStructure {
 		attribute.setAge( age);
 		attribute.setDate( date);
 		attribute.setCarePathway( eCarePathway);
-		method.setName(Method.RECURRENCY_FLOW);
+		method.setName(Method.STATUS);
 		method.setEAttribute(attribute);
 		query.setEMethod(method);
 		
@@ -60,6 +60,7 @@ public class QueryStructure {
 		java.lang.reflect.Method method;
 		
 		try {
+			System.out.println(eQuery.getEMethod().getName());
 			method = QueryMethod.class.getMethod(eQuery.getEMethod().getName() + "");
 			method.setAccessible(true);
 			try {
