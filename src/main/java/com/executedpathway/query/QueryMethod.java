@@ -44,7 +44,32 @@ public class QueryMethod {
 		this.range = eQuery.getEMethod().getEAttribute().getRange();
 		this.sex = eQuery.getEMethod().getEAttribute().getSex();
 		this.status = eQuery.getEMethod().getEAttribute().getStatus();
-	}	
+	}
+	
+	public Map<String, Integer> conducts() {
+		//finding all the documents
+		FindIterable<Document> conductsDoc = filterDocuments();	
+		
+		Map<String, Integer> conductsSum = new HashMap<>();		
+		conductsSum.put( "with_conduct", 0);
+		conductsSum.put( "no_conduct", 0);
+		
+		//counting the occurrences when the care pathway has conducts or not
+		for (Document document : conductsDoc) {
+			List<Document> conducts = (List<Document>) document.get("complementaryConducts");
+			
+			if (!conducts.isEmpty()) {
+				int value = conductsSum.get( "with_conduct");
+				conductsSum.replace( "with_conduct", value + 1);
+			}
+			else {
+				int value = conductsSum.get( "no_conduct");
+				conductsSum.replace( "no_conduct", value + 1);
+			}
+		}
+			
+		return conductsSum;
+	}
 	
 	public Map<String, Integer> status() {
 		
@@ -56,6 +81,7 @@ public class QueryMethod {
 		statusSum.put( "aborted", 0);
 		statusSum.put( "inProgress", 0);
 		
+		//counting the occurrences of each status types
 		for (Document doc : status) {
 			if (doc.getBoolean("aborted")) {
 				int value = statusSum.get( "aborted");
@@ -96,7 +122,7 @@ public class QueryMethod {
 								!doc2.getString( "name").isEmpty()) {
 							
 							String key = doc2.getString( "name");
-							System.out.println(key);
+
 							if (medicationTimes.containsKey( doc2.getString( "name"))) {
 								double value = medicationTimes.get(key) + 1;
 								medicationTimes.replace( key, value);

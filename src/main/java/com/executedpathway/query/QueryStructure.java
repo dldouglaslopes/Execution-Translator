@@ -57,6 +57,9 @@ public class QueryStructure {
 	}
 	
 	private void call(EQuery eQuery) {			
+		new QueryMethod(eQuery).conducts();
+		
+		/*
 		java.lang.reflect.Method method;
 		
 		try {
@@ -71,6 +74,6 @@ public class QueryStructure {
 		} catch (NoSuchMethodException | SecurityException e) {
 			e.printStackTrace();
 		}
-			
+		*/
 	}
 }
