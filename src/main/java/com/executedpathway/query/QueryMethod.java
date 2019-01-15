@@ -1,6 +1,7 @@
 package com.executedpathway.query;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -152,7 +153,6 @@ public class QueryMethod {
 								Document medication = ( Document) document.get( "medication");
 															
 								String key = medication.getString( "name");
-								System.out.println(key);
 								
 								if (medicationTimes.containsKey( medication.getString( "name"))) {
 									double value = medicationTimes.get(key) + 1;
@@ -194,15 +194,34 @@ public class QueryMethod {
 		return decimalFormat( avg / 60);
 	}
 		
-	public int occurrencyExecution() {
+	public List<Entry<String, Double>> occurrencyExecution() {
 		//finding all the documents
 		FindIterable<Document> carePathwayDocs = filterDocuments();	
 				
+		Map<String, Double> occurrenciesMap = new HashMap<>();
 		String field = "name";
-		String name = carePathway.getName();
-		int size = count( field, name, carePathwayDocs);
 		
-		return size;	
+		for (Document document : carePathwayDocs) {
+			for (int i = 0; i < carePathway.getName().size(); i++) {
+				String name = carePathway.getName().get(i);
+				int size = count( field, name, carePathwayDocs);	
+			
+				if (occurrenciesMap.containsKey(name)) {
+					double value = occurrenciesMap.get(name) + 1;
+					occurrenciesMap.replace(name, value);
+				}
+				else {
+					occurrenciesMap.put(name, 1.0);
+				}
+			}
+		}
+		
+		List<Entry<String, Double>> list = new LinkedList<>( occurrenciesMap.entrySet());
+		
+		//sorting the list following the order
+		sort( list, range.getOrder());
+		
+		return split( range.getQuantity(), list);		
 	}
 	
 	public List<Entry<String, Double>> occurrencyFlow() {
@@ -212,7 +231,7 @@ public class QueryMethod {
 				
 		//count how many occurrences of same care pathway name 
 		String field = "name";
-		String name = carePathway.getName();
+		String name = carePathway.getName().get(0);
 		int size = count( field, name, carePathwayDocs);
 		
 		Map<String, Integer> flowMap = new HashMap<>();
@@ -304,6 +323,20 @@ public class QueryMethod {
 											age.getTo())));
 		}
 		
+		List<Document> docList = new ArrayList<>();
+		
+		for (Document document : docs) {
+			
+			if(document.getDate("creation").after(date.getFrom()) &&
+					document.getDate("conclusion").before(date.getTo())) {
+				
+				docList.add(document);
+			}	
+		}	
+		for (Document document : docList) {
+			System.err.println(docList.get(0).get("creation"));
+		} 
+	
 		return docs;
 	}	
 	

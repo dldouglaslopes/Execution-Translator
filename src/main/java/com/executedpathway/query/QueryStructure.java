@@ -1,6 +1,8 @@
 package com.executedpathway.query;
 
-import java.lang.reflect.InvocationTargetException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import QueryMetamodel.Age;
 import QueryMetamodel.Date;
@@ -20,7 +22,7 @@ import QueryMetamodel.Sex;
 import QueryMetamodel.Status;
 
 public class QueryStructure {			
-	public void create() {		
+	public void create() throws ParseException {		
 		EQuery query = Query_metamodelFactory.eINSTANCE.createEQuery();
 		EMethod method = Query_metamodelFactory.eINSTANCE.createEMethod();
 		EAttribute attribute = Query_metamodelFactory.eINSTANCE.createEAttribute();	
@@ -31,6 +33,10 @@ public class QueryStructure {
 		Date date = Query_metamodelFactory.eINSTANCE.createDate();
 		Status status = Query_metamodelFactory.eINSTANCE.createStatus();
 		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSS", Locale.getDefault());	
+		
+		date.setFrom(dateFormat.parse("2018-05-29T18:36:25.013818-03:00"));
+		date.setFrom(dateFormat.parse("2018-10-03T18:36:25.013818-03:00"));
 		sex.setSex(Gender.ALL);
 		age.setFrom(0);
 		age.setTo(0);
@@ -38,7 +44,7 @@ public class QueryStructure {
 		range.setOrder(Order.TOP);
 		eCarePathway.getStep().add(EStep.ALL);
 		eCarePathway.getConduct().add(EConduct.ALL);
-		eCarePathway.setName("Pneumonia & Influenza");
+		eCarePathway.getName().add("Pneumonia & Influenza");
 		date.setFrom(null);
 		date.setTo(null);
 		status.setMessage(Message.ALL);
