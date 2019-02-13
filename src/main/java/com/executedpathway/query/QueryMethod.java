@@ -323,19 +323,19 @@ public class QueryMethod {
 											age.getTo())));
 		}
 		
-		List<Document> docList = new ArrayList<>();
-		
-		for (Document document : docs) {
-			
-			if(document.getDate("creation").after(date.getFrom()) &&
-					document.getDate("conclusion").before(date.getTo())) {
-				
-				docList.add(document);
-			}	
-		}	
-		for (Document document : docList) {
-			System.err.println(docList.get(0).get("creation"));
-		} 
+//		List<Document> docList = new ArrayList<>();
+//		
+//		for (Document document : docs) {
+//			
+//			if(document.getDate("creation").after(date.getFrom()) &&
+//					document.getDate("conclusion").before(date.getTo())) {
+//				
+//				docList.add(document);
+//			}	
+//		}	
+//		for (Document document : docList) {
+//			System.err.println(docList.get(0).get("creation"));
+//		} 
 	
 		return docs;
 	}	

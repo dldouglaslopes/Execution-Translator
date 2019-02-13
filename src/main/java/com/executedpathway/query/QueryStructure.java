@@ -1,5 +1,6 @@
 package com.executedpathway.query;
 
+import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -55,7 +56,7 @@ public class QueryStructure {
 		attribute.setAge( age);
 		attribute.setDate( date);
 		attribute.setCarePathway( eCarePathway);
-		method.setName(Method.STATUS);
+		method.setName(Method.CONDUCTS);
 		method.setEAttribute(attribute);
 		query.setEMethod(method);
 		
@@ -63,9 +64,9 @@ public class QueryStructure {
 	}
 	
 	private void call(EQuery eQuery) {			
-		new QueryMethod(eQuery).conducts();
+		//new QueryMethod(eQuery).conducts();
 		
-		/*
+		
 		java.lang.reflect.Method method;
 		
 		try {
@@ -80,6 +81,6 @@ public class QueryStructure {
 		} catch (NoSuchMethodException | SecurityException e) {
 			e.printStackTrace();
 		}
-		*/
+		
 	}
 }
